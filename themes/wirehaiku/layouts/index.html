@@ -3,7 +3,7 @@
 {{ .Site.Params.intro | .RenderString }}
 
 <ul>
-    {{ range ( where .Site.RegularPages "Type" "posts" ) | first 25 }}
+    {{ range (where .Site.RegularPages "Type" "posts") | first 25 }}
     <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         ({{ .Date.Format "2 Jan 2006" }})
@@ -11,7 +11,6 @@
     {{ end }}
 </ul>
 
-{{ $arch := .Site.GetPage "/pages/archives" }}
-<p> You can also check out the <a href="{{ $arch.RelPermalink }}">archives</a>. </p>
+<p> You can also check out the <a href="/pages/archives/">archives</a>. </p>
 
 {{ end }}
