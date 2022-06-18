@@ -1,3 +1,7 @@
+{{- $sass := resources.Get "style.scss" -}}
+{{- $opts := (dict "outputStyle" "compressed") -}}
+{{- $file := $sass | resources.ToCSS $opts -}}
+
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +10,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="{{ .Site.Params.description }}">
-		<link type="text/css" rel="stylesheet" href="/style.css">
+		<link type="text/css" rel="stylesheet" href="{{ $file.RelPermalink }}">
 		<title>
 			{{- .Site.Title -}}
 			{{- if ne .Site.Title .Title }} &bull; {{ .Title }} {{- end -}}
@@ -18,24 +22,24 @@
 
 	<body>
 		<div id="main">
-			<div>
-				<div id="head">
-					<strong> <a href="/">{{ .Site.Title }}</a> </strong>
-					&bull; <a href="/">Home</a>
-					&bull; <a href="/pages/archive/">Archive</a>
-					&bull; <a href="https://twitter.com/{{ .Site.Params.twitter }}">Twitter</a>
-				</div>
-				<hr>
-				<div id="body">
-					{{ block "main" . }} {{ end }}
-				</div>
-				<hr>
-				<div id="foot">
-					<p>
-						&copy; Stephen Malone {{ now.Format "2006" }}.
-						Powered by <a href="https://gohugo.io/">Hugo</a>.
-					</p>
-				</div>
+			<div id="head">
+				<strong> <a href="/">{{ .Site.Title }}</a> </strong>
+				&bull; <a href="/">Home</a>
+				&bull; <a href="/pages/about/">About</a>
+				&bull; <a href="/pages/archives/">Archives</a>
+				&bull; <a href="https://twitter.com/{{ .Site.Params.twitter }}">Twitter</a>
+			</div>
+			<hr>
+			<div id="body">
+				{{ block "main" . }} {{ end }}
+			</div>
+			<hr>
+			<div id="foot">
+				<p>
+					&copy; Stephen Malone {{ now.Format "2006" }}.
+					Powered by <a href="https://gohugo.io/">Hugo</a>.
+					Get the <a href="/index.xml">RSS</a>.
+				</p>
 			</div>
 		</div>
 	</body>

@@ -11,4 +11,7 @@
     {{ end }}
 </ul>
 
+{{ $arch := .Site.GetPage "/pages/archives" }}
+<p> You can also check out the <a href="{{ $arch.RelPermalink }}">archives</a>. </p>
+
 {{ end }}

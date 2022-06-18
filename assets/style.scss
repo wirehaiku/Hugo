@@ -1,0 +1,134 @@
+/* Light Colours */
+$lite-back: #ffffff;
+$lite-grey: #dddddd;
+$lite-fore: #000000;
+$lite-blue: #306090;
+$lite-purp: #603090;
+
+/* Dark Colours */
+$dark-back: #000000;
+$dark-grey: #222222;
+$dark-fore: #ffffff;
+$dark-blue: #90c0f0;
+$dark-purp: #c090f0;
+
+/* Mutual Colours */
+$both-grey: #888888;
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    font: 16px Helvetica, sans-serif;
+    line-height: 1.6rem;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#head {
+    color: $both-grey;
+    margin: 1rem;
+
+    a {
+        margin: 0 0.25rem;
+    }
+}
+
+#body {
+    margin: 1rem;
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    :last-child {
+        margin-bottom: 0;
+    }
+
+    ul {
+        margin: 1rem 0;
+        padding-left: 1rem;
+
+        li {
+            padding: 0.5rem;
+        }
+    }
+
+    pre {
+        padding: 1rem 0 1rem 1rem;
+
+        code {
+            font: 1.2rem Helvetica, sans-serif;
+            line-height: 2em;
+        }
+
+    }
+
+    .meta {
+        color: $both-grey;
+    }
+
+}
+
+#foot {
+    color: $both-grey;
+    margin: 1rem;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background: $lite-back;
+        color: $lite-fore;
+    }
+
+    a:link {
+        color: $lite-blue;
+    }
+
+    a:visited {
+        color: $lite-purp;
+    }
+
+    hr {
+        background-color: $lite-grey;
+    }
+
+    #body pre {
+        border-left: 1px solid $lite-grey;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: $dark-back;
+        color: $dark-fore;
+    }
+
+    a:link {
+        color: $dark-blue;
+    }
+
+    a:visited {
+        color: $dark-purp;
+    }
+
+    hr {
+        background-color: $dark-grey;
+    }
+
+    #body pre {
+        border-left: 1px solid $dark-grey;
+    }
+}
