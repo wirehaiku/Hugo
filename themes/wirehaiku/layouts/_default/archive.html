@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+
+{{ .Content }}
+
+<h3> By Category </h3>
+<ul>
+    {{ range $name, $posts := .Site.Taxonomies.categories }}
+    {{ $cnt := .Count }}
+    {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
+    <li> <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ $cnt }})</li>
+    {{ end }}
+    {{ end }}
+</ul>
+
+<h3> By Tag </h3>
+<p>
+    {{ range $name, $posts := .Site.Taxonomies.tags }}
+    {{ $cnt := .Count }}
+    {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ $cnt }})
+    {{ end }}
+    {{ end }}
+</p>
+
+{{ end }}

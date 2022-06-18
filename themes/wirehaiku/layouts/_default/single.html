@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+<h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+
+{{ if eq .Type "posts" }}
+<p class="meta">
+	Written {{ .Date.Format "2 January 2006" }}
+	&bull; {{ partial "taxon.html" (.GetTerms "categories") }}
+	&bull; {{ partial "taxon.html" (.GetTerms "tags") }}
+</p>
+{{ end }}
+
+{{ .Content }}
+
+{{ end }}

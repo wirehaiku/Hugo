@@ -1,0 +1,33 @@
+# Hugo Configuration File.
+baseURL = "https://wirehaiku.org/"
+theme   = "wirehaiku"
+title   = "Wire Haiku"
+languageCode = "en-us"
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+
+[author]
+name  = "Stephen Malone"
+email = "mail@wirehaiku.org"
+
+[frontmatter]
+date = [":filename"]
+
+[params]
+author  = "Stephen Malone"
+twitter = "wirehaiku"
+description = "Haiku about city life and the small comforts of home, by Stephen Malone."
+intro = """
+Hi, I'm Stephen Malone and this is **Wire Haiku**, a journal of haiku about the 
+beauty of city life and the simple pleasures of home. Every weekday I write a new haiku and publish it here.
+
+If you like my work you can follow me on [Twitter](https://twitter.com/wirehaiku) for 
+updates, or just tell your friends.
+"""
+
+[permalinks]
+categories = "/category/:slug/"
+tags       = "/tag/:slug/"
+
+[taxonomies]
+category = "categories"
+tag      = "tags"
