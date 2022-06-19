@@ -15,13 +15,12 @@ date = [":filename"]
 [params]
 author  = "Stephen Malone"
 twitter = "wirehaiku"
-description = "Haiku about city life and the small comforts of home, by Stephen Malone."
+donation = "https://ko-fi.com/wirehaiku"
+description = "Haiku about city life and modern nature, by Stephen Malone."
 intro = """
-Hi, I'm Stephen Malone and this is **Wire Haiku**, a journal of haiku about the 
-beauty of city life and the simple pleasures of home. Every weekday I write a new haiku and publish it here.
+Hello and welcome to **Wire Haiku**, a journal of [haiku poetry][1] about city life and modern nature.
 
-If you like my work you can follow me on [Twitter](https://twitter.com/wirehaiku) for 
-updates, or just tell your friends.
+[1]: https://en.wikipedia.org/wiki/Haiku
 """
 
 [permalinks]

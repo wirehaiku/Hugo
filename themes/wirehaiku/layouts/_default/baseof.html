@@ -23,10 +23,10 @@
 		<div id="main">
 			<div id="head">
 				<strong> <a href="/">{{ .Site.Title }}</a> </strong>
-				&bull; <a href="/">Home</a>
 				&bull; <a href="/pages/about/">About</a>
 				&bull; <a href="/pages/archives/">Archives</a>
 				&bull; <a href="https://twitter.com/{{ .Site.Params.twitter }}">Twitter</a>
+				&bull; <a href="{{ .Site.Params.donation }}">Donate</a>
 			</div>
 			<hr>
 			<div id="body">
@@ -36,8 +36,8 @@
 			<div id="foot">
 				<p>
 					&copy; Stephen Malone {{ now.Format "2006" }}.
-					Powered by <a href="https://gohugo.io/">Hugo</a>.
-					Get the <a href="/index.xml">RSS</a>.
+					Powered by <a href="https://gohugo.io/">Hugo</a>,
+					supported by <a href="{{ .Site.Params.donation }}">kind readers</a>!
 				</p>
 			</div>
 		</div>
