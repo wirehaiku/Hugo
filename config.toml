@@ -15,7 +15,7 @@ date = [":filename"]
 [params]
 author  = "Stephen Malone"
 twitter = "wirehaiku"
-donation = "https://ko-fi.com/wirehaiku"
+donate  = "https://ko-fi.com/wirehaiku"
 description = "Haiku about city life and modern nature, by Stephen Malone."
 intro = """
 Hello and welcome to **Wire Haiku**, a journal of [haiku poetry][1] about city life and modern nature.
