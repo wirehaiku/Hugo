@@ -1,6 +1,5 @@
 {{- $sass := resources.Get "style.scss" -}}
-{{- $opts := (dict "outputStyle" "compressed") -}}
-{{- $file := $sass | resources.ToCSS $opts -}}
+{{- $file := $sass | resources.ToCSS -}}
 
 <!doctype html>
 <html lang="en">
@@ -14,8 +13,9 @@
 			{{- .Site.Title -}}
 			{{- if ne .Site.Title .Title }} &bull; {{ .Title }} {{- end -}}
 		</title>
-		{{- range .AlternativeOutputFormats }}
-		{{ printf `<link rel="%s" type="%s" href="%s" title="%s - %s">` .Rel .MediaType.Type .Permalink $.Site.Title $.Title | safeHTML }}
+		{{ range .AlternativeOutputFormats }}
+		<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}"
+			title="{{ $.Site.Title }} - {{ $.Title }}">
 		{{ end }}
 	</head>
 
