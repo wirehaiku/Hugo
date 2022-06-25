@@ -30,3 +30,6 @@ tags       = "/tag/:slug/"
 [taxonomies]
 category = "categories"
 tag      = "tags"
+
+[markup.goldmark.extensions]
+typographer = true
