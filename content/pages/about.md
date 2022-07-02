@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: About
 ---
 
 Hello and welcome to **Wire Haiku**, a journal of [haiku poetry][1] about city life and modern nature. I'm Stephen Malone, and every weekday I write a new haiku and publish it here for all to see.
