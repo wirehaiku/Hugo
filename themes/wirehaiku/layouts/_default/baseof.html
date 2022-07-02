@@ -13,9 +13,8 @@
 			{{- .Site.Title -}}
 			{{- if ne .Site.Title .Title }} &bull; {{ .Title }} {{- end -}}
 		</title>
-		{{ range .AlternativeOutputFormats }}
-		<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}"
-			title="{{ $.Site.Title }} - {{ $.Title }}">
+		{{ range .AlternativeOutputFormats -}}
+		<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}">
 		{{ end }}
 	</head>
 
