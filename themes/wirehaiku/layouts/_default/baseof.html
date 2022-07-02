@@ -22,10 +22,9 @@
 		<div id="main">
 			<div id="head">
 				<strong> <a href="/">{{ .Site.Title }}</a> </strong>
-				&bull; <a href="/pages/about/">About</a>
-				&bull; <a href="/pages/archives/">Archives</a>
-				&bull; <a href="https://twitter.com/{{ .Site.Params.twitter }}">Twitter</a>
-				&bull; <a href="{{ .Site.Params.donate }}">Donate</a>
+				{{ range .Site.Params.menu }}
+				&bull; <a href="{{ index . 1 }}">{{ index . 0 }}</a>
+				{{ end }}
 			</div>
 			<hr>
 			<div id="body">

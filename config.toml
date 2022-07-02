@@ -14,7 +14,7 @@ date = [":filename"]
 
 [params]
 author  = "Stephen Malone"
-twitter = "wirehaiku"
+twitter = "https://twitter.com/wirehaiku"
 donate  = "https://ko-fi.com/wirehaiku"
 description = "Haiku about city life and modern nature, by Stephen Malone."
 intro = """
@@ -22,6 +22,13 @@ Hello and welcome to **Wire Haiku**, a journal of [haiku poetry][1] about city l
 
 [1]: https://en.wikipedia.org/wiki/Haiku
 """
+
+menu = [
+    ["About",    "/pages/about/"],
+    ["Archives", "/pages/archives/"],
+    ["Twitter",  "https://twitter.com/wirehaiku"],
+    ["Donate",   "https://ko-fi.com/wirehaiku"],
+]
 
 [permalinks]
 categories = "/category/:slug/"
