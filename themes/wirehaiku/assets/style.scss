@@ -50,11 +50,12 @@ hr {
     margin: 1rem;
 
     pre {
+        border-left: 1px solid;
         margin: 1rem 0;
-        padding: 1rem 0 1rem 1.25rem;
+        padding: 1rem;
 
         code {
-            font: 1.2rem Helvetica, sans-serif;
+            font: 1rem Helvetica, sans-serif;
             line-height: 2em;
         }
     }
@@ -71,7 +72,6 @@ hr {
     .meta {
         color: $both-grey;
     }
-
 }
 
 #foot {
@@ -98,7 +98,7 @@ hr {
     }
 
     #body pre {
-        border-left: 1px solid $lite-grey;
+        border-color: $lite-grey;
     }
 }
 
@@ -121,6 +121,6 @@ hr {
     }
 
     #body pre {
-        border-left: 1px solid $dark-grey;
+        border-color: $dark-grey;
     }
 }
