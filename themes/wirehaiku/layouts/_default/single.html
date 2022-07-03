@@ -5,8 +5,14 @@
 {{ if eq .Type "posts" }}
 <p class="meta">
 	Written {{ .Date.Format "2 January 2006" }}
-	&bull; {{ partial "taxon.html" (.GetTerms "categories") }}
-	&bull; {{ partial "taxon.html" (.GetTerms "tags") }}
+
+	&bull; {{ range sort (.GetTerms "categories") "Name" }}
+	<a href="{{ .Permalink }}">{{ .Title }}</a>
+	{{ end }}
+
+	&bull; {{ range sort (.GetTerms "tags") "Name" }}
+	<a href="{{ .Permalink }}">{{ .Title }}</a>
+	{{ end }}
 </p>
 {{ end }}
 
