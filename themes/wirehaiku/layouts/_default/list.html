@@ -1,6 +1,14 @@
 {{ define "main" }}
 
-<h2> {{ .Data.Singular | title }}: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+
+<h2>
+    {{ .Data.Singular | title }}:
+    {{ if eq .Data.Singular "category" }} {{ partial "cat.html" . }}
+    {{ else if eq .Data.Singular "tag" }} {{ partial "tag.html" . }}
+    {{ else }} <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ end }}
+</h2>
+
 
 <ul>
     {{ range .Pages.ByTitle  }}

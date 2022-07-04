@@ -7,11 +7,11 @@
 	Written {{ .Date.Format "2 January 2006" }}
 
 	&bull; {{ range sort (.GetTerms "categories") "Name" }}
-	<a href="{{ .Permalink }}">{{ .Title }}</a>
+	{{ partial "cat.html" . }}
 	{{ end }}
 
 	&bull; {{ range sort (.GetTerms "tags") "Name" }}
-	<a href="{{ .Permalink }}">{{ .Title }}</a>
+	{{ partial "tag.html" . }}
 	{{ end }}
 </p>
 {{ end }}

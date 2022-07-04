@@ -9,7 +9,7 @@
     {{ range $name, $posts := .Site.Taxonomies.categories }}
     {{ $cnt := .Count }}
     {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
-    <li> <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ $cnt }})</li>
+    <li> {{ partial "cat.html" . }} ({{ $cnt }}) </li>
     {{ end }}
     {{ end }}
 </ul>
@@ -19,7 +19,7 @@
     {{ range $name, $posts := .Site.Taxonomies.tags }}
     {{ $cnt := .Count }}
     {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ $cnt }})
+    {{ partial "tag.html" . }} ({{ $cnt }})
     {{ end }}
     {{ end }}
 </p>
