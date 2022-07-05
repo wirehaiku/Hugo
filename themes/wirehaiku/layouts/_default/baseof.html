@@ -24,7 +24,8 @@
 			<div id="head">
 				<strong> <a href="/">{{ .Site.Title }}</a> </strong>
 				{{ range .Site.Params.menu }}
-				&bull; <a href="{{ index . 1 }}">{{ index . 0 }}</a>
+				<span>&bull;</span>
+				<a href="{{ index . 1 }}">{{ index . 0 }}</a>
 				{{ end }}
 			</div>
 			<hr>

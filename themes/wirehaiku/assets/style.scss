@@ -124,3 +124,23 @@ hr {
         border-color: $dark-grey;
     }
 }
+
+@media (max-width: 500px) {
+    #head {
+        margin: 0.5rem;
+        text-align: center;
+
+        strong:first-of-type {
+            display: block;
+            margin: 0.25rem;
+        }
+
+        span:first-of-type {
+            display: none;
+        }
+    }
+
+    #foot {
+        text-align: center;
+    }
+}
