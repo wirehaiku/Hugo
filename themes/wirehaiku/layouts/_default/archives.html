@@ -4,7 +4,7 @@
 
 {{ .Content }}
 
-<h3> By Category </h3>
+<h3> Categories </h3>
 <ul>
     {{ range $name, $posts := .Site.Taxonomies.categories }}
     {{ $cnt := .Count }}
@@ -14,14 +14,15 @@
     {{ end }}
 </ul>
 
-<h3> By Tag </h3>
-<p>
-    {{ range $name, $posts := .Site.Taxonomies.tags }}
-    {{ $cnt := .Count }}
-    {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
-    {{ partial "tag.html" . }} ({{ $cnt }})
+{{ range (.Site.RegularPages.GroupByDate "January 2006")  }}
+{{ if (where .Pages "Type" "posts") }}
+<h3> {{ .Key }} </h3>
+<ul>
+    {{ range (where .Pages "Section" "posts") }}
+    <li> {{ partial "link.html" . }} </li>
     {{ end }}
-    {{ end }}
-</p>
+</ul>
+{{ end }}
+{{ end }}
 
 {{ end }}
