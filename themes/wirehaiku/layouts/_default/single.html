@@ -6,11 +6,11 @@
 <p class="meta">
 	Written {{ .Date.Format "2 January 2006" }}
 
-	&bull; {{ range sort (.GetTerms "categories") "Name" }}
+	&bull; {{ range .GetTerms "categories" }}
 	{{ partial "cat.html" . }}
 	{{ end }}
 
-	&bull; {{ range sort (.GetTerms "tags") "Name" }}
+	&bull; {{ range .GetTerms "tags" }}
 	{{ partial "tag.html" . }}
 	{{ end }}
 </p>
