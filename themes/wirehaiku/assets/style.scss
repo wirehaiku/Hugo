@@ -1,20 +1,3 @@
-/* Light Colours */
-$lite-back: #ffffff;
-$lite-grey: #dddddd;
-$lite-fore: #000000;
-$lite-blue: #306090;
-$lite-purp: #603090;
-
-/* Dark Colours */
-$dark-back: #000000;
-$dark-grey: #222222;
-$dark-fore: #ffffff;
-$dark-blue: #90c0f0;
-$dark-purp: #c090f0;
-
-/* Mutual Colours */
-$both-grey: #888888;
-
 *, :after, :before {
     box-sizing: border-box;
 }
@@ -38,7 +21,7 @@ hr {
 }
 
 #head {
-    color: $both-grey;
+    color: #888888;
     margin: 1rem;
 
     a {
@@ -66,59 +49,44 @@ hr {
     }
 
     .meta {
-        color: $both-grey;
+        color: #888888;
     }
 }
 
 #foot {
-    color: $both-grey;
+    color: #888888;
     margin: 1rem;
 }
 
-@media (prefers-color-scheme: light) {
+@mixin colour($back, $fore, $blue, $purp, $grey) {
     body {
-        background: $lite-back;
-        color: $lite-fore;
+        background: $back;
+        color: $fore;
     }
 
     a:link {
-        color: $lite-blue;
+        color: $blue;
     }
 
     a:visited {
-        color: $lite-purp;
+        color: $purp;
     }
 
     hr {
-        background-color: $lite-grey;
+        background-color: $grey;
     }
 
     #body pre {
-        border-color: $lite-grey;
+        border-color: $grey;
     }
 }
 
+@media (prefers-color-scheme: light) {
+    @include colour(#ffffff, #000000, #306090, #603090, #dddddd);
+}
+
 @media (prefers-color-scheme: dark) {
-    body {
-        background: $dark-back;
-        color: $dark-fore;
-    }
-
-    a:link {
-        color: $dark-blue;
-    }
-
-    a:visited {
-        color: $dark-purp;
-    }
-
-    hr {
-        background-color: $dark-grey;
-    }
-
-    #body pre {
-        border-color: $dark-grey;
-    }
+    @include colour(#000000, #ffffff, #90c0f0, #c090f0, #222222);
 }
 
 @media (max-width: 500px) {
