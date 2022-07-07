@@ -18,11 +18,12 @@
 
 {{ .Content }}
 
-{{ if or .NextInSection .PrevInSection }}
+{{ if eq .Type "posts" }}
 <ul class="meta">
 	{{ with .PrevInSection }}
 	<li> Previous: {{ partial "link.html" . }} </li>
 	{{ end }}
+
 	{{ with .NextInSection }}
 	<li> Next: {{ partial "link.html" . }} </li>
 	{{ end }}
