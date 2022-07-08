@@ -29,10 +29,20 @@
 				{{ end }}
 			</div>
 			<hr>
+
+			{{ with .Site.Params.alert }}
+			<div id="alert">
+				{{ $opts := dict "display" "block" }}
+				{{ . | $.RenderString $opts }}
+			</div>
+			<hr>
+			{{ end }}
+
 			<div id="body">
 				{{ block "main" . }} {{ end }}
 			</div>
 			<hr>
+
 			<div id="foot">
 				<p>
 					&copy; Stephen Malone {{ now.Format "2006" }}.

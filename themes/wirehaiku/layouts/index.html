@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-{{ .Site.Params.intro | .RenderString }}
+{{ $opts := dict "display" "block" }}
+{{ .Site.Params.intro | .RenderString $opts }}
 
 <ul>
     {{ range (where .Site.RegularPages "Type" "posts") | first 25 }}

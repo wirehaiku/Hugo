@@ -17,6 +17,7 @@ author  = "Stephen Malone"
 twitter = "https://twitter.com/wirehaiku"
 donate  = "https://ko-fi.com/wirehaiku"
 description = "Haiku about city life and modern nature, by Stephen Malone."
+alert = ""
 intro = """
 Hello and welcome to **Wire Haiku**, a [journal of haiku poetry][1] about city life and modern nature.
 
