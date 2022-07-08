@@ -4,16 +4,6 @@
 
 {{ .Content }}
 
-<h3> Categories </h3>
-<ul>
-    {{ range $name, $posts := .Site.Taxonomies.categories }}
-    {{ $cnt := .Count }}
-    {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
-    <li> {{ partial "cat.html" . }} ({{ $cnt }}) </li>
-    {{ end }}
-    {{ end }}
-</ul>
-
 {{ range (.Site.RegularPages.GroupByDate "January 2006")  }}
 {{ if (where .Pages "Type" "posts") }}
 <h3> {{ .Key }} </h3>
