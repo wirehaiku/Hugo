@@ -10,10 +10,7 @@
 		<meta name="description" content="{{ .Site.Params.description }}">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="stylesheet" type="text/css" href="{{ $file.RelPermalink }}">
-		<title>
-			{{- .Site.Title -}}
-			{{- if ne .Site.Title .Title }} &bull; {{ .Title }} {{- end -}}
-		</title>
+		<title> {{ partial "title.html" . }} </title>
 		{{ range .AlternativeOutputFormats -}}
 		<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}">
 		{{ end }}
@@ -45,7 +42,7 @@
 
 			<div id="foot">
 				<p>
-					&copy; Stephen Malone {{ now.Format "2006" }}.
+					© Stephen Malone {{ now.Format "2006" }}.
 					Powered by <a href="https://gohugo.io/">Hugo</a>,
 					supported by <a href="{{ .Site.Params.donate }}">kind readers</a>!
 				</p>
