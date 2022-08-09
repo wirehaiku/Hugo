@@ -1,5 +1,5 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:blog="{{ .Permalink }}">
 	<channel>
 		<!-- Basic site information. -->
 		<title>{{ partial "title.html" . }}</title>
@@ -29,10 +29,10 @@
 			<link>{{ .Permalink }}</link>
 			<guid>{{ .Permalink }}</guid>
 			<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
-			<description>{{ .Content | html }}</description>
+			<description>{{ .Content | html  }}</description>
 			
 			<!-- Custom blog fields. -->
-			<blog:summary>{{ .Summary }}</blog:summary>
+			<blog:summary>{{ .Summary | html }}</blog:summary>
 			<blog:tags>{{- range (.GetTerms "tags") }}#{{- .Name }} {{ end -}}</blog:tags>
 		</item>
 		{{- end }}
