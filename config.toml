@@ -2,8 +2,8 @@
 baseURL = "https://wirehaiku.org/"
 theme   = "wirehaiku"
 title   = "Wire Haiku"
-languageCode = "en-us"
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License."
+languageCode = "en-us"
 
 [author]
 name  = "Stephen Malone"
