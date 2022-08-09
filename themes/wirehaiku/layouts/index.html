@@ -4,7 +4,7 @@
 {{ .Site.Params.intro | .RenderString $opts }}
 
 <ul>
-    {{ range (where .Site.RegularPages "Type" "posts") | first 25 }}
+    {{ range (where .Site.RegularPages "Type" "posts") | first 15 }}
     <li> {{ partial "link.html" . }} </li>
     {{ end }}
 </ul>
