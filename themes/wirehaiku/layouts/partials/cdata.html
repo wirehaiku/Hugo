@@ -1,0 +1,3 @@
+{{- $data := htmlUnescape .  -}}
+{{- $data := trim $data "\n" -}}
+{{- printf "<![CDATA[%s]]>" $data | safeHTML -}}
