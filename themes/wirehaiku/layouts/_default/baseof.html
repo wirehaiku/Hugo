@@ -19,26 +19,25 @@
 	<body>
 		<div id="main">
 			<div id="head">
-				<strong> <a href="/">{{ .Site.Title }}</a> </strong>
-				{{ range .Site.Params.menu }}
-				<span>&bull;</span>
-				<a href="{{ index . 1 }}">{{ index . 0 }}</a>
-				{{ end }}
+				<h1> <a href="/">{{ .Site.Title }}</a> </h1>
+				<nav>
+					<ul>
+						{{ range .Site.Params.menu }}
+						<li> <a href="{{ index . 1 }}">{{ index . 0 }}</a> </li>
+						{{ end }}
+					</ul>
+				</nav>
 			</div>
-			<hr>
-
-			{{ with .Site.Params.alert }}
-			<div id="alert">
-				{{ $opts := dict "display" "block" }}
-				{{ . | $.RenderString $opts }}
-			</div>
-			<hr>
-			{{ end }}
 
 			<div id="body">
+				{{ with .Site.Params.alert }}
+				<div id="alert">
+					{{ $opts := dict "display" "block" }}
+					{{ . | $.RenderString $opts }}
+				</div>
+				{{ end }}
 				{{ block "main" . }} {{ end }}
 			</div>
-			<hr>
 
 			<div id="foot">
 				<p>

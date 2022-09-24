@@ -4,7 +4,7 @@
 
 {{ .Content }}
 
-{{ $big := 2.5 }}
+{{ $big := 2.0 }}
 {{ $lil := 1.0 }}
 {{ $max := add (len (index .Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
 {{ $min := len (index .Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
