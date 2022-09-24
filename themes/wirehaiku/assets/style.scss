@@ -101,4 +101,8 @@ body, code {
     @include colour(#000000, #ffffff, #90c0f0, #c090f0, #222222);
 }
 
-@media (max-width: 680px) {}
+@media (max-width: 680px) {
+    body {
+        padding: 0 1rem;
+    }
+}
