@@ -1,3 +1,17 @@
+$l-back: #ffffff;
+$l-fore: #000000;
+$l-link: #306090;
+$l-seen: #603090;
+$l-grey: #dddddd;
+$l-meta: #888888;
+
+$d-back: #000000;
+$d-fore: #ffffff;
+$d-link: #90c0f0;
+$d-seen: #c090f0;
+$d-grey: #222222;
+$d-meta: #888888;
+
 *, :after, :before {
     box-sizing: border-box;
 }
@@ -16,14 +30,6 @@ body, code {
 
 #head {
     text-align: center;
-
-    a:link, a:visited {
-        text-decoration: none;
-    }
-
-    a:focus, a:hover {
-        text-decoration: underline;
-    }
 }
 
 #menu {
@@ -55,28 +61,23 @@ body, code {
         line-height: 2rem;
     }
 
-    .meta {
-        color: #888888;
+    #alert {
+        padding: 0.25rem 1rem;
+        text-align: center;
     }
 
     .tag-cloud a {
         line-height: 2rem;
         margin: 0.1rem;
     }
-
-    #alert {
-        padding: 0.25rem 1rem;
-        text-align: center;
-    }
 }
 
 #foot {
-    color: #888888;
     margin: 1rem 0;
     text-align: center;
 }
 
-@mixin colour($back, $fore, $blue, $purp, $grey) {
+@mixin colour($back, $fore, $blue, $purp, $grey, $meta) {
     body {
         background: $back;
         color: $fore;
@@ -102,15 +103,21 @@ body, code {
         #alert {
             border: 1px solid $grey;
         }
+
+        .meta {
+            color: $meta;
+        }
+    }
+
+    #foot {
+        color: $meta;
     }
 }
 
 @media (prefers-color-scheme: light) {
-    @include colour(#ffffff, #000000, #306090, #603090, #dddddd);
+    @include colour($l-back, $l-fore, $l-link, $l-seen, $l-grey, $l-meta)
 }
 
 @media (prefers-color-scheme: dark) {
-    @include colour(#000000, #ffffff, #90c0f0, #c090f0, #222222);
+    @include colour($d-back, $d-fore, $d-link, $d-seen, $d-grey, $d-meta)
 }
-
-@media (max-width: 680px) {}
