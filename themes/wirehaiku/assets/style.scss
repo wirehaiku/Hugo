@@ -1,23 +1,10 @@
-$l-back: #ffffff;
-$l-fore: #000000;
-$l-link: #306090;
-$l-seen: #603090;
-$l-grey: #dddddd;
-$l-meta: #888888;
-
-$d-back: #000000;
-$d-fore: #ffffff;
-$d-link: #90c0f0;
-$d-seen: #c090f0;
-$d-grey: #222222;
-$d-meta: #888888;
-
 *, :after, :before {
     box-sizing: border-box;
 }
 
 body, html {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 44rem;
     padding: 0 1rem;
     width: 100%;
 }
@@ -28,28 +15,21 @@ body, code {
     line-height: 1.6rem;
 }
 
-#head {
+#head, #menu {
     text-align: center;
 }
 
-#menu {
-    text-align: center;
+#menu ul {
+    list-style-type: none;
+    padding: 0;
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-
-        li {
-            display: inline-block;
-            padding: 0 0.25rem;
-        }
+    li {
+        display: inline-block;
+        padding: 0 0.25rem;
     }
 }
 
 #body {
-    margin: 0 auto;
-    max-width: 40rem;
-
     pre {
         border-left: 1px solid;
         padding: 0.5rem 1rem;
@@ -100,6 +80,10 @@ body, code {
             border-color: $grey;
         }
 
+        ul li::marker {
+            color: $meta;
+        }
+
         #alert {
             border: 1px solid $grey;
         }
@@ -115,9 +99,9 @@ body, code {
 }
 
 @media (prefers-color-scheme: light) {
-    @include colour($l-back, $l-fore, $l-link, $l-seen, $l-grey, $l-meta)
+    @include colour(#ffffff, #000000, #306090, #603090, #dddddd, #888888)
 }
 
 @media (prefers-color-scheme: dark) {
-    @include colour($d-back, $d-fore, $d-link, $d-seen, $d-grey, $d-meta)
+    @include colour(#000000, #ffffff, #90c0f0, #c090f0, #222222, #888888)
 }
