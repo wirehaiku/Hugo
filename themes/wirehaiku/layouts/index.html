@@ -1,5 +1,11 @@
 {{ define "main" }}
 
+{{ with .Site.Params.alert }}
+<div id="alert">
+    {{ . | $.RenderString }}
+</div>
+{{ end }}
+
 {{ $opts := dict "display" "block" }}
 {{ .Site.Params.intro | .RenderString $opts }}
 

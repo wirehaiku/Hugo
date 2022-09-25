@@ -15,13 +15,14 @@ body, code {
     line-height: 1.6rem;
 }
 
-#head, #menu {
+#head {
     text-align: center;
 }
 
 #menu ul {
     list-style-type: none;
     padding: 0;
+    text-align: center;
 
     li {
         display: inline-block;

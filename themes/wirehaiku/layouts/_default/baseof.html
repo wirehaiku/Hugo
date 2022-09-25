@@ -30,12 +30,6 @@
 		</div>
 
 		<div id="body">
-			{{ with .Site.Params.alert }}
-			<div id="alert">
-				{{ $opts := dict "display" "block" }}
-				{{ . | $.RenderString $opts }}
-			</div>
-			{{ end }}
 			{{ block "main" . }} {{ end }}
 		</div>
 
