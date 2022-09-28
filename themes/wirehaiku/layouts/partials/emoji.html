@@ -1,4 +1,4 @@
-{{ if in .Params.tags "summer" }} ☀️ {{ end }}
-{{ if in .Params.tags "autumn" }} 🍂 {{ end }}
-{{ if in .Params.tags "winter" }} ❄️ {{ end }}
-{{ if in .Params.tags "spring" }} 🌼 {{ end }}
+{{- if in .Params.tags "summer" -}} ☀️
+{{- else if in .Params.tags "autumn" -}} 🍂
+{{- else if in .Params.tags "winter" -}} ❄️
+{{- else if in .Params.tags "spring" -}} 🌼 {{- end -}}
