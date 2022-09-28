@@ -2,7 +2,7 @@
 
 <h2>
 	<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-	{{- partial "emoji.html" . -}}
+	{{ partial "emoji.html" . }}
 </h2>
 
 {{ if eq .Type "posts" }}

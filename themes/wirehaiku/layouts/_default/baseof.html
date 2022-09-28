@@ -1,5 +1,5 @@
-{{- $sass := resources.Get "style.scss" -}}
-{{- $file := $sass | resources.ToCSS -}}
+{{ $sass := resources.Get "style.scss" }}
+{{ $file := $sass | resources.ToCSS }}
 
 <!doctype html>
 <html lang="en">
@@ -11,7 +11,7 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="stylesheet" type="text/css" href="{{ $file.RelPermalink }}">
 		<title> {{ partial "title.html" . }} </title>
-		{{ range .AlternativeOutputFormats -}}
+		{{ range .AlternativeOutputFormats }}
 		<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}">
 		{{ end }}
 	</head>
