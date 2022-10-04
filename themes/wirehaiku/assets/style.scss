@@ -31,13 +31,20 @@ body, code {
 }
 
 #body {
+    hr {
+        border: none;
+        border-bottom: 2px dashed;
+        margin: 2rem auto;
+        width: 75%;
+    }
+
     pre {
         border-left: 1px solid;
         padding: 0.5rem 1rem;
         line-height: 2em;
     }
 
-    ul {
+    ol, ul {
         padding-left: 1rem;
         line-height: 2rem;
     }
@@ -73,7 +80,7 @@ body, code {
     }
 
     hr {
-        background-color: $grey;
+        border-color: $meta;
     }
 
     #body {
