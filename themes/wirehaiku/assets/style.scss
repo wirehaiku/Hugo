@@ -31,13 +31,6 @@ body, code {
 }
 
 #body {
-    hr {
-        border: none;
-        border-bottom: 2px dashed;
-        margin: 2rem auto;
-        width: 75%;
-    }
-
     pre {
         border-left: 1px solid;
         padding: 0.5rem 1rem;
@@ -77,10 +70,6 @@ body, code {
 
     a:visited {
         color: $purp;
-    }
-
-    hr {
-        border-color: $meta;
     }
 
     #body {
