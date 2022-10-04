@@ -9,7 +9,7 @@
 </h2>
 
 <ul>
-    {{ range .Pages.ByTitle  }}
+    {{ range .Pages.ByDate  }}
     <li> {{ partial "link.html" . }} </li>
     {{ end }}
 </ul>
