@@ -9,8 +9,8 @@
 <p class="meta">
 	Written {{ .Date.Format "2 January 2006" }}
 
-	&bull; {{ range .GetTerms "categories" }}
-	{{ partial "cat.html" . }}
+	&bull; {{ range .GetTerms "theme" }}
+	{{ partial "theme.html" . }}
 	{{ end }}
 
 	&bull; {{ range .GetTerms "tags" }}

@@ -2,7 +2,7 @@
 
 <h2>
     {{ .Data.Singular | title }}:
-    {{ if eq .Data.Singular "category" }} {{ partial "cat.html" . }}
+    {{ if eq .Data.Singular "theme" }} {{ partial "theme.html" . }}
     {{ else if eq .Data.Singular "tag" }} {{ partial "tag.html" . }}
     {{ else }} <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     {{ end }}

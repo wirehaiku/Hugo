@@ -33,12 +33,12 @@ menu = [
 ]
 
 [permalinks]
-categories = "/category/:slug/"
-tags       = "/tag/:slug/"
+theme = "/theme/:slug/"
+tags  = "/tag/:slug/"
 
 [taxonomies]
-category = "categories"
-tag      = "tags"
+theme = "theme"
+tag   = "tags"
 
 [markup.goldmark.extensions]
 typographer = true
