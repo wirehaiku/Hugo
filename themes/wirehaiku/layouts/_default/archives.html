@@ -8,7 +8,7 @@
 {{ if (where .Pages "Type" "posts") }}
 <h3> {{ .Key }} </h3>
 <ul>
-    {{ range (where .Pages "Type" "posts") }}
+    {{ range .Pages }}
     <li> {{ partial "link.html" . }} </li>
     {{ end }}
 </ul>
