@@ -34,7 +34,8 @@
 
 			<!-- Custom blog fields. -->
 			<blog:summary>{{ partial "cdata.html" .Summary }}</blog:summary>
-			<blog:tags>{{ range (.GetTerms "tags") }}#{{ .Name }} {{ end }}</blog:tags>
+			<blog:tags>{{ range $i, $e := .Params.tags }}{{ if $i }} {{ end }}#{{ $e }}{{ end }}</blog:tags>
+			<blog:tagscomma>{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}#{{ $e }}{{ end }}</blog:tumblr>
 		</item>
 		{{ end }}
 	</channel>
