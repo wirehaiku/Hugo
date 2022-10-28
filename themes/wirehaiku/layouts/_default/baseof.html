@@ -1,5 +1,5 @@
-{{ $sass := resources.Get "style.scss" }}
-{{ $file := $sass | resources.ToCSS }}
+{{- $cloud := (resources.Get "cloud.svg") -}}
+{{- $style := (resources.Get "style.scss") | resources.ToCSS -}}
 
 <!doctype html>
 <html lang="en">
@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="{{ .Site.Params.description }}">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="stylesheet" type="text/css" href="{{ $file.RelPermalink }}">
+		<link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
 		<title> {{ partial "title.html" . }} </title>
 		{{ range .AlternativeOutputFormats }}
 		<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}">
@@ -17,29 +17,29 @@
 	</head>
 
 	<body>
-		<div id="head">
+		<header>
 			<h1> <a href="/">{{ .Site.Title }}</a> </h1>
-		</div>
 
-		<div id="menu">
-			<ul>
-				{{ range .Site.Params.menu }}
-				<li> <a href="{{ index . 1 }}">{{ index . 0 }}</a> </li>
-				{{ end }}
-			</ul>
-		</div>
+			<nav>
+				<ul>
+					{{ range .Site.Params.menu }}
+					<li> <a href="{{ index . 1 }}">{{ index . 0 }}</a> </li>
+					{{ end }}
+				</ul>
+			</nav>
+		</header>
 
-		<div id="body">
+		<main>
 			{{ block "main" . }} {{ end }}
-		</div>
+		</main>
 
-		<div id="foot">
+		<footer>
 			<p>
 				© Stephen Malone {{ now.Format "2006" }}.
 				Powered by <a href="https://gohugo.io/">Hugo</a>,
 				supported by <a href="{{ .Site.Params.donate }}">kind readers</a>!
 			</p>
-		</div>
+		</footer>
 	</body>
 
 </html>

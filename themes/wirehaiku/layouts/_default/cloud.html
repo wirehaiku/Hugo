@@ -1,21 +1,23 @@
 {{ define "main" }}
 
-<h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+<article>
+    <h2> {{ partial "link.html" . }} </h2>
 
-{{ .Content }}
+    {{ .Content }}
 
-{{ $big := 2.0 }}
-{{ $lil := 1.0 }}
-{{ $max := add (len (index .Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
-{{ $min := len (index .Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
+    {{ $big := 2.0 }}
+    {{ $lil := 1.0 }}
+    {{ $max := add (len (index .Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
+    {{ $min := len (index .Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
 
-<div class="tag-cloud">
-    {{ range $name, $taxo := .Site.Taxonomies.tags }}
-    {{ $tags := len $taxo.Pages }}
-    {{ $wght := div (sub (math.Log $tags) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
-    {{ $rems := add $lil (mul (sub $big $lil) $wght) }}
-    <a href="/tag/{{ $name | lower }}" style="font-size:{{ $rems }}rem">{{ $name }}</a>
-    {{ end }}
-</div>
+    <div class="cloud">
+        {{ range $name, $taxo := .Site.Taxonomies.tags }}
+        {{ $tags := len $taxo.Pages }}
+        {{ $wght := div (sub (math.Log $tags) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+        {{ $rems := add $lil (mul (sub $big $lil) $wght) }}
+        <a href="/tag/{{ $name | lower }}" style="font-size:{{ $rems }}rem">{{ $name }}</a>
+        {{ end }}
+    </div>
+</article>
 
 {{ end }}

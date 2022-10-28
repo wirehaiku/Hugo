@@ -1,18 +1,20 @@
 {{ define "main" }}
 
-<h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+<article>
+    <h2> {{ partial "link.html" . }} </h2>
 
-{{ .Content }}
+    {{ .Content }}
 
-{{ range (.Site.RegularPages.GroupByDate "January 2006")  }}
-{{ if (where .Pages "Type" "posts") }}
-<h3> {{ .Key }} </h3>
-<ul>
-    {{ range .Pages }}
-    <li> {{ partial "link.html" . }} </li>
+    {{ range (.Site.RegularPages.GroupByDate "January 2006")  }}
+    {{ if (where .Pages "Type" "posts") }}
+    <h3> {{ .Key }} </h3>
+    <ul>
+        {{ range .Pages }}
+        <li> {{ partial "link.html" . }} </li>
+        {{ end }}
+    </ul>
     {{ end }}
-</ul>
-{{ end }}
-{{ end }}
+    {{ end }}
+</article>
 
 {{ end }}

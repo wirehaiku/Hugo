@@ -1,36 +1,38 @@
 {{ define "main" }}
 
-<h2>
-	<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-	{{ partial "emoji.html" . }}
-</h2>
+<article>
+	<h2>
+		{{ partial "link.html" . }}
+		{{ partial "emoji.html" . }}
+	</h2>
 
-{{ if eq .Type "posts" }}
-<p class="meta">
-	Written {{ .Date.Format "2 January 2006" }}
+	{{ if eq .Type "posts" }}
+	<p class="meta">
+		Written {{ partial "date.html" . }}
 
-	&bull; {{ range .GetTerms "theme" }}
-	{{ partial "theme.html" . }}
+		&bull; {{ range .GetTerms "theme" }}
+		{{ partial "theme.html" . }}
+		{{ end }}
+
+		&bull; {{ range .GetTerms "tags" }}
+		{{ partial "tag.html" . }}
+		{{ end }}
+	</p>
 	{{ end }}
 
-	&bull; {{ range .GetTerms "tags" }}
-	{{ partial "tag.html" . }}
-	{{ end }}
-</p>
-{{ end }}
+	{{ .Content }}
 
-{{ .Content }}
+	{{ if eq .Type "posts" }}
+	<ul class="meta">
+		{{ with .PrevInSection }}
+		<li> Previous: {{ partial "link.html" . }} </li>
+		{{ end }}
 
-{{ if eq .Type "posts" }}
-<ul class="meta">
-	{{ with .PrevInSection }}
-	<li> Previous: {{ partial "link.html" . }} </li>
+		{{ with .NextInSection }}
+		<li> Next: {{ partial "link.html" . }} </li>
+		{{ end }}
+	</ul>
 	{{ end }}
-
-	{{ with .NextInSection }}
-	<li> Next: {{ partial "link.html" . }} </li>
-	{{ end }}
-</ul>
-{{ end }}
+</article>
 
 {{ end }}

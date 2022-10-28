@@ -1,17 +1,22 @@
 {{ define "main" }}
 
-<h2>
-    {{ .Data.Singular | title }}:
-    {{ if eq .Data.Singular "theme" }} {{ partial "theme.html" . }}
-    {{ else if eq .Data.Singular "tag" }} {{ partial "tag.html" . }}
-    {{ else }} <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{ end }}
-</h2>
+<article>
+    <h2>
+        {{ .Data.Singular | title }}:
+        {{ if eq .Data.Singular "theme" }} {{ partial "theme.html" . }}
+        {{ else if eq .Data.Singular "tag" }} {{ partial "tag.html" . }}
+        {{ else }} {{ partial "link.html" . }}
+        {{ end }}
+    </h2>
 
-<ul>
-    {{ range .Pages.ByDate  }}
-    <li> {{ partial "link.html" . }} </li>
-    {{ end }}
-</ul>
+    <ul>
+        {{ range .Pages.ByDate  }}
+        <li>
+            {{ partial "link.html" . }}
+            ({{ partial "date.html" . }})
+        </li>
+        {{ end }}
+    </ul>
+</article>
 
 {{ end }}

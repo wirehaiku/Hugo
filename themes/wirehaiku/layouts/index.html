@@ -1,20 +1,26 @@
 {{ define "main" }}
 
-{{ with .Site.Params.alert }}
-<div id="alert">
-    {{ . | $.RenderString }}
-</div>
-{{ end }}
-
-{{ $opts := dict "display" "block" }}
-{{ .Site.Params.intro | .RenderString $opts }}
-
-<ul>
-    {{ range (where .Site.RegularPages "Type" "posts") | first 15 }}
-    <li> {{ partial "link.html" . }} </li>
+<article>
+    {{ with .Site.Params.alert }}
+    <div id="alert">
+        {{ . | $.RenderString }}
+    </div>
     {{ end }}
-</ul>
 
-<p> You can also check out the <a href="/pages/archives/">archives</a>. </p>
+    {{ $opts := dict "display" "block" }}
+    {{ .Site.Params.intro | .RenderString $opts }}
+
+    <ul>
+        {{ range (where .Site.RegularPages "Type" "posts") | first 15 }}
+        <li>
+            {{ partial "link.html" . }}
+            {{ partial "emoji.html" . }}
+            ({{ partial "date.html" . }})
+        </li>
+        {{ end }}
+    </ul>
+
+    <p> You can also check out the <a href="/pages/archives/">archives</a>. </p>
+</article>
 
 {{ end }}
