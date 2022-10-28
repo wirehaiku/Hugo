@@ -116,6 +116,12 @@ main {
         font-size: 1.4rem;
     }
 
+    hr {
+        border: 0.1rem solid $fade;
+        margin: 2rem auto;
+        width: 75%;
+    }
+
     pre {
         background-color: lighten($fade, 10);
         background-image: url("/cloud.svg");
