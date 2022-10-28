@@ -1,0 +1,3 @@
+{{- $a := split .Content "<code>" -}}
+{{- $b := split (index $a 1) "</code>" -}}
+{{- index $b 0 | htmlUnescape -}}

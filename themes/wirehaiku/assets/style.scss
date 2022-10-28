@@ -15,7 +15,7 @@ $purp-lite: lighten($purp, 20);
 }
 
 body {
-    background: $back;
+    background-color: $back;
     color: $fore;
     margin: 0;
     padding: 0;
@@ -48,7 +48,7 @@ article a:visited {
 /*** Element Styles **/
 
 header {
-    background-color: #336699;
+    background-color: $blue;
     background-image: url("/cloud.svg");
 
     color: $back;
@@ -60,12 +60,12 @@ header {
         text-shadow: 0.1rem 0.1rem 0.25rem black;
 
         a:link, a:visited {
-            background: none;
+            background-color: none;
             color: $back;
             text-decoration: none;
 
             &:active, &:focus, &:hover {
-                background: none;
+                background-color: none;
                 color: $back;
                 text-decoration: underline;
             }
@@ -87,14 +87,14 @@ nav {
         a:link, a:visited {
             display: block;
             font-weight: bold;
-            background: none;
+            background-color: none;
             color: $back;
             padding: 0.25rem 0.75rem;
             text-decoration: none;
             text-shadow: 0.1rem 0.1rem 0.25rem black;
 
             &:active, &:focus, &:hover {
-                background: $back;
+                background-color: $back;
                 color: $blue;
                 text-shadow: none;
             }
@@ -117,9 +117,14 @@ main {
     }
 
     pre {
-        border-left: 0.1rem solid $fade;
-        line-height: 2em;
+        background-color: lighten($fade, 10);
+        background-image: url("/cloud.svg");
         padding: 0.5rem 1rem;
+
+        code {
+            font-size: 1.2rem;
+            line-height: 2em;
+        }
     }
 
     ol, ul {
