@@ -32,7 +32,7 @@ body, code {
 a:link, a:visited {
     color: $blue;
 
-    &:active, &:focus, &:hover {
+    &:active, &:hover {
         color: $blue-lite;
     }
 }
@@ -40,7 +40,7 @@ a:link, a:visited {
 article a:visited {
     color: $purp;
 
-    &:active, &:focus, &:hover {
+    &:active, &:hover {
         color: $purp-lite;
     }
 }
@@ -64,7 +64,7 @@ header {
             color: $back;
             text-decoration: none;
 
-            &:active, &:focus, &:hover {
+            &:active, &:hover {
                 background-color: transparent;
                 color: $back;
                 text-decoration: underline;
@@ -92,7 +92,7 @@ nav {
             padding: 0.25rem 0.75rem;
             text-decoration: none;
 
-            &:active, &:focus, &:hover {
+            &:active, &:hover {
                 background-color: $back;
                 color: $blue;
                 text-shadow: none;
@@ -106,14 +106,6 @@ main {
     max-width: 70ch;
     padding: 0 1rem;
     width: 100%;
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    h3 {
-        font-size: 1.4rem;
-    }
 
     hr {
         border: 0.1rem solid $fore;
