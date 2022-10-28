@@ -2,6 +2,7 @@
 $back: #fff;
 $fore: #000;
 $grey: #666;
+$lite: #f4f8fc;
 $blue: #258;
 $purp: adjust-hue($blue, 60);
 $blue-lite: lighten($blue, 20);
@@ -84,10 +85,10 @@ nav {
         padding: 0;
 
         a:link, a:visited {
-            display: block;
-            font-weight: bold;
             background-color: transparent;
             color: $back;
+            display: block;
+            font-weight: bold;
             padding: 0.25rem 0.75rem;
             text-decoration: none;
 
@@ -121,9 +122,8 @@ main {
     }
 
     pre {
-        box-shadow:
-            -0.1rem -0.1rem 0.2rem $blue-lite,
-            0.1rem 0.1rem 0.2rem $purp-lite;
+        background-color: $lite;
+        background-image: url("/cloud.svg");
         padding: 0.5rem 1rem;
 
         code {
@@ -153,8 +153,10 @@ footer {
 /*** Class Styles ***/
 
 .alert {
-    padding: 0.5rem 1rem;
+    background-color: $lite;
+    background-image: url("/cloud.svg");
     font-size: 1.2rem;
+    padding: 0.5rem 1rem;
     text-align: center;
 }
 
