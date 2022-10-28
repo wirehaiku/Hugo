@@ -2,7 +2,6 @@
 $back: #fff;
 $fore: #000;
 $grey: #666;
-$fade: #ddd;
 $blue: #258;
 $purp: adjust-hue($blue, 60);
 $blue-lite: lighten($blue, 20);
@@ -50,12 +49,12 @@ article a:visited {
 header {
     background-color: $blue;
     background-image: url("/cloud.svg");
-
     color: $back;
     text-align: center;
     text-shadow: 0.1rem 0.1rem 0.25rem black;
 
     h1 {
+        font-size: 2.25rem;
         margin: 0;
         padding-top: 1rem;
 
@@ -116,14 +115,15 @@ main {
     }
 
     hr {
-        border: 0.1rem solid $fade;
+        border: 0.1rem solid $fore;
         margin: 2rem auto;
         width: 75%;
     }
 
     pre {
-        background-color: lighten($fade, 10);
-        background-image: url("/cloud.svg");
+        box-shadow:
+            -0.1rem -0.1rem 0.2rem $blue-lite,
+            0.1rem 0.1rem 0.2rem $purp-lite;
         padding: 0.5rem 1rem;
 
         code {
@@ -137,7 +137,7 @@ main {
         padding-left: 1rem;
 
         li::marker {
-            color: $fade;
+            color: $grey;
         }
     }
 }
@@ -153,8 +153,6 @@ footer {
 /*** Class Styles ***/
 
 .alert {
-    background-color: lighten($fade, 10);
-    background-image: url("/cloud.svg");
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     text-align: center;
