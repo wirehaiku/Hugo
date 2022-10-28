@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<article>
+    <h2> {{ partial "link.html" . }} </h2>
+
+    {{ .Content }}
+
+    {{ range .Site.RegularPages }}
+    {{ if eq .Type "posts" }}
+    {{ $post := . }}
+    {{ with partial "haiku.html" . }}
+
+    <p class="meta">
+        {{ partial "link.html" $post}}
+        {{ partial "emoji.html" $post }}
+        ({{ partial "date.html" $post }})
+    </p>
+    {{ . }}
+
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</article>
+
+{{ end }}

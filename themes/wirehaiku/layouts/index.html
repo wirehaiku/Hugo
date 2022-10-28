@@ -13,13 +13,13 @@
     {{ $posts := (where .Site.RegularPages "Type" "posts") | first 15  }}
     {{ $first := index $posts 0 }}
 
-    {{ with (partial "haiku.html" $first) }}
+    {{ with partial "haiku.html" $first }}
     <h2>
         Latest Post:
         {{ partial "link.html" $first }}
         {{ partial "emoji.html" $first }}
     </h2>
-    <pre><code>{{ . }}</code></pre>
+    {{ . }}
     <p> <a href="{{ $first.RelPermalink }}">Read more &rarr;</a> </p>
     {{ end }}
 
