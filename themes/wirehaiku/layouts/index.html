@@ -9,6 +9,7 @@
 
     {{ $opts := dict "display" "block" }}
     {{ .Site.Params.intro | .RenderString $opts }}
+
     {{ $posts := (where .Site.RegularPages "Type" "posts") | first 15  }}
     {{ $first := index $posts 0 }}
 
