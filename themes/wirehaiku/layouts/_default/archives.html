@@ -10,7 +10,11 @@
     <h3> {{ .Key }} </h3>
     <ul>
         {{ range .Pages }}
-        <li> {{ partial "link.html" . }} </li>
+        <li>
+            {{ partial "link.html" . }}
+            {{ partial "emoji.html" . }}
+            ({{ partial "date.html" . }})
+        </li>
         {{ end }}
     </ul>
     {{ end }}
