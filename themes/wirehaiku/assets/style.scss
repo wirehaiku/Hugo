@@ -22,9 +22,9 @@ body {
 }
 
 body, code {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-family: Figtree, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     font-size: 16px;
-    line-height: 1.6rem;
+    line-height: 1.8rem;
 }
 
 /*** Anchor Styles ***/
@@ -46,6 +46,7 @@ article a:visited {
 }
 
 /*** Element Styles **/
+
 header {
     background-color: #336699;
     background-image: url("/cloud.svg");
@@ -56,6 +57,7 @@ header {
     h1 {
         margin: 0;
         padding-top: 1rem;
+        text-shadow: 0.1rem 0.1rem 0.25rem black;
 
         a:link, a:visited {
             background: none;
@@ -89,10 +91,12 @@ nav {
             color: $back;
             padding: 0.25rem 0.75rem;
             text-decoration: none;
+            text-shadow: 0.1rem 0.1rem 0.25rem black;
 
             &:active, &:focus, &:hover {
                 background: $back;
                 color: $blue;
+                text-shadow: none;
             }
         }
     }
@@ -100,37 +104,31 @@ nav {
 
 main {
     margin: 0 auto;
-    max-width: 44rem;
+    max-width: 70ch;
     padding: 0 1rem;
     width: 100%;
 
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
     pre {
         border-left: 0.1rem solid $fade;
-        padding: 0.5rem 1rem;
         line-height: 2em;
+        padding: 0.5rem 1rem;
     }
 
     ol, ul {
+        line-height: 2.25rem;
         padding-left: 1rem;
-        line-height: 2rem;
 
         li::marker {
             color: $fade;
         }
-    }
-
-    #alert {
-        padding: 0.25rem 1rem;
-        text-align: center;
-    }
-
-    .cloud a {
-        line-height: 2rem;
-        margin: 0.25rem;
-    }
-
-    .meta {
-        color: $grey;
     }
 }
 
@@ -138,4 +136,24 @@ footer {
     color: $grey;
     margin-top: 1rem;
     text-align: center;
+}
+
+/*** Class Styles ***/
+
+#alert {
+    padding: 0.25rem 1rem;
+    text-align: center;
+}
+
+.cloud a {
+    line-height: 2rem;
+    margin: 0.25rem;
+}
+
+a.emoji {
+    text-decoration: none;
+}
+
+.meta {
+    color: $grey;
 }
