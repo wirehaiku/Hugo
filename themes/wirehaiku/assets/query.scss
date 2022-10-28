@@ -29,3 +29,16 @@
         }
     }
 }
+
+@media print {
+    * {
+        background-color: #fff !important;
+        color: #000 !important;
+        background-image: none !important;
+        text-shadow: none !important;
+    }
+
+    input, label, nav {
+        display: none !important;
+    }
+}
