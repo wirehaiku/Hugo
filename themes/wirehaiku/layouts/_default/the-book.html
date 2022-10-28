@@ -5,7 +5,7 @@
 
     {{ .Content }}
 
-    {{ range .Site.RegularPages }}
+    {{ range .Site.RegularPages.ByDate }}
     {{ if eq .Type "posts" }}
     {{ $post := . }}
     {{ with partial "haiku.html" . }}
