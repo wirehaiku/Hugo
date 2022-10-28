@@ -2,7 +2,7 @@
 
 <article>
     {{ with .Site.Params.alert }}
-    <div id="alert">
+    <div class="alert">
         {{ . | $.RenderString }}
     </div>
     {{ end }}

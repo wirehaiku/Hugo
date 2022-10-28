@@ -91,7 +91,6 @@ nav {
             color: $back;
             padding: 0.25rem 0.75rem;
             text-decoration: none;
-            text-shadow: 0.1rem 0.1rem 0.25rem black;
 
             &:active, &:focus, &:hover {
                 background-color: $back;
@@ -153,8 +152,11 @@ footer {
 
 /*** Class Styles ***/
 
-#alert {
-    padding: 0.25rem 1rem;
+.alert {
+    background-color: lighten($fade, 10);
+    background-image: url("/cloud.svg");
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 
