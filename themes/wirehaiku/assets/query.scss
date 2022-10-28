@@ -1,0 +1,35 @@
+@media (max-width: 700px) {
+    header {
+        h1 {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2rem;
+            margin: 0 0 0.5rem 0;
+
+            &::before {
+                content: "〈 menu 〉";
+            }
+        }
+
+        input:checked ~ nav {
+            max-height: 100%;
+        }
+    }
+
+    nav {
+        max-height: 0;
+        overflow: hidden;
+
+        li {
+            display: block;
+        }
+
+        ul {
+            margin: 0 0 0.5rem 0;
+        }
+    }
+}

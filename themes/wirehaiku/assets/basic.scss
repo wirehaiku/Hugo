@@ -71,6 +71,10 @@ header {
             }
         }
     }
+
+    input, label {
+        display: none;
+    }
 }
 
 nav {
