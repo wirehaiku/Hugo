@@ -1,4 +1,4 @@
-{{- $cloud := (resources.Get "cloud.svg") -}}
+{{- $fonts := (resources.Get "fonts.scss") | resources.ToCSS -}}
 {{- $style := (resources.Get "style.scss") | resources.ToCSS -}}
 
 <!doctype html>
@@ -9,15 +9,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="{{ .Site.Params.description }}">
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="stylesheet" type="text/css" href="{{ $fonts.RelPermalink }}">
 		<link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
 		<title> {{ partial "title.html" . }} </title>
 		{{ range .AlternativeOutputFormats }}
 		<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}">
 		{{ end }}
-
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap" rel="stylesheet">
 	</head>
 
 	<body>
