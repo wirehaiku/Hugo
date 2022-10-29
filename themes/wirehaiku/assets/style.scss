@@ -1,0 +1,258 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                Stylesheet Variables                               //
+///////////////////////////////////////////////////////////////////////////////////////
+
+$back: #ffffff;
+$fore: #000000;
+$grey: #666666;
+$fade: #f4f8fc;
+$blue: #225588;
+$purp: #552288;
+$blue-lite: lighten($blue, 20);
+$purp-lite: lighten($purp, 20);
+
+///////////////////////////////////////////////////////////////////////////////////////
+//                                Webfont Definitions                                //
+///////////////////////////////////////////////////////////////////////////////////////
+
+@font-face {
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(""),
+        url("/fonts/figtree-v1-latin-regular.woff2") format("woff2"),
+        url("/fonts/figtree-v1-latin-regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local(""),
+        url("/fonts/figtree-v1-latin-700.woff2") format("woff2"),
+        url("/fonts/figtree-v1-latin-700.woff") format("woff");
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+//                                   Global Styles                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+a:link, a:visited {
+    color: $blue;
+}
+
+a:active, a:hover {
+    color: $blue-lite;
+}
+
+body {
+    background-color: $back;
+    color: $fore;
+    margin: 0;
+    padding: 0;
+}
+
+body, code {
+    font-family: Figtree, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.8rem;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+//                             Header & Navigation Styles                            //
+///////////////////////////////////////////////////////////////////////////////////////
+
+header {
+    background-color: $blue;
+    background-image: url("/patterns/curves.svg");
+    color: $back;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0.1rem 0.1rem 0.25rem $fore;
+
+    a:link, a:visited {
+        background-color: transparent;
+        color: $back;
+        text-decoration: none;
+    }
+
+    a:active, a:hover {
+        background-color: transparent;
+        color: $back;
+        text-decoration: underline;
+    }
+
+    h1 {
+        margin: 0;
+        padding-top: 1rem;
+    }
+
+    input, label {
+        display: none;
+    }
+}
+
+nav {
+    li {
+        display: inline-block;
+        margin: 0 0.5rem;
+        padding: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+//                               Main & Article Styles                               //
+///////////////////////////////////////////////////////////////////////////////////////
+
+main {
+    margin: 0 auto;
+    max-width: 70ch;
+    padding: 0 1rem;
+    width: 100%;
+
+    article a:visited {
+        color: $purp;
+
+        &:active, &:hover {
+            color: $purp-lite;
+        }
+    }
+
+    hr {
+        border: 0.1rem solid $fore;
+        margin: 2rem auto;
+        width: 75%;
+    }
+
+    li::marker {
+        color: $grey;
+    }
+
+    ol, ul {
+        line-height: 2.25rem;
+        padding-left: 1rem;
+    }
+
+    pre {
+        background-color: $fade;
+        background-image: url("/patterns/curves.svg");
+        padding: 0.5rem 1rem;
+
+        code {
+            font-size: 1.2rem;
+            line-height: 2em;
+        }
+    }
+}
+
+.alert {
+    background-color: $fade;
+    background-image: url("/patterns/curves.svg");
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.cloud a {
+    line-height: 2rem;
+    margin: 0.25rem;
+}
+
+a.emoji {
+    text-decoration: none;
+}
+
+.meta {
+    color: $grey;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+//                                   Footer Styles                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+
+footer {
+    color: $grey;
+    margin: 0 auto;
+    max-width: 70ch;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+//                                 Mobile Media Query                                //
+///////////////////////////////////////////////////////////////////////////////////////
+
+@media (max-width: 700px) {
+    header {
+        h1 {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        input:checked ~ nav {
+            max-height: 100%;
+        }
+
+        input:checked + label::after {
+            content: " -";
+        }
+
+        label {
+            background-color: transparent;
+            color: #fff;
+            display: block;
+            margin: 0 0 0.5rem 0;
+        }
+
+        label::after {
+            content: " +";
+        }
+    }
+
+    nav {
+        max-height: 0;
+        overflow: hidden;
+
+        li {
+            display: block;
+            margin: 0.25rem 0;
+        }
+
+        ul {
+            margin: 0 0 0.5rem 0;
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+//                                 Print Media Query                                 //
+///////////////////////////////////////////////////////////////////////////////////////
+
+@media print {
+    * {
+        background-color: #fff !important;
+        color: #000 !important;
+        background-image: none !important;
+        text-shadow: none !important;
+    }
+
+    input, label {
+        display: none !important;
+    }
+
+    pre {
+        border: 1px solid $fore;
+    }
+}

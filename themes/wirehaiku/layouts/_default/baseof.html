@@ -1,8 +1,4 @@
-{{- $basic := (resources.Get "basic.scss") | resources.ToCSS }}
-{{- $fonts := (resources.Get "fonts.scss") | resources.ToCSS }}
-{{- $query := (resources.Get "query.scss") | resources.ToCSS }}
-{{- $theme := (resources.Get "theme.scss") | resources.ToCSS }}
-{{- $style := slice $basic $fonts $query $theme | resources.Concat "style.css" }}
+{{- $style := (resources.Get "style.scss") | resources.ToCSS }}
 
 <!doctype html>
 <html lang="en">
@@ -24,7 +20,7 @@
 			<h1> <a href="/">{{ .Site.Title }}</a> </h1>
 
 			<input type="checkbox" id="menu">
-			<label for="menu">≡</label>
+			<label for="menu">menu</label>
 
 			<nav>
 				<ul>
