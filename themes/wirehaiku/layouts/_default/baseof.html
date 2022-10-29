@@ -1,7 +1,8 @@
 {{- $basic := (resources.Get "basic.scss") | resources.ToCSS }}
 {{- $fonts := (resources.Get "fonts.scss") | resources.ToCSS }}
 {{- $query := (resources.Get "query.scss") | resources.ToCSS }}
-{{- $style := slice $basic $query $fonts | resources.Concat "style.css" }}
+{{- $theme := (resources.Get "theme.scss") | resources.ToCSS }}
+{{- $style := slice $basic $fonts $query $theme | resources.Concat "style.css" }}
 
 <!doctype html>
 <html lang="en">

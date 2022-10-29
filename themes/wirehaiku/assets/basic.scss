@@ -1,22 +1,8 @@
-/*** Style Variables ***/
-$back: #fff;
-$fore: #000;
-$grey: #666;
-$lite: #f4f8fc;
-$blue: #258;
-$purp: adjust-hue($blue, 60);
-$blue-lite: lighten($blue, 20);
-$purp-lite: lighten($purp, 20);
-
-/*** Global Styles ***/
-
 *, :after, :before {
     box-sizing: border-box;
 }
 
 body {
-    background-color: $back;
-    color: $fore;
     margin: 0;
     padding: 0;
 }
@@ -27,32 +13,12 @@ body, code {
     line-height: 1.8rem;
 }
 
-/*** Anchor Styles ***/
-
-a:link, a:visited {
-    color: $blue;
-
-    &:active, &:hover {
-        color: $blue-lite;
-    }
-}
-
-article a:visited {
-    color: $purp;
-
-    &:active, &:hover {
-        color: $purp-lite;
-    }
-}
-
-/*** Element Styles **/
-
 header {
-    background-color: $blue;
+    background-color: #258;
     background-image: url("/cloud.svg");
-    color: $back;
+    color: #000;
     text-align: center;
-    text-shadow: 0.1rem 0.1rem 0.25rem black;
+    text-shadow: 0.1rem 0.1rem 0.25rem #000;
 
     h1 {
         font-size: 2.25rem;
@@ -61,12 +27,12 @@ header {
 
         a:link, a:visited {
             background-color: transparent;
-            color: $back;
+            color: #fff;
             text-decoration: none;
 
             &:active, &:hover {
                 background-color: transparent;
-                color: $back;
+                color: #fff;
                 text-decoration: underline;
             }
         }
@@ -90,15 +56,15 @@ nav {
 
         a:link, a:visited {
             background-color: transparent;
-            color: $back;
+            color: #fff;
             display: block;
             font-weight: bold;
             padding: 0.25rem 0.75rem;
             text-decoration: none;
 
             &:active, &:hover {
-                background-color: $back;
-                color: $blue;
+                background-color: #fff;
+                color: #258;
                 text-shadow: none;
             }
         }
@@ -112,14 +78,11 @@ main {
     width: 100%;
 
     hr {
-        border: 0.1rem solid $fore;
         margin: 2rem auto;
         width: 75%;
     }
 
     pre {
-        background-color: $lite;
-        background-image: url("/cloud.svg");
         padding: 0.5rem 1rem;
 
         code {
@@ -131,26 +94,17 @@ main {
     ol, ul {
         line-height: 2.25rem;
         padding-left: 1rem;
-
-        li::marker {
-            color: $grey;
-        }
     }
 }
 
 footer {
-    color: $grey;
     margin: 0 auto;
     max-width: 70ch;
     padding: 0 1rem;
     text-align: center;
 }
 
-/*** Class Styles ***/
-
 .alert {
-    background-color: $lite;
-    background-image: url("/cloud.svg");
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     text-align: center;
@@ -163,8 +117,4 @@ footer {
 
 a.emoji {
     text-decoration: none;
-}
-
-.meta {
-    color: $grey;
 }
