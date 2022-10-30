@@ -148,12 +148,12 @@ main {
     padding: 0 1rem;
     width: 100%;
 
-    article a:visited {
+    a:visited {
         color: $purp;
+    }
 
-        &:active, &:hover {
-            color: $purp-lite;
-        }
+    a:active, a:hover {
+        color: $purp-lite;
     }
 
     hr {
@@ -253,6 +253,47 @@ footer {
             display: block;
             margin: 1.5rem 0;
         }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+//                               Dark Mode Media Query                               //
+///////////////////////////////////////////////////////////////////////////////////////
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $fore;
+        color: $back;
+    }
+
+    a:link, a:visited {
+        color: lighten($blue, 35);
+    }
+
+    a:active, a:hover {
+        color: lighten($blue-lite, 35);
+    }
+
+    main {
+        a:visited {
+            color: lighten($purp, 35);
+        }
+
+        a:active, a:hover {
+            color: lighten($purp-lite, 35);
+        }
+
+        pre, .alert {
+            background-color: $fore;
+        }
+    }
+
+    .meta {
+        color: lighten($grey, 20);
+    }
+
+    footer {
+        color: lighten($grey, 20);
     }
 }
 
