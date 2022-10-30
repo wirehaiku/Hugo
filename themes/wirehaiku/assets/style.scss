@@ -28,11 +28,29 @@ $purp-lite: lighten($purp, 20);
 @font-face {
     font-family: "Figtree";
     font-style: normal;
+    font-weight: 500;
+    src: local(""),
+        url("../fonts/figtree-v1-latin-500.woff2") format("woff2"),
+        url("../fonts/figtree-v1-latin-500.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Figtree";
+    font-style: normal;
     font-weight: 700;
     font-display: swap;
     src: local(""),
         url("/fonts/figtree-v1-latin-700.woff2") format("woff2"),
         url("/fonts/figtree-v1-latin-700.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Figtree";
+    font-style: normal;
+    font-weight: 900;
+    src: local(""),
+        url("../fonts/figtree-v1-latin-900.woff2") format("woff2"),
+        url("../fonts/figtree-v1-latin-900.woff") format("woff");
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -54,6 +72,7 @@ a:active, a:hover {
 body {
     background-color: $back;
     color: $fore;
+    font-weight: 400;
     margin: 0;
     padding: 0;
 }
@@ -64,6 +83,10 @@ body, code {
     line-height: 1.8rem;
 }
 
+strong {
+    font-weight: 700;
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////
 //                             Header & Navigation Styles                            //
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -72,7 +95,6 @@ header {
     background-color: $blue;
     background-image: url("/patterns/curves.svg");
     color: $back;
-    font-weight: bold;
     text-align: center;
     text-shadow: 0.1rem 0.1rem 0.25rem $fore;
 
@@ -89,6 +111,7 @@ header {
     }
 
     h1 {
+        font-weight: 900;
         margin: 0;
         padding-top: 1rem;
     }
@@ -99,6 +122,8 @@ header {
 }
 
 nav {
+    font-weight: 500;
+
     li {
         display: inline-block;
         margin: 0 0.5rem;
@@ -146,7 +171,7 @@ main {
         padding-left: 1rem;
     }
 
-    pre {
+    pre, .alert {
         background-color: $fade;
         background-image: url("/patterns/curves.svg");
         padding: 0.5rem 1rem;
@@ -156,13 +181,6 @@ main {
             line-height: 2em;
         }
     }
-}
-
-.alert {
-    background-color: $fade;
-    background-image: url("/patterns/curves.svg");
-    padding: 0.5rem;
-    text-align: center;
 }
 
 .cloud a {
@@ -227,13 +245,13 @@ footer {
 
     nav {
         clear: both;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         max-height: 0;
         overflow: hidden;
 
         li {
             display: block;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
     }
 }
