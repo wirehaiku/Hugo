@@ -30,7 +30,7 @@ menu = [
     ["Archives", "/pages/archives/"],
     ["The Book", "/pages/the-book"],
     ["Twitter",  "https://twitter.com/wirehaiku"],
-    ["Donate",   "https://ko-fi.com/wirehaiku"],
+    ["Support",   "https://ko-fi.com/wirehaiku"],
 ]
 
 [permalinks]
