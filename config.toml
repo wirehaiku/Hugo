@@ -28,7 +28,7 @@ life and modern nature, written by Stephen Malone.
 menu = [
     ["About",    "/pages/about/"],
     ["Archives", "/pages/archives/"],
-    ["The Book", "/pages/the-book"],
+    ["Compendium", "/pages/compendium"],
     ["Twitter",  "https://twitter.com/wirehaiku"],
     ["Support",   "https://ko-fi.com/wirehaiku"],
 ]
