@@ -197,6 +197,7 @@ footer {
 @media (max-width: 700px) {
     header {
         h1 {
+            float: left;
             font-size: 1.5rem;
             padding: 0.5rem;
         }
@@ -212,8 +213,11 @@ footer {
         label {
             background-color: transparent;
             color: #fff;
+            cursor: pointer;
             display: block;
-            margin: 0 0 0.5rem 0;
+            float: right;
+            font-size: 1.2rem;
+            padding: 0.5rem;
         }
 
         label::after {
@@ -222,6 +226,7 @@ footer {
     }
 
     nav {
+        clear: both;
         max-height: 0;
         overflow: hidden;
 
