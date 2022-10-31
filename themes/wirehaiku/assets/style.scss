@@ -5,7 +5,6 @@
 $back: #ffffff;
 $fore: #000000;
 $grey: #666666;
-$fade: #f4f8fc;
 $blue: #225588;
 $purp: #552288;
 $blue-lite: lighten($blue, 20);
@@ -170,8 +169,7 @@ main {
     }
 
     pre, .alert {
-        background-color: $fade;
-        background-image: url("/patterns/curves.svg");
+        background-color: lighten($blue, 62.5);
         padding: 0.5rem 1rem;
 
         code {
@@ -282,7 +280,7 @@ footer {
         }
 
         pre, .alert {
-            background-color: $fore;
+            background-color: darken($blue, 25);
         }
     }
 
