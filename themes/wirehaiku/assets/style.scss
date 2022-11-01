@@ -2,13 +2,23 @@
 //                                Stylesheet Variables                               //
 ///////////////////////////////////////////////////////////////////////////////////////
 
-$back: #ffffff;
-$fore: #000000;
-$grey: #666666;
-$blue: #225588;
-$purp: #552288;
-$blue-lite: lighten($blue, 20);
-$purp-lite: lighten($purp, 20);
+$lite-back: #ffffff;
+$lite-fore: #000000;
+$lite-grey: #888888;
+$lite-blue: #225588;
+$lite-purp: adjust-hue($lite-blue, 60); // #552288 ????
+$lite-blue-fade: lighten($lite-blue, 62.5);
+$lite-blue-high: lighten($lite-blue, 20);
+$lite-purp-high: lighten($lite-purp, 20);
+
+$dark-back: #000000;
+$dark-fore: #ffffff;
+$dark-grey: #888888;
+$dark-blue: lighten($lite-blue, 35);
+$dark-purp: lighten($lite-purp, 35);
+$dark-blue-fade: darken($lite-blue, 25);
+$dark-blue-high: lighten($lite-blue-high, 35);
+$dark-purp-high: lighten($lite-purp-high, 35);
 
 ///////////////////////////////////////////////////////////////////////////////////////
 //                                Webfont Definitions                                //
@@ -61,16 +71,16 @@ $purp-lite: lighten($purp, 20);
 }
 
 a:link, a:visited {
-    color: $blue;
+    color: $lite-blue;
 }
 
 a:active, a:hover {
-    color: $blue-lite;
+    color: $lite-blue-high;
 }
 
 body {
-    background-color: $back;
-    color: $fore;
+    background-color: $lite-back;
+    color: $lite-fore;
     font-weight: 400;
     margin: 0;
     padding: 0;
@@ -91,21 +101,21 @@ strong {
 ///////////////////////////////////////////////////////////////////////////////////////
 
 header {
-    background-color: $blue;
+    background-color: $lite-blue;
     background-image: url("/patterns/curves.svg");
-    color: $back;
+    color: $lite-back;
     text-align: center;
-    text-shadow: 0.1rem 0.1rem 0.25rem $fore;
+    text-shadow: 0.1rem 0.1rem 0.25rem $lite-fore;
 
     a:link, a:visited {
         background-color: transparent;
-        color: $back;
+        color: $lite-back;
         text-decoration: none;
     }
 
     a:active, a:hover {
         background-color: transparent;
-        color: $back;
+        color: $lite-back;
         text-decoration: underline;
     }
 
@@ -147,21 +157,21 @@ main {
     width: 100%;
 
     a:visited {
-        color: $purp;
+        color: $lite-purp;
     }
 
     a:active, a:hover {
-        color: $purp-lite;
+        color: $lite-purp-high;
     }
 
     hr {
-        border: 0.1rem solid $fore;
+        border: 0.1rem solid $lite-fore;
         margin: 2rem auto;
         width: 75%;
     }
 
     li::marker {
-        color: $grey;
+        color: $lite-grey;
     }
 
     ol, ul {
@@ -170,7 +180,7 @@ main {
     }
 
     pre, .alert {
-        background-color: lighten($blue, 62.5);
+        background-color: $lite-blue-fade;
         padding: 0.5rem 1rem;
 
         code {
@@ -190,7 +200,7 @@ a.emoji {
 }
 
 .meta {
-    color: $grey;
+    color: $lite-grey;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -198,7 +208,7 @@ a.emoji {
 ///////////////////////////////////////////////////////////////////////////////////////
 
 footer {
-    color: $grey;
+    color: $lite-grey;
     margin: 0 auto;
     max-width: 70ch;
     padding: 0 1rem;
@@ -259,38 +269,38 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: $fore;
-        color: $back;
+        background-color: $dark-back;
+        color: $dark-fore;
     }
 
     a:link, a:visited {
-        color: lighten($blue, 35);
+        color: $dark-blue;
     }
 
     a:active, a:hover {
-        color: lighten($blue-lite, 35);
+        color: $dark-blue-high;
     }
 
     main {
         a:visited {
-            color: lighten($purp, 35);
+            color: $dark-purp;
         }
 
         a:active, a:hover {
-            color: lighten($purp-lite, 35);
+            color: $dark-purp-high;
         }
 
         pre, .alert {
-            background-color: darken($blue, 25);
+            background-color: $dark-blue-fade;
         }
     }
 
     .meta {
-        color: lighten($grey, 20);
+        color: lighten($dark-grey, 20);
     }
 
     footer {
-        color: lighten($grey, 20);
+        color: lighten($dark-grey, 20);
     }
 }
 
@@ -300,8 +310,8 @@ footer {
 
 @media print {
     * {
-        background-color: #fff !important;
-        color: #000 !important;
+        background-color: white !important;
+        color: black !important;
         background-image: none !important;
         text-shadow: none !important;
     }
@@ -311,6 +321,6 @@ footer {
     }
 
     pre {
-        border: 1px solid $fore;
+        border: 1px solid black;
     }
 }
