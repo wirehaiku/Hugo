@@ -25,7 +25,7 @@
 
     <h2> Latest <a href="/pages/archives">Archives</a> </h2>
     <ul>
-        {{ range (after 1 $posts) }}
+        {{ range after 1 $posts }}
         <li>
             {{ partial "link.html" . }}
             {{ partial "emoji.html" . }}
