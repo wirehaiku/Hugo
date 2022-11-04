@@ -88,8 +88,8 @@ body {
 
 body, code {
     font-family: Figtree, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 16px;
-    line-height: 1.75rem;
+    font-size: 18px;
+    line-height: 1.8rem;
 }
 
 strong {
@@ -131,7 +131,6 @@ header {
 }
 
 nav {
-    font-size: 1.125rem;
     font-weight: 500;
 
     li {
@@ -184,8 +183,7 @@ main {
         padding: 0.5rem 1rem;
 
         code {
-            font-size: 1.125rem;
-            line-height: 2em;
+            line-height: 2.5rem;
         }
     }
 }
@@ -252,7 +250,6 @@ footer {
 
     nav {
         clear: both;
-        font-size: 1.25rem;
         max-height: 0;
         overflow: hidden;
 
@@ -262,7 +259,7 @@ footer {
 
         li {
             display: block;
-            margin-bottom: 1.5rem;
+            margin: 1rem 0;
         }
     }
 }
