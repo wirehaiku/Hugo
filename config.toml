@@ -19,10 +19,12 @@ donate  = "https://ko-fi.com/wirehaiku"
 description = "Haiku about city life and modern nature, by Stephen Malone."
 alert = ""
 intro = """
-Hello and welcome to **Wire Haiku**: a [journal of haiku poetry][1] about city
-life and modern nature, written by Stephen Malone.
+Hello and welcome to **Wire Haiku**: a journal of haiku poetry about city
+life and modern nature, written by Stephen Malone. [Click here][1] to learn more
+about the site, check out the [archives][2] or just keep on reading!
 
 [1]: /pages/about/
+[2]: /pages/archives/
 """
 
 menu = [
