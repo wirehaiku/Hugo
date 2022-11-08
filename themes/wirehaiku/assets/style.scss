@@ -216,6 +216,7 @@ footer {
             cursor: pointer;
             display: block;
             float: right;
+            font-size: 1.25rem;
             padding: 0.5rem;
         }
 
@@ -226,6 +227,8 @@ footer {
 
     nav {
         clear: both;
+        font-size: 1.25rem;
+        line-height: 2rem;
         max-height: 0;
         overflow: hidden;
 
