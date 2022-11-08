@@ -25,41 +25,21 @@ $dark-purp-high: lighten($lite-purp-high, 35);
 ///////////////////////////////////////////////////////////////////////////////////////
 
 @font-face {
-    font-family: "Figtree";
+    font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
     src: local(""),
-        url("/fonts/figtree-v1-latin-regular.woff2") format("woff2"),
-        url("/fonts/figtree-v1-latin-regular.woff") format("woff");
+        url("/fonts/inter-400.woff2") format("woff2"),
+        url("/fonts/inter-400.woff") format("woff");
 }
 
 @font-face {
-    font-family: "Figtree";
-    font-style: normal;
-    font-weight: 500;
-    src: local(""),
-        url("../fonts/figtree-v1-latin-500.woff2") format("woff2"),
-        url("../fonts/figtree-v1-latin-500.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Figtree";
+    font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-display: swap;
     src: local(""),
-        url("/fonts/figtree-v1-latin-700.woff2") format("woff2"),
-        url("/fonts/figtree-v1-latin-700.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Figtree";
-    font-style: normal;
-    font-weight: 900;
-    src: local(""),
-        url("../fonts/figtree-v1-latin-900.woff2") format("woff2"),
-        url("../fonts/figtree-v1-latin-900.woff") format("woff");
+        url("/fonts/inter-700.woff2") format("woff2"),
+        url("/fonts/inter-700.woff") format("woff");
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -87,9 +67,9 @@ body {
 }
 
 body, code {
-    font-family: Figtree, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 18px;
-    line-height: 1.8rem;
+    font-family: Inter, sans-serif, "Segoe UI Emoji", "Apple Color Emoji";
+    font-size: 16px;
+    line-height: 1.6rem;
 }
 
 strong {
@@ -120,7 +100,6 @@ header {
     }
 
     h1 {
-        font-weight: 900;
         margin: 0;
         padding-top: 1rem;
     }
@@ -131,8 +110,6 @@ header {
 }
 
 nav {
-    font-weight: 500;
-
     li {
         display: inline-block;
         margin: 0 0.5rem;
@@ -239,7 +216,6 @@ footer {
             cursor: pointer;
             display: block;
             float: right;
-            font-size: 1.25rem;
             padding: 0.5rem;
         }
 
