@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{ $posts := (where .Site.RegularPages "Type" "posts") | first 15  }}
+{{ $first := index $posts 0 }}
 
 <article>
     {{ with .Site.Params.alert }}
@@ -7,32 +9,35 @@
     </div>
     {{ end }}
 
-    {{ $opts := dict "display" "block" }}
-    {{ .Site.Params.intro | .RenderString $opts }}
-
-    {{ $posts := (where .Site.RegularPages "Type" "posts") | first 15  }}
-    {{ $first := index $posts 0 }}
+    <div class="index">
+        {{ $opts := dict "display" "block" }}
+        {{ .Site.Params.intro | .RenderString $opts }}
+    </div>
 
     {{ with partial "haiku.html" $first }}
-    <h2>
-        Latest Post:
-        {{ partial "link.html" $first }}
-        {{ partial "emoji.html" $first }}
-    </h2>
-    {{ . }}
-    <p> <a href="{{ $first.RelPermalink }}">Read more &rarr;</a> </p>
+    <div class="index">
+        <h2>
+            Latest Post:
+            {{ partial "link.html" $first }}
+            {{ partial "emoji.html" $first }}
+        </h2>
+        {{ . }}
+        <p> <a href="{{ $first.RelPermalink }}">Read more &rarr;</a> </p>
+    </div>
     {{ end }}
 
-    <h2> Latest <a href="/pages/archives">Archives</a> </h2>
-    <ul>
-        {{ range after 1 $posts }}
-        <li>
-            {{ partial "link.html" . }}
-            {{ partial "emoji.html" . }}
-            ({{ partial "date.html" . }})
-        </li>
-        {{ end }}
-    </ul>
+    <div class="index">
+        <h2> Latest <a href="/pages/archives">Archives</a> </h2>
+        <ul>
+            {{ range after 1 $posts }}
+            <li>
+                {{ partial "link.html" . }}
+                {{ partial "emoji.html" . }}
+                ({{ partial "date.html" . }})
+            </li>
+            {{ end }}
+        </ul>
+    </div>
 </article>
 
 {{ end }}

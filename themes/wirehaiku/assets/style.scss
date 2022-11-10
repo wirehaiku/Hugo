@@ -6,7 +6,7 @@ $lite-back: #ffffff;
 $lite-fore: #000000;
 $lite-grey: #888888;
 $lite-blue: #225588;
-$lite-purp: adjust-hue($lite-blue, 60); // #552288 ????
+$lite-purp: adjust-hue($lite-blue, 60);
 $lite-blue-fade: lighten($lite-blue, 62.5);
 $lite-blue-high: lighten($lite-blue, 20);
 $lite-purp-high: lighten($lite-purp, 20);
@@ -36,10 +36,28 @@ $dark-purp-high: lighten($lite-purp-high, 35);
 @font-face {
     font-family: "Inter";
     font-style: normal;
+    font-weight: 500;
+    src: local(""),
+        url("../fonts/inter-500.woff2") format("woff2"),
+        url("../fonts/inter-500.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
     font-weight: 700;
     src: local(""),
         url("/fonts/inter-700.woff2") format("woff2"),
         url("/fonts/inter-700.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 900;
+    src: local(""),
+        url("../fonts/inter-900.woff2") format("woff2"),
+        url("../fonts/inter-900.woff") format("woff");
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -96,6 +114,7 @@ header {
     }
 
     h1 {
+        font-weight: 900;
         margin: 0;
         padding-top: 1rem;
     }
@@ -106,6 +125,8 @@ header {
 }
 
 nav {
+    font-weight: 500;
+
     li {
         display: inline-block;
         margin: 0 0.5rem;
@@ -136,12 +157,6 @@ main {
         color: $lite-purp-high;
     }
 
-    hr {
-        border: 0.1rem solid $lite-fore;
-        margin: 2rem auto;
-        width: 75%;
-    }
-
     li::marker {
         color: $lite-grey;
     }
@@ -168,6 +183,10 @@ main {
 
 a.emoji {
     text-decoration: none;
+}
+
+.index {
+    margin-bottom: 2rem;
 }
 
 .meta {
