@@ -10,8 +10,7 @@
     {{ end }}
 
     <div class="index">
-        {{ $opts := dict "display" "block" }}
-        {{ .Site.Params.intro | .RenderString $opts }}
+        {{ .Site.Params.intro | safeHTML   }}
     </div>
 
     {{ with partial "haiku.html" $first }}

@@ -19,20 +19,21 @@ donate  = "https://ko-fi.com/wirehaiku"
 description = "Haiku about city life and modern nature, by Stephen Malone."
 alert = ""
 intro = """
-Hello and welcome to **Wire Haiku**: a journal of haiku poetry about city
-life and modern nature, written by Stephen Malone. [Click here][1] to learn more
-about the site, check out the [archives][2] or just keep on reading!
-
-[1]: /pages/about/
-[2]: /pages/archives/
+<p>
+    Hello and welcome to <strong>Wire Haiku</strong>: a journal of haiku poetry about city
+    life and modern nature, written by Stephen Malone. You can
+    <a href="/pages/about/">click here</a> to learn more about the site, check
+    out the <a href="/pages/archives/">archives</a>, follow me on
+    <a rel="me" href="https://stvmln.com/@stvmln">Mastodon</a> or just keep reading!
+</p>
 """
 
 menu = [
     ["Home",       "https://wirehaiku.org"],
-    ["About",       "/pages/about/"],
+    ["About",      "/pages/about/"],
     ["Archives",   "/pages/archives/"],
     ["Compendium", "/pages/compendium"],
-    ["Twitter",    "https://twitter.com/wirehaiku"],
+    ["Mastodon",   "https://stvmln.com/@stvmln"],
     ["Support",    "https://ko-fi.com/wirehaiku"],
 ]
 
