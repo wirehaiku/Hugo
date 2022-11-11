@@ -6,6 +6,7 @@ $lite-back: #ffffff;
 $lite-fore: #000000;
 $lite-grey: #888888;
 $lite-blue: #225588;
+$lite-blur: rgba(255, 255, 255, 0.25);
 $lite-purp: adjust-hue($lite-blue, 60);
 $lite-blue-fade: lighten($lite-blue, 62.5);
 $lite-blue-high: lighten($lite-blue, 20);
@@ -102,13 +103,11 @@ header {
     text-shadow: 0.1rem 0.1rem 0.25rem $lite-fore;
 
     a:link, a:visited {
-        background-color: transparent;
         color: $lite-back;
         text-decoration: none;
     }
 
     a:active, a:hover {
-        background-color: transparent;
         color: $lite-back;
         text-decoration: underline;
     }
@@ -127,14 +126,22 @@ header {
 nav {
     font-weight: 500;
 
+    a {
+        backdrop-filter: blur(1rem);
+        background-color: $lite-blur;
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.5rem;
+    }
+
     li {
         display: inline-block;
         margin: 0 0.5rem;
+
     }
 
     ul {
         list-style-type: none;
-        padding: 0 0 0.5rem 0;
+        padding: 0.5rem 0 1rem 0;
         text-align: center;
     }
 }
@@ -249,14 +256,19 @@ footer {
         max-height: 0;
         overflow: hidden;
 
-        ul {
-            padding: 0;
+        a {
+            padding: 0.5rem 1rem;
         }
 
         li {
             display: block;
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
+
+        ul {
+            padding: 0;
+        }
+
     }
 }
 
