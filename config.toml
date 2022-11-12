@@ -22,8 +22,7 @@ intro = """
     Hello and welcome to <strong>Wire Haiku</strong>: a journal of haiku poetry about city
     life and modern nature, written by Stephen Malone. You can
     <a href="/pages/about/">click here</a> to learn more about the site, check
-    out the <a href="/pages/archives/">archives</a>, follow me on
-    <a rel="me" href="https://stvmln.com/@stvmln">Mastodon</a> or just keep reading!
+    out the <a href="/pages/archives/">archives</a>, or just keep on reading!
 </p>
 """
 
@@ -31,7 +30,7 @@ menu = [
     ["Home 🏠", "https://wirehaiku.org"],
     ["About 💬", "/pages/about/"],
     ["Archives 📚", "/pages/archives/"],
-    ["Mastodon 🐘", "https://stvmln.com/@stvmln"],
+    ["Mastodon 🐘", "https://stvmln.com/@wirehaiku"],
     ["Support 💸", "https://ko-fi.com/wirehaiku"],
 ]
 
