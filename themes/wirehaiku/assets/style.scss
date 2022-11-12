@@ -128,7 +128,7 @@ nav {
     font-weight: 500;
 
     a {
-        backdrop-filter: blur(0.375rem);
+        backdrop-filter: blur(5px);
         background-color: $lite-blur-high;
         border-radius: 0.25rem;
         padding: 0.25rem 0.5rem;
@@ -180,7 +180,7 @@ main {
         border-radius: 0.25rem;
 
         code {
-            backdrop-filter: blur(0.375rem);
+            backdrop-filter: blur(5px);
             background-color: $lite-blur-low;
             border-radius: 0.25rem;
             color: $lite-back;
