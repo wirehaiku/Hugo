@@ -1,4 +1,6 @@
 .hugo_build.lock
+.mypy_cache
+.pytest_cache
 .vscode
 public
 resources
