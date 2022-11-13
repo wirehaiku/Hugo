@@ -10,11 +10,11 @@
 	<p class="meta">
 		Written {{ partial "date.html" . }}
 
-		&bull; {{ range .GetTerms "theme" }}
+		&middot; {{ range .GetTerms "theme" }}
 		{{ partial "theme.html" . }}
 		{{ end }}
 
-		&bull; {{ range .GetTerms "tags" }}
+		&middot; {{ range .GetTerms "tags" }}
 		{{ partial "tag.html" . }}
 		{{ end }}
 	</p>
