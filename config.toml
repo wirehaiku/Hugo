@@ -27,11 +27,11 @@ intro = """
 """
 
 menu = [
-    ["Home 🏠", "https://wirehaiku.org"],
-    ["About 💬", "/pages/about/"],
-    ["Archives 📚", "/pages/archives/"],
-    ["Mastodon 🐘", "https://stvmln.com/@wirehaiku"],
-    ["Support 💸", "https://ko-fi.com/wirehaiku"],
+    ["Home",     "🏠", "/"],
+    ["About",    "💬", "/pages/about/"],
+    ["Archives", "📚", "/pages/archives/"],
+    ["Mastodon", "🐘", "https://stvmln.com/@wirehaiku"],
+    ["Support",  "💸", "https://ko-fi.com/wirehaiku"],
 ]
 
 [permalinks]

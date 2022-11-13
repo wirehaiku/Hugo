@@ -5,7 +5,7 @@
 $lite-back: #ffffff;
 $lite-fore: #000000;
 $lite-grey: #888888;
-$lite-fade: #eeeeee;
+$lite-fade: #f5f5f5;
 $lite-blue: #225588;
 $lite-purp: adjust-hue($lite-blue, 60);
 $lite-blue-high: lighten($lite-blue, 20);
@@ -79,7 +79,6 @@ a:active, a:hover {
 body {
     background-color: $lite-back;
     color: $lite-fore;
-    font-weight: 400;
     margin: 0;
     padding: 0;
 }
@@ -95,26 +94,15 @@ body, code {
 ///////////////////////////////////////////////////////////////////////////////////////
 
 header {
-    background-color: $lite-blue;
-    background-image: url("/branding/banner.png");
-    color: $lite-back;
     text-align: center;
-    text-shadow: 0.125rem 0.125rem 0.25rem $lite-fore;
-
-    a:link, a:visited {
-        color: $lite-back;
-        text-decoration: none;
-    }
-
-    a:active, a:hover {
-        color: $lite-back;
-        text-decoration: underline;
-    }
 
     h1 {
+        font-size: 3rem;
         font-weight: 900;
-        margin: 0;
-        padding-top: 1rem;
+
+        a {
+            text-decoration: none;
+        }
     }
 
     input, label {
@@ -125,22 +113,18 @@ header {
 nav {
     font-weight: 500;
 
-    a {
-        background-color: transparentize($lite-fade, 0.75);
-        backdrop-filter: blur(10px);
-        border-radius: 0.25rem;
-        padding: 0.25rem 0.5rem;
-    }
-
     li {
+        background-color: $lite-fade;
+        border-radius: 0.25rem;
         display: inline-block;
         margin: 0 0.5rem;
-
+        padding: 0.375rem 0.75rem;
     }
 
     ul {
         list-style-type: none;
-        padding: 0.5rem 0 1rem 0;
+        margin: 2rem 0;
+        padding: 0;
         text-align: center;
     }
 }
