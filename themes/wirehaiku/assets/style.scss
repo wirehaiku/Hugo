@@ -28,8 +28,7 @@ $dark-purp-high: lighten($lite-purp-high, 35);
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
-    src: local(""),
-        url("/fonts/inter-400.woff2") format("woff2"),
+    src: local(""), url("/fonts/inter-400.woff2") format("woff2"),
         url("/fonts/inter-400.woff") format("woff");
 }
 
@@ -37,8 +36,7 @@ $dark-purp-high: lighten($lite-purp-high, 35);
     font-family: "Inter";
     font-style: normal;
     font-weight: 500;
-    src: local(""),
-        url("../fonts/inter-500.woff2") format("woff2"),
+    src: local(""), url("../fonts/inter-500.woff2") format("woff2"),
         url("../fonts/inter-500.woff") format("woff");
 }
 
@@ -46,8 +44,7 @@ $dark-purp-high: lighten($lite-purp-high, 35);
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    src: local(""),
-        url("/fonts/inter-700.woff2") format("woff2"),
+    src: local(""), url("/fonts/inter-700.woff2") format("woff2"),
         url("/fonts/inter-700.woff") format("woff");
 }
 
@@ -55,8 +52,7 @@ $dark-purp-high: lighten($lite-purp-high, 35);
     font-family: "Inter";
     font-style: normal;
     font-weight: 900;
-    src: local(""),
-        url("../fonts/inter-900.woff2") format("woff2"),
+    src: local(""), url("../fonts/inter-900.woff2") format("woff2"),
         url("../fonts/inter-900.woff") format("woff");
 }
 
@@ -64,15 +60,19 @@ $dark-purp-high: lighten($lite-purp-high, 35);
 //                                   Global Styles                                   //
 ///////////////////////////////////////////////////////////////////////////////////////
 
-*, :after, :before {
+*,
+:after,
+:before {
     box-sizing: border-box;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: $lite-blue;
 }
 
-a:active, a:hover {
+a:active,
+a:hover {
     color: $lite-blue-high;
 }
 
@@ -83,7 +83,8 @@ body {
     padding: 0;
 }
 
-body, code {
+body,
+code {
     font-family: Inter, sans-serif, "Segoe UI Emoji", "Apple Color Emoji";
     font-size: 16px;
     line-height: 1.6rem;
@@ -100,21 +101,28 @@ header {
         font-size: 5rem;
         font-weight: 900;
 
-        a:link, a:visited {
+        a:link,
+        a:visited {
             background: linear-gradient(45deg, $lite-blue 0%, $dark-purp 100%);
             background-clip: text;
             color: transparent;
             text-decoration: none;
         }
 
-        a:active, a:hover {
-            background: linear-gradient(45deg, $lite-blue-high 0%, $dark-purp-high 100%);
+        a:active,
+        a:hover {
+            background: linear-gradient(
+                45deg,
+                $lite-blue-high 0%,
+                $dark-purp-high 100%
+            );
             background-clip: text;
             color: transparent;
         }
     }
 
-    input, label {
+    input,
+    label {
         display: none;
     }
 }
@@ -152,7 +160,8 @@ main {
         color: $lite-purp;
     }
 
-    a:visited:active, a:visited:hover {
+    a:visited:active,
+    a:visited:hover {
         color: $lite-purp-high;
     }
 
@@ -160,7 +169,8 @@ main {
         color: $lite-grey;
     }
 
-    ol, ul {
+    ol,
+    ul {
         line-height: 2.25rem;
         padding-left: 1rem;
     }
@@ -269,11 +279,13 @@ footer {
         color: $dark-fore;
     }
 
-    a:link, a:visited {
+    a:link,
+    a:visited {
         color: $dark-blue;
     }
 
-    a:active, a:hover {
+    a:active,
+    a:hover {
         color: $dark-blue-high;
     }
 
@@ -293,7 +305,8 @@ footer {
             color: $dark-purp;
         }
 
-        a:visited:active, a:visited:hover {
+        a:visited:active,
+        a:visited:hover {
             color: $dark-purp-high;
         }
 
@@ -324,11 +337,13 @@ footer {
         text-decoration: underline !important;
     }
 
-    input, label {
+    input,
+    label {
         display: none !important;
     }
 
-    nav li, pre {
+    nav li,
+    pre {
         border: 0.125rem solid black;
     }
 }
