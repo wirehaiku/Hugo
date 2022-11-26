@@ -37,7 +37,7 @@
             <description>{{- printf "<![CDATA[%s]]>" $data | safeHTML -}}</description>
 
 			<!-- Custom blog fields. -->
-			<blog:summary>{{ partial "cdata.html" .Summary }}</blog:summary>
+            <blog:summary>{{ .Summary | htmlUnescape | safeHTML }}</blog:summary>
 			<blog:tags>{{ range $i, $e := .Params.tags }}{{ if $i }} {{ end }}#{{ $e }}{{ end }}</blog:tags>
 			<blog:tagscomma>{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}#{{ $e }}{{ end }}</blog:tagscomma>
 		</item>
