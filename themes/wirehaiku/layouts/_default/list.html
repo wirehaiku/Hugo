@@ -1,19 +1,28 @@
 {{ define "main" }}
 
-<article>
-    <h2>
-        {{ .Data.Singular | title }}:
-        <a href="{{ .RelPermalink }}">{{ .Title | title }}</a>
-    </h2>
+    <article>
+        <h2>
+            {{ if ne .Data.Singular nil }}
+                {{ .Data.Singular | title }}:
+                <a href="{{ .RelPermalink }}">{{ .Title | title }}</a>
+            {{ else if eq .Type "posts" }}
+                <a href="{{ .RelPermalink }}">Archives</a>
+            {{ else }}
+                <a href="{{ .RelPermalink }}">{{ .Title | title }}</a>
+            {{ end }}
+        </h2>
 
-    <ul>
-        {{ range .Pages.ByDate  }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <span class="meta">{{ .Date.Format "2 January 2006" }}</span> 
-            </li>
+        {{ range (.Pages.GroupByDate "January 2006")  }}
+            <h3> {{ .Key }} </h3>
+            <ul>
+                {{ range .Pages }}
+                    <li>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <span class="meta">{{- .Date.Format "2 January 2006" -}}</span> 
+                    </li>
+                {{ end }}
+            </ul>
         {{ end }}
-    </ul>
-</article>
+        </article>
 
 {{ end }}

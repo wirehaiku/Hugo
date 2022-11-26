@@ -29,7 +29,7 @@ intro = """
 menu = [
     ["Home",     "/"],
     ["About",    "/pages/about/"],
-    ["Archives", "/pages/archives/"],
+    ["Archives", "/posts/"],
     ["Mastodon", "https://stvmln.com/@wirehaiku"],
     ["Support",  "https://ko-fi.com/wirehaiku"],
 ]
