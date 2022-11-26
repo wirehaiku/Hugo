@@ -8,14 +8,14 @@
 
 	{{ if eq .Type "posts" }}
 	<p class="meta">
-		Written {{ partial "date.html" . }}
+        Written {{ .Date.Format "Monday 2 January 2006" -}}. 
 
-		&middot; {{ range .GetTerms "theme" }}
-		{{ partial "theme.html" . }}
+		{{ range .GetTerms "theme" }}
+    		{{ partial "theme.html" . }}
 		{{ end }}
 
-		&middot; {{ range .GetTerms "tags" }}
-		{{ partial "tag.html" . }}
+		{{ range .GetTerms "tags" }}
+		    {{ partial "tag.html" . }}
 		{{ end }}
 	</p>
 	{{ end }}
@@ -23,15 +23,15 @@
 	{{ .Content }}
 
 	{{ if eq .Type "posts" }}
-	<ul class="meta">
-		{{ with .PrevInSection }}
-		<li> Previous: {{ partial "link.html" . }} </li>
-		{{ end }}
-
-		{{ with .NextInSection }}
-		<li> Next: {{ partial "link.html" . }} </li>
-		{{ end }}
-	</ul>
+    	<ul class="meta">
+	    	{{ with .PrevInSection }}
+	        	<li> Previous: {{ partial "link.html" . }} </li>
+    		{{ end }}
+    
+	    	{{ with .NextInSection }}
+		        <li> Next: {{ partial "link.html" . }} </li>
+    		{{ end }}
+	    </ul>
 	{{ end }}
 </article>
 

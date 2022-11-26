@@ -6,18 +6,18 @@
     {{ .Content }}
 
     {{ range (.Site.RegularPages.GroupByDate "January 2006")  }}
-    {{ if (where .Pages "Type" "posts") }}
-    <h3> {{ .Key }} </h3>
-    <ul>
-        {{ range .Pages }}
-        <li>
-            {{ partial "link.html" . }}
-            {{ partial "emoji.html" . }}
-            ({{ partial "date.html" . }})
-        </li>
+        {{ if (where .Pages "Type" "posts") }}
+            <h3> {{ .Key }} </h3>
+            <ul>
+                {{ range .Pages }}
+                    <li>
+                        {{ partial "link.html" . }}
+                        {{ partial "emoji.html" . }}
+                        <span class="meta">{{- .Date.Format "2 January 2006" -}}</span> 
+                    </li>
+                {{ end }}
+            </ul>
         {{ end }}
-    </ul>
-    {{ end }}
     {{ end }}
 </article>
 

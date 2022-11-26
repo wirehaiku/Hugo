@@ -13,7 +13,8 @@
         {{ range .Pages.ByDate  }}
         <li>
             {{ partial "link.html" . }}
-            ({{ partial "date.html" . }})
+            {{ partial "emoji.html" . }} 
+            <span class="meta">{{- .Date.Format "2 January 2006" -}}</span> 
         </li>
         {{ end }}
     </ul>

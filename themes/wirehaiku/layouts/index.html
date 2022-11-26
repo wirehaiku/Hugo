@@ -4,9 +4,9 @@
 
 <article>
     {{ with .Site.Params.alert }}
-    <div class="alert">
-        {{ . | $.RenderString }}
-    </div>
+        <div class="alert">
+            {{ . | $.RenderString }}
+        </div>
     {{ end }}
 
     <div class="index">
@@ -14,15 +14,15 @@
     </div>
 
     {{ with partial "haiku.html" $first }}
-    <div class="index">
-        <h2>
-            Latest Post:
-            {{ partial "link.html" $first }}
-            {{ partial "emoji.html" $first }}
-        </h2>
-        {{ . }}
-        <p> <a href="{{ $first.RelPermalink }}">Read more &rarr;</a> </p>
-    </div>
+        <div class="index">
+            <h2>
+                Latest Post:
+                {{ partial "link.html" $first }}
+                {{ partial "emoji.html" $first }}
+            </h2>
+            {{ . }}
+            <p> <a href="{{ $first.RelPermalink }}">Read more &rarr;</a> </p>
+        </div>
     {{ end }}
 
     <div class="index">
@@ -32,7 +32,7 @@
             <li>
                 {{ partial "link.html" . }}
                 {{ partial "emoji.html" . }}
-                ({{ partial "date.html" . }})
+                <span class="meta">{{- .Date.Format "2 January 2006" -}}</span> 
             </li>
             {{ end }}
         </ul>
