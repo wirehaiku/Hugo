@@ -2,9 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:blog="{{ .Permalink }}">
 	<channel>
 		<!-- Basic site information. -->
-		<title>{{ partial "title.html" . }}</title>
+        <title>
+            {{ .Site.Title }}
+            {{ if ne .Site.Title .Title }} &middot; {{ .Title }} {{ end }}
+        </title>
 		<link>{{ .Permalink }}</link>
-		<description>Recent content in "{{ partial "title.html" . }}"</description>
+		<description>Recent content in "{{ .Title }}"</description>
 		<atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml"/>
 
 		<!-- Advanced feed information. -->

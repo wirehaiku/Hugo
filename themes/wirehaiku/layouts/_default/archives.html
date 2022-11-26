@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <article>
-    <h2> {{ partial "link.html" . }} </h2>
+    <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>  
 
     {{ .Content }}
 
@@ -11,8 +11,7 @@
             <ul>
                 {{ range .Pages }}
                     <li>
-                        {{ partial "link.html" . }}
-                        {{ partial "emoji.html" . }}
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                         <span class="meta">{{- .Date.Format "2 January 2006" -}}</span> 
                     </li>
                 {{ end }}

@@ -3,19 +3,15 @@
 <article>
     <h2>
         {{ .Data.Singular | title }}:
-        {{ if eq .Data.Singular "theme" }} {{ partial "theme.html" . }}
-        {{ else if eq .Data.Singular "tag" }} {{ partial "tag.html" . }}
-        {{ else }} {{ partial "link.html" . }}
-        {{ end }}
+        <a href="{{ .RelPermalink }}">{{ .Title | title }}</a>
     </h2>
 
     <ul>
         {{ range .Pages.ByDate  }}
-        <li>
-            {{ partial "link.html" . }}
-            {{ partial "emoji.html" . }} 
-            <span class="meta">{{- .Date.Format "2 January 2006" -}}</span> 
-        </li>
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <span class="meta">{{ .Date.Format "2 January 2006" }}</span> 
+            </li>
         {{ end }}
     </ul>
 </article>

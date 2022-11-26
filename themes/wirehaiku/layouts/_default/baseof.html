@@ -1,53 +1,50 @@
 {{- $style := (resources.Get "style.scss") | resources.ToCSS }}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="{{ .Site.Params.description }}" />
+        <meta property="og:title" content="{{ .Title }}" />
+        <meta property="og:description" content="{{ .Summary }}" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ .Permalink }}" />
+        <meta property="og:image" content="{{ .Site.BaseURL }}branding/banner.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}" />
+        <title>
+            {{ .Site.Title }} 
+            {{ if ne .Site.Title .Title }} &middot; {{ .Title }} {{ end }}
+        </title>
+        {{ range .AlternativeOutputFormats }}
+            <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}" />
+        {{ end }}
+    </head>
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="{{ .Site.Params.description }}">
-		<meta property="og:title" content="{{ .Title }}">
-		<meta property="og:description" content="{{ .Summary }}">
-		<meta property="og:type" content="article">
-		<meta property="og:url" content="{{ .Permalink }}">
-		<meta property="og:image" content="{{ .Site.BaseURL }}branding/banner.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
-		<title> {{ partial "title.html" . }} </title>
-		{{ range .AlternativeOutputFormats }}
-		<link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}">
-		{{ end }}
-	</head>
+    <body>
+        <header>
+            <h1><a href="/">{{ .Site.Title }}</a></h1>
 
-	<body>
-		<header>
-			<h1> <a href="/">{{ .Site.Title }}</a> </h1>
+            <input type="checkbox" id="menu" />
+            <nav>
+                <ul>
+                    {{ range .Site.Params.menu }}
+                    <li> <a href="{{ index . 1 }}">{{ index . 0 }}</a> </li>
+                    {{ end }}
+                </ul>
+            </nav>
+            <label for="menu">menu</label>
+        </header>
 
-			<input type="checkbox" id="menu">
+        <main>{{ block "main" . }} {{ end }}</main>
 
-			<nav>
-				<ul>
-					{{ range .Site.Params.menu }}
-					<li> <a href="{{ index . 2 }}">{{ index . 0 }}</a> {{ index . 1 }} </li>
-					{{ end }}
-				</ul>
-			</nav>
-
-			<label for="menu">menu</label>
-		</header>
-
-		<main>
-			{{ block "main" . }} {{ end }}
-		</main>
-
-		<footer>
-			<p>
-				© Stephen Malone {{ now.Format "2006" }}.
-				Powered by <a href="https://gohugo.io/">Hugo</a>,
-				supported by <a href="{{ .Site.Params.donate }}">kind readers</a>!
-			</p>
-		</footer>
-	</body>
-
+        <footer>
+            <p>
+                © Stephen Malone {{ now.Format "2006" }}. Powered by
+                <a href="https://gohugo.io/">Hugo</a>, supported by
+                <a href="{{ .Site.Params.donate }}">kind readers</a>!
+            </p>
+        </footer>
+    </body>
 </html>

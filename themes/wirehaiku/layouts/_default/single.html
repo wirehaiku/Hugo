@@ -1,38 +1,41 @@
 {{ define "main" }}
 
-<article>
-	<h2>
-		{{ partial "link.html" . }}
-		{{ partial "emoji.html" . }}
-	</h2>
+        <article>
+        <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
 
-	{{ if eq .Type "posts" }}
-	<p class="meta">
-        Written {{ .Date.Format "Monday 2 January 2006" -}}. 
+        {{ if eq .Type "posts" }}
+            <p class="meta">
+                Written {{ .Date.Format "Monday 2 January 2006" }}.
 
-		{{ range .GetTerms "theme" }}
-    		{{ partial "theme.html" . }}
-		{{ end }}
+                {{ range .GetTerms "theme" }}
+                    <a href="{{ .RelPermalink }}">‹{{ .Title }}›</a>
+                {{ end }} 
 
-		{{ range .GetTerms "tags" }}
-		    {{ partial "tag.html" . }}
-		{{ end }}
-	</p>
-	{{ end }}
+                {{ range .GetTerms "tags" }}
+                    <a href="{{ .RelPermalink }}">#{{ .Title }}</a>
+                {{ end }}
+            </p>
+        {{ end }} 
 
-	{{ .Content }}
+        {{ .Content }} 
 
-	{{ if eq .Type "posts" }}
-    	<ul class="meta">
-	    	{{ with .PrevInSection }}
-	        	<li> Previous: {{ partial "link.html" . }} </li>
-    		{{ end }}
-    
-	    	{{ with .NextInSection }}
-		        <li> Next: {{ partial "link.html" . }} </li>
-    		{{ end }}
-	    </ul>
-	{{ end }}
-</article>
+        {{ if eq .Type "posts" }}
+            <ul class="meta">
+                {{ with .PrevInSection }}
+                    <li> 
+                        Previous: 
+                        <a class="button" href="{{ .RelPermalink }}">{{ .Title }}</a> 
+                    </li>
+                {{ end }} 
+
+                {{ with .NextInSection }}
+                    <li> 
+                        Next:
+                        <a class="button" href="{{ .RelPermalink }}">{{ .Title }}</a> 
+                    </li>
+                {{ end }}
+            </ul>
+       {{ end }}
+    </article>
 
 {{ end }}

@@ -1,6 +1,0 @@
-{{- $a := split .Content "<code>" -}}
-{{- $b := split (index $a 1) "</code>" -}}
-{{- $c := index $b 0 | htmlUnescape -}}
-{{- if ne $c "" -}}
-<pre><code>{{ $c }}</code></pre>
-{{- end -}}

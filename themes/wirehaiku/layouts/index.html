@@ -1,6 +1,5 @@
 {{ define "main" }}
-{{ $posts := (where .Site.RegularPages "Type" "posts") | first 15  }}
-{{ $first := index $posts 0 }}
+{{ $posts := (where .Site.RegularPages "Type" "posts") | first 11  }}
 
 <article>
     {{ with .Site.Params.alert }}
@@ -9,31 +8,29 @@
         </div>
     {{ end }}
 
-    <div class="index">
-        {{ .Site.Params.intro | safeHTML   }}
-    </div>
-
-    {{ with partial "haiku.html" $first }}
-        <div class="index">
-            <h2>
-                Latest Post:
-                {{ partial "link.html" $first }}
-                {{ partial "emoji.html" $first }}
-            </h2>
-            {{ . }}
-            <p> <a href="{{ $first.RelPermalink }}">Read more &rarr;</a> </p>
-        </div>
+    {{ .Site.Params.intro | safeHTML }}
+    
+    {{ with index $posts 0 }}
+        {{ $a := split .Content "<code>" }}
+        {{ $b := split (index $a 1) "</code>" }}
+        {{ $c := index $b 0 | htmlUnescape }}
+        {{ if ne $c "" }}
+            <div class="index">
+                <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2> 
+                <pre><code>{{ $c }}</code></pre>
+                <p> <a href="{{ .RelPermalink }}">Read more &rarr;</a> </p>
+            </div>
+        {{ end }}
     {{ end }}
 
     <div class="index">
         <h2> Latest <a href="/pages/archives">Archives</a> </h2>
         <ul>
             {{ range after 1 $posts }}
-            <li>
-                {{ partial "link.html" . }}
-                {{ partial "emoji.html" . }}
-                <span class="meta">{{- .Date.Format "2 January 2006" -}}</span> 
-            </li>
+                <li> 
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <span class="meta">{{ .Date.Format "2 January 2006" }}</span> 
+                </li>
             {{ end }}
         </ul>
     </div>
