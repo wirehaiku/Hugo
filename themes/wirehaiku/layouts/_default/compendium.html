@@ -12,7 +12,7 @@
     <p class="meta">
         {{ partial "link.html" $post}}
         {{ partial "emoji.html" $post }}
-        ({{ partial "date.html" $post }})
+        <span class="meta">{{- $post.Date.Format "2 January 2006" -}}</span> 
     </p>
     {{ . }}
 
