@@ -14,7 +14,7 @@ date = [":filename"]
 
 [params]
 author  = "Stephen Malone"
-donate  = "https://ko-fi.com/wirehaiku"
+donate  = "https://www.patreon.com/wirehaiku"
 description = "Haiku about city life and modern nature, by Stephen Malone."
 alert = ""
 intro = """
@@ -31,7 +31,7 @@ menu = [
     ["About",    "/pages/about/"],
     ["Archives", "/posts/"],
     ["Mastodon", "https://stvmln.com/@stvmln"],
-    ["Support",  "https://ko-fi.com/wirehaiku"],
+    ["Patreon",  "https://www.patreon.com/wirehaiku"],
 ]
 
 [permalinks]

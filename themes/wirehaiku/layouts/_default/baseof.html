@@ -14,11 +14,10 @@
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}" />
         <title>
-            {{ .Site.Title }} 
-            {{ if ne .Site.Title .Title }} &middot; {{ .Title }} {{ end }}
+            {{ .Site.Title }} {{ if ne .Site.Title .Title }} &middot; {{ .Title }} {{ end }}
         </title>
         {{ range .AlternativeOutputFormats }}
-            <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}" />
+        <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}" />
         {{ end }}
     </head>
 
@@ -30,7 +29,7 @@
             <nav>
                 <ul>
                     {{ range .Site.Params.menu }}
-                    <li> <a href="{{ index . 1 }}">{{ index . 0 }}</a> </li>
+                    <li><a href="{{ index . 1 }}">{{ index . 0 }}</a></li>
                     {{ end }}
                 </ul>
             </nav>
