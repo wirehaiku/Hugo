@@ -12,10 +12,10 @@
             {{ end }}
         </h2>
 
-        {{ range (.Pages.GroupByDate "January 2006")  }}
+        {{ range .Pages.GroupByDate "January 2006" }}
             <h3> {{ .Key }} </h3>
             <ul>
-                {{ range .Pages }}
+                {{ range where .Pages "Type" "!=" "perks" }}
                     <li>
                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                         <span class="meta">{{- .Date.Format "2 January 2006" -}}</span> 
