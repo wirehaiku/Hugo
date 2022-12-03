@@ -4,7 +4,7 @@
 		<!-- Basic site information. -->
         <title>
             {{- .Site.Title }}
-            {{- if ne .Site.Title .Title }} · {{ .Title }} {{- end -}}
+            {{- if ne .Site.Title .Title }} - {{ .Title }} {{- end -}}
         </title>
 		<link>{{ .Permalink }}</link>
 		<description>Recent content in "{{ .Title }}"</description>

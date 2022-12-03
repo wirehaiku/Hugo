@@ -2,28 +2,20 @@
 
 <article>
     <h2>
-        {{ if ne .Data.Singular nil }}
-        {{ .Data.Singular | title }}: {{ partial "page/title.html" . }}
-
-        {{ else if eq .Type "posts" }}
-        <a href="{{ .RelPermalink }}">Archives</a>
-
-        {{ else }}
-        {{ partial "page/title.html" . }}
-        {{ end }}
+        {{ if ne .Data.Singular nil }} {{ .Data.Singular | title }}: {{ end }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </h2>
 
     {{ range .Pages.GroupByDate "January 2006" }}
-    <h3>{{ .Key }}</h3>
-    <ul>
+    <h3> {{ .Key }} </h3>
 
+    <ul>
         {{ range where .Pages "Type" "!=" "perks" }}
         <li>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <span class="meta">{{- .Date.Format "2 January 2006" -}}</span>
+            <span class="meta">{{ .Date.Format "2 January 2006" }}</span>
         </li>
         {{ end }}
-
     </ul>
     {{ end }}
 </article>

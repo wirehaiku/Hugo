@@ -1,12 +1,22 @@
 {{ define "main" }}
 
 <article>
-    <h2> {{ partial "page/title.html" . }} </h2>
+    <h2>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
 
     <p class="meta">
+        {{ if ne .Date.Year 0001 }}
         Written {{ .Date.Format "Monday 2 January 2006" }}.
-        {{ partial "post/themes.html" . }}
-        {{ partial "post/tags.html" . }}
+        {{ end }}
+
+        {{ range .GetTerms "theme" }}
+        <a href="{{ .RelPermalink }}">‹{{ .Title | lower }}›</a>
+        {{ end }}
+
+        {{ range .GetTerms "tags" }}
+        <a href="{{ .RelPermalink }}">#{{ .Title | lower }}</a>
+        {{ end }}
     </p>
 
     {{ .Content }}

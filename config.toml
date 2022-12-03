@@ -16,7 +16,6 @@ date = [":filename"]
 author  = "Stephen Malone"
 donate  = "https://www.patreon.com/wirehaiku"
 description = "Haiku about city life and modern nature, by Stephen Malone."
-alert = ""
 intro = """
 <p>
     Hello and welcome to <strong>Wire Haiku</strong>: a journal of haiku poetry about city
