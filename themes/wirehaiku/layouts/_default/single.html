@@ -1,42 +1,25 @@
 {{ define "main" }}
 
 <article>
-    <h2>{{ partial "page/title.html" . }}</h2>
+    <h2> {{ partial "page/title.html" . }} </h2>
 
-    {{ if eq .Type "posts" }}
     <p class="meta">
         Written {{ .Date.Format "Monday 2 January 2006" }}.
-
-        {{ range .GetTerms "theme" }}
-        <a href="{{ .RelPermalink }}">‹{{ .Title }}›</a>
-        {{ end }}
-
-        {{ range .GetTerms "tags" }}
-        <a href="{{ .RelPermalink }}">#{{ .Title }}</a>
-        {{ end }}
+        {{ partial "post/themes.html" . }}
+        {{ partial "post/tags.html" . }}
     </p>
-    {{ end }}
 
     {{ .Content }}
 
-    {{ if eq .Type "posts" }}
-
     <ul class="meta">
         {{ with .PrevInSection }}
-        <li>
-            Previous:
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
+        <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
         {{ end }}
 
         {{ with .NextInSection }}
-        <li>
-            Next:
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
+        <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
         {{ end }}
     </ul>
-    {{ end }}
 </article>
 
 {{ end }}
