@@ -30,7 +30,7 @@ menu = [
     ["Home",     "/"],
     ["About",    "/pages/about/"],
     ["Archives", "/posts/"],
-    ["Mastodon", "https://stvmln.com/@wirehaiku"],
+    ["Mastodon", "https://stvmln.com/@stvmln"],
     ["Support",  "https://ko-fi.com/wirehaiku"],
 ]
 
