@@ -20,14 +20,10 @@
         <meta property="og:type" content="article">
         <meta property="og:url" content="{{ .Permalink }}">
 
-        <!-- Stylesheets and icons. -->
+        <!-- Stylesheets, links and icons. -->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
-
-        <!-- RSS feed links. -->
-        {{- range .AlternativeOutputFormats -}}
-        <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}">
-        {{- end }}
+        <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml">
     </head>
 
     <body>
