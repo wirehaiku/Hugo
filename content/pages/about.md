@@ -19,6 +19,6 @@ If you have any questions or suggestions, please send me a direct message at [@s
 [1]: https://en.wikipedia.org/wiki/Haiku
 [2]: https://stvmln.com
 [3]: https://stvmln.com/@stvmln
-[4]: https://wirehaiku.org/index.xml
+[4]: https://wirehaiku.org/posts/index.xml
 [5]: https://www.patreon.com/wirehaiku
 [6]: mailto:mail@wirehaiku.org
