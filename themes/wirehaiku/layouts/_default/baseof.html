@@ -1,4 +1,4 @@
-{{- $style := (resources.Get "style.scss") | resources.ToCSS }}
+{{ $style := (resources.Get "style.scss") | resources.ToCSS }}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
         <meta name="description" content="{{ .Site.Params.description }}">
         <meta name="theme-color" content="#225588">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> {{ .Site.Title }} {{ if ne .Site.Title .Title -}} - {{ .Title }} {{ end }} </title>
+        <title>{{ .Site.Title }} {{- if ne .Site.Title .Title }} - {{ .Title }} {{- end }}</title>
 
         <!-- OpenGraph tags. -->
         <meta property="og:title" content="{{ .Title }}">
@@ -25,9 +25,9 @@
         <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
 
         <!-- RSS feed links. -->
-        {{ range .AlternativeOutputFormats }}
+        {{- range .AlternativeOutputFormats -}}
         <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | html }}">
-        {{ end }}
+        {{- end }}
     </head>
 
     <body>

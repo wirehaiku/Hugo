@@ -22,17 +22,17 @@
 		<docs>https://validator.w3.org/feed/docs/rss2.html</docs>
 
 		<!-- Feed dates. -->
-		<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
-		<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
+		<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+		<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
 
 		<!-- Item lists. -->
-		{{ range where .Site.RegularPages ".Type" "posts" }}
+		{{ range .Pages }}
 		<item>
 			<!-- Built-in fields. -->
 			<title>{{ .Title }}</title>
 			<link>{{ .Permalink }}</link>
 			<guid>{{ .Permalink }}</guid>
-            <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+            <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
 
             <!-- Encoded post content. -->
             {{- $data := htmlUnescape .Content  -}}
@@ -41,8 +41,6 @@
 
 			<!-- Custom blog fields. -->
             <blog:summary>{{ .Summary | htmlUnescape | safeHTML }}</blog:summary>
-			<blog:tags>{{ range $i, $e := .Params.tags }}{{ if $i }} {{ end }}#{{ $e }}{{ end }}</blog:tags>
-			<blog:tagscomma>{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}#{{ $e }}{{ end }}</blog:tagscomma>
 		</item>
 		{{ end }}
 	</channel>
