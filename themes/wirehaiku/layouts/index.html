@@ -12,10 +12,9 @@
     {{ $c := index $b 0 | htmlUnescape }}
     {{ if ne $c "" }}
     <pre><code>{{ $c }}</code></pre>
-    {{ .Summary }}
-
     {{ end }}
 
+    {{ .Summary }}
     <p> <a href="{{ .RelPermalink }}">Read more &rarr;</a> </p>
     {{ end }}
 
