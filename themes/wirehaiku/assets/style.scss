@@ -91,6 +91,12 @@ pre {
     line-height: 1.6rem;
 }
 
+hr {
+    border: 1px solid $lite-grey;
+    margin: 2rem auto;
+    width: 50%;
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////
 //                             Header & Navigation Styles                            //
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -275,6 +281,10 @@ footer {
     a:active,
     a:hover {
         color: $dark-blue-high;
+    }
+
+    hr {
+        border: 1px solid $dark-grey;
     }
 
     header {
