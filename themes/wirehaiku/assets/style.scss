@@ -1,7 +1,7 @@
 // Stylesheet Variables
 
-$lite-back: #ffffff;
-$lite-fore: #000000;
+$lite-back: #fdfaf6;
+$lite-fore: #181818;
 $lite-grey: #888888;
 $lite-fade: #f8f8f8;
 $lite-blue: #225588;
@@ -107,6 +107,7 @@ ul {
     line-height: 1.8rem;
     padding-left: 1rem;
 }
+
 // Header Styles
 
 header {
@@ -160,8 +161,7 @@ main {
     }
 
     pre {
-        background-color: $lite-fade;
-        border-radius: 0.25rem;
+        border: 2px solid $lite-grey;
         padding: 0.5rem 1rem;
 
         code {
@@ -173,6 +173,9 @@ main {
 
 .meta {
     color: $lite-grey;
+}
+
+li .meta {
     float: right;
 }
 
@@ -270,7 +273,7 @@ footer {
         }
 
         pre {
-            background-color: $dark-fade;
+            border-color: $dark-grey;
         }
     }
 
