@@ -232,6 +232,13 @@ footer {
             margin: 0;
         }
     }
+
+    main {
+        li .meta {
+            display: block;
+            float: none;
+        }
+    }
 }
 
 // Dark Mode Media Query
