@@ -9,17 +9,9 @@
     {{ partial "post-lede.html" . }}
     {{ end }}
 
-
     <div>
         <h2> Latest <a href="/posts/">Archives</a> </h2>
-        <ul>
-            {{ range after 1 $posts }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                <span class="meta">{{ .Date.Format "2 January 2006" }}</span>
-            </li>
-            {{ end }}
-        </ul>
+        {{ partial "post-list.html" (after 1 $posts) }}
     </div>
 </article>
 

@@ -8,15 +8,7 @@
 
     {{ range .Pages.GroupByDate "January 2006" }}
     <h3> {{ .Key }} </h3>
-
-    <ul>
-        {{ range where .Pages "Type" "!=" "perks" }}
-        <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <span class="meta">{{ .Date.Format "2 January 2006" }}</span>
-        </li>
-        {{ end }}
-    </ul>
+    {{ partial "post-list.html" (where .Pages "Type" "!=" "perks") }}
     {{ end }}
 </article>
 
