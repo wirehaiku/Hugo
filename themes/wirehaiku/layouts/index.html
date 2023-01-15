@@ -6,17 +6,9 @@
 
     {{ with index $posts 0 }}
     <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
-
-    {{ $a := split .Content "<code>" }}
-    {{ $b := split (index $a 1) "</code>" }}
-    {{ $c := index $b 0 | htmlUnescape }}
-    {{ if ne $c "" }}
-    <pre><code>{{ $c }}</code></pre>
+    {{ partial "post-lede.html" . }}
     {{ end }}
 
-    {{ .Summary }}
-    <p> <a href="{{ .RelPermalink }}">Read more &rarr;</a> </p>
-    {{ end }}
 
     <div>
         <h2> Latest <a href="/posts/">Archives</a> </h2>
