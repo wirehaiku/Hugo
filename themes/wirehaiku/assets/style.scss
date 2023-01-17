@@ -1,9 +1,7 @@
-// Stylesheet Variables
-
 $lite-back: #fdfaf6;
 $lite-fore: #181818;
-$lite-grey: #888888;
-$lite-fade: #f8f8f8;
+$lite-grey: #777777;
+$lite-bord: #bbbbbb;
 $lite-blue: #225588;
 $lite-purp: adjust-hue($lite-blue, 60);
 $lite-blue-high: lighten($lite-blue, 20);
@@ -12,13 +10,11 @@ $lite-purp-high: lighten($lite-purp, 20);
 $dark-back: invert($lite-back);
 $dark-fore: invert($lite-fore);
 $dark-grey: invert($lite-grey);
-$dark-fade: lighten(invert($lite-fade), 10);
+$dark-bord: invert($lite-bord);
 $dark-blue: lighten($lite-blue, 35);
 $dark-purp: lighten($lite-purp, 35);
 $dark-blue-high: lighten($lite-blue-high, 35);
 $dark-purp-high: lighten($lite-purp-high, 35);
-
-// Font Definitions
 
 @font-face {
     font-family: "Crimson Pro";
@@ -59,8 +55,6 @@ $dark-purp-high: lighten($lite-purp-high, 35);
     src: local(""), url("/fonts/400i.woff2") format("woff2"),
         url("/fonts/400i.woff") format("woff");
 }
-
-// Global Styles
 
 *,
 :after,
@@ -104,11 +98,9 @@ hr {
 
 ol,
 ul {
-    line-height: 1.8rem;
+    line-height: 1.7rem;
     padding-left: 1rem;
 }
-
-// Header Styles
 
 header {
     text-align: center;
@@ -144,8 +136,6 @@ nav {
     }
 }
 
-// Main & Article Styles
-
 main {
     a:visited {
         color: $lite-purp;
@@ -161,7 +151,7 @@ main {
     }
 
     pre {
-        border: 2px solid $lite-grey;
+        border: 2px solid $lite-bord;
         padding: 0.5rem 1rem;
 
         code {
@@ -176,19 +166,14 @@ main {
 }
 
 li .meta {
-
     float: right;
 }
-
-// Footer Styles
 
 footer {
     color: $lite-grey;
     font-size: 0.875rem;
     text-align: center;
 }
-
-// Mobile Media Query
 
 @media (max-width: 700px) {
     header {
@@ -242,8 +227,6 @@ footer {
     }
 }
 
-// Dark Mode Media Query
-
 @media (prefers-color-scheme: dark) {
     body {
         background-color: $dark-back;
@@ -281,7 +264,7 @@ footer {
         }
 
         pre {
-            border-color: $dark-grey;
+            border-color: $dark-bord;
         }
     }
 
@@ -290,22 +273,10 @@ footer {
     }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////
-//                                 Print Media Query                                 //
-///////////////////////////////////////////////////////////////////////////////////////
-
 @media print {
     * {
         background-color: white !important;
+        border-color: black !important;
         color: black !important;
-    }
-
-    input,
-    label {
-        display: none !important;
-    }
-
-    pre {
-        border: 0.125rem solid black;
     }
 }
