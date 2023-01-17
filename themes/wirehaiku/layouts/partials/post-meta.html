@@ -1,0 +1,13 @@
+<p class="meta">
+    {{ if ne .Date.Year 0001 }}
+    Written {{ .Date.Format "Monday 2 January 2006" }}.
+    {{ end }}
+
+    {{ range .GetTerms "theme" }}
+    {{ partial "theme-link.html" . }}
+    {{ end }}
+
+    {{ range .GetTerms "tags" }}
+    {{ partial "tag-link.html" . }}
+    {{ end }}
+</p>

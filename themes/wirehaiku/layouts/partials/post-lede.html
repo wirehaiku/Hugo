@@ -1,6 +1,3 @@
-<!-- partials/post-lede.html -->
-<!-- Print a post's leading <pre>, summary and read-more link. -->
-
 {{ $pre := split .Content "<code>" }}
 {{ $pre := split (index $pre 1) "</code>" }}
 {{ $pre := index $pre 0 | htmlUnescape }}
