@@ -7,14 +7,14 @@ $lite-purp: adjust-hue($lite-blue, 60);
 $lite-blue-high: lighten($lite-blue, 20);
 $lite-purp-high: lighten($lite-purp, 20);
 
-$dark-back: invert($lite-back);
+$dark-back: #1d1a16;
 $dark-fore: invert($lite-fore);
 $dark-grey: invert($lite-grey);
 $dark-bord: invert($lite-bord);
-$dark-blue: lighten($lite-blue, 35);
-$dark-purp: lighten($lite-purp, 35);
-$dark-blue-high: lighten($lite-blue-high, 35);
-$dark-purp-high: lighten($lite-purp-high, 35);
+$dark-blue: lighten($lite-blue, 30);
+$dark-purp: lighten($lite-purp, 30);
+$dark-blue-high: lighten($lite-blue-high, 30);
+$dark-purp-high: lighten($lite-purp-high, 30);
 
 @font-face {
     font-family: "Crimson Pro";
