@@ -26,11 +26,11 @@ intro = """
 """
 
 menu = [
-    ["Home",     "/"],
-    ["About",    "/pages/about/"],
-    ["Archives", "/posts/"],
-    ["Mastodon", "https://stvmln.com/@stvmln"],
-    ["Patreon",  "https://www.patreon.com/wirehaiku"],
+    "<a href='/'>Home</a>",
+    "<a href='/pages/about'>About</a>",
+    "<a href='/posts/'>Archives</a>",
+    "<a href='https://mastodon.social/@stvmln' rel='me'>Mastodon</a>",
+    "<a href='https://www.patreon.com/wirehaiku'>Patreon</a>",
 ]
 
 [permalinks]

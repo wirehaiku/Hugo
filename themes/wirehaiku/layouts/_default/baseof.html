@@ -30,7 +30,7 @@
             <nav>
                 <ul>
                     {{ range .Site.Params.menu }}
-                    <li> <a href="{{ index . 1 }}">{{ index . 0 }}</a> </li>
+                    <li> {{ . | safeHTML }} </li>
                     {{ end }}
                 </ul>
             </nav>
