@@ -6,7 +6,7 @@
 
     {{ with index $posts 0 }}
     <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
-    {{ partial "post-lede.html" . }}
+    {{ .Summary }}
     {{ end }}
 
     <h2> Latest <a href="/posts/">Archives</a> </h2>
