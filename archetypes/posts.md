@@ -13,6 +13,8 @@ tagline
 
 <!--more-->
 
+---
+
 content
 
 ```
