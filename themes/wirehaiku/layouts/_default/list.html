@@ -2,8 +2,13 @@
 
 <article>
     <h2>
-        {{ if ne .Data.Singular nil }} {{ .Data.Singular | title }}: {{ end }}
+        {{ if eq .Data.Singular "theme" }}
+        Theme: {{ partial "theme-link.html" . }}
+        {{ else if eq .Data.Singular "tag" }}
+        Tag: {{ partial "tag-link.html" . }}
+        {{ else }}
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
     </h2>
 
     {{ range .Pages.GroupByDate "January 2006" }}

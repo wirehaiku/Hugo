@@ -7,6 +7,7 @@
     {{ with index $posts 0 }}
     <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
     {{ .Summary }}
+    <p> <a href="{{ .RelPermalink }}">Read more &rarr;</a> </p>
     {{ end }}
 
     <h2> Latest <a href="/posts/">Archives</a> </h2>
