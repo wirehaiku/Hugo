@@ -72,6 +72,15 @@ a:hover {
     color: $lite-blue-high;
 }
 
+a:visited {
+    color: $lite-purp;
+}
+
+a:visited:active,
+a:visited:hover {
+    color: $lite-purp-high;
+}
+
 html,
 code,
 pre {
@@ -136,15 +145,6 @@ nav {
 }
 
 main {
-    a:visited {
-        color: $lite-purp;
-    }
-
-    a:visited:active,
-    a:visited:hover {
-        color: $lite-purp-high;
-    }
-
     li::marker {
         color: $lite-grey;
     }
@@ -242,6 +242,15 @@ footer {
         color: $dark-blue-high;
     }
 
+    a:visited {
+        color: $dark-purp;
+    }
+
+    a:visited:active,
+    a:visited:hover {
+        color: $dark-purp-high;
+    }
+
     hr {
         border: 1px solid $dark-bord;
     }
@@ -253,15 +262,6 @@ footer {
     }
 
     main {
-        a:visited {
-            color: $dark-purp;
-        }
-
-        a:visited:active,
-        a:visited:hover {
-            color: $dark-purp-high;
-        }
-
         pre {
             border-color: $dark-bord;
         }
