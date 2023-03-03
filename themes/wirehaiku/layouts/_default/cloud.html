@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<article>
+    <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+
+    {{ .Content }}
+
+    <div class="cloud">
+        {{ if ne (len $.Site.Taxonomies.tags) 0 }}
+        {{ $big := 2.0 }}
+        {{ $lil := 1.0 }}
+        {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
+        {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
+        {{ $step := div (sub $big $lil) (sub $max $min) }}
+
+        {{ range $name, $tax := $.Site.Taxonomies.tags }}
+        {{ $cnt := len $tax.Pages }}
+        {{ $wgt := div (sub (math.Log $cnt) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+        {{ $size := (add $lil (mul (sub $big $lil) $wgt)) }}
+        <span class="cloud-item">
+            <a href="/tag/{{ $name | urlize }}" style="font-size: {{ $size }}rem">{{ $name }}</a>
+            <sup class="meta">{{ $cnt }}</sup>
+        </span>
+        {{ end }}
+        {{ end }}
+    </div>
+</article>
+
+{{ end }}

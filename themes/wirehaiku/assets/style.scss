@@ -160,6 +160,14 @@ main {
     }
 }
 
+.cloud {
+    line-height: 2rem;
+
+    .cloud-item {
+        margin: 0 0.25rem;
+    }
+}
+
 .meta {
     color: $lite-grey;
 }
