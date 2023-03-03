@@ -14,7 +14,6 @@ date = [":filename"]
 
 [params]
 author  = "Stephen Malone"
-donate  = "https://www.patreon.com/wirehaiku"
 description = "Haiku about city life and modern nature, by Stephen Malone."
 intro = """
 <p>
@@ -30,7 +29,6 @@ menu = [
     "<a href='/pages/about'>About</a>",
     "<a href='/posts/'>Archives</a>",
     "<a href='https://mastodon.social/@stvmln' rel='me'>Mastodon</a>",
-    "<a href='https://www.patreon.com/wirehaiku'>Patreon</a>",
 ]
 
 [permalinks]

@@ -13,7 +13,7 @@
 
     {{ range .Pages.GroupByDate "January 2006" }}
     <h3> {{ .Key }} </h3>
-    {{ partial "post-list.html" (where .Pages "Type" "!=" "perks") }}
+    {{ partial "post-list.html" .Pages }}
     {{ end }}
 </article>
 

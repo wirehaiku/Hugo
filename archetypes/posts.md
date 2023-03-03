@@ -17,14 +17,3 @@ tagline
 
 content
 
-```
-haiku 2
-```
-
-content
-
-```
-haiku 3
-```
-
-content
