@@ -1,27 +1,17 @@
-$lite-back: #fdfaf6;
-$lite-fore: #181818;
-$lite-grey: #777777;
-$lite-bord: #bbbbbb;
-$lite-blue: #225588;
-$lite-purp: adjust-hue($lite-blue, 60);
-$lite-blue-high: lighten($lite-blue, 20);
-$lite-purp-high: lighten($lite-purp, 20);
-
-$dark-back: #1d1a16;
-$dark-fore: invert($lite-fore);
-$dark-grey: invert($lite-grey);
-$dark-bord: invert($lite-bord);
-$dark-blue: lighten($lite-blue, 30);
-$dark-purp: lighten($lite-purp, 30);
-$dark-blue-high: lighten($lite-blue-high, 30);
-$dark-purp-high: lighten($lite-purp-high, 30);
-
 @font-face {
     font-family: "Crimson Pro";
     font-style: normal;
     font-weight: 400;
     src: local(""), url("/fonts/400.woff2") format("woff2"),
         url("/fonts/400.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Crimson Pro";
+    font-style: italic;
+    font-weight: 400;
+    src: local(""), url("/fonts/400i.woff2") format("woff2"),
+        url("/fonts/400i.woff") format("woff");
 }
 
 @font-face {
@@ -48,37 +38,10 @@ $dark-purp-high: lighten($lite-purp-high, 30);
         url("/fonts/900.woff") format("woff");
 }
 
-@font-face {
-    font-family: "Crimson Pro";
-    font-style: italic;
-    font-weight: 400;
-    src: local(""), url("/fonts/400i.woff2") format("woff2"),
-        url("/fonts/400i.woff") format("woff");
-}
-
 *,
 :after,
 :before {
     box-sizing: border-box;
-}
-
-a:link,
-a:visited {
-    color: $lite-blue;
-}
-
-a:active,
-a:hover {
-    color: $lite-blue-high;
-}
-
-a:visited {
-    color: $lite-purp;
-}
-
-a:visited:active,
-a:visited:hover {
-    color: $lite-purp-high;
 }
 
 html,
@@ -87,12 +50,10 @@ pre {
     font-family: "Crimson Pro", serif;
     font-size: 20px;
     font-weight: 400;
-    line-height: 1.65rem;
+    line-height: 1.6rem;
 }
 
 body {
-    background-color: $lite-back;
-    color: $lite-fore;
     margin: 0 auto;
     max-width: 60ch;
     padding: 0 1rem;
@@ -100,7 +61,6 @@ body {
 }
 
 hr {
-    border: 1px solid $lite-bord;
     margin: 2rem auto;
     width: 50%;
 }
@@ -134,7 +94,7 @@ nav {
 
     li {
         display: inline-block;
-        margin: 0 0.375rem;
+        margin: 0 0.5rem;
     }
 
     ul {
@@ -145,12 +105,7 @@ nav {
 }
 
 main {
-    li::marker {
-        color: $lite-grey;
-    }
-
     pre {
-        border: 2px solid $lite-bord;
         padding: 0.5rem 1rem;
 
         code {
@@ -169,16 +124,11 @@ main {
     }
 }
 
-.meta {
-    color: $lite-grey;
-}
-
 li .meta {
     float: right;
 }
 
 footer {
-    color: $lite-grey;
     font-size: 0.875rem;
     text-align: center;
 }
@@ -201,7 +151,6 @@ footer {
 
         label {
             cursor: pointer;
-            color: $lite-grey;
             display: inline-block;
             font-size: 1.25rem;
             margin-top: 0.5rem;
@@ -235,56 +184,57 @@ footer {
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: $dark-back;
-        color: $dark-fore;
+@mixin theme($back, $fore, $grey, $bord, $blue, $purp) {
+    a:link {
+        color: $blue;
     }
 
-    a:link,
     a:visited {
-        color: $dark-blue;
+        color: $purp;
     }
 
     a:active,
     a:hover {
-        color: $dark-blue-high;
-    }
-
-    a:visited {
-        color: $dark-purp;
+        color: lighten($blue, 20);
     }
 
     a:visited:active,
     a:visited:hover {
-        color: $dark-purp-high;
+        color: lighten($purp, 20);
+    }
+
+    header label {
+        color: $grey;
+    }
+
+    body {
+        background-color: $back;
+        color: $fore;
     }
 
     hr {
-        border: 1px solid $dark-bord;
+        border: 1px solid $bord;
     }
 
-    header {
-        label {
-            color: $dark-grey;
-        }
+    pre {
+        border: 2px solid $bord;
     }
 
-    main {
-        pre {
-            border-color: $dark-bord;
-        }
-    }
-
-    footer {
-        color: $dark-grey;
+    main li::marker,
+    footer,
+    .meta {
+        color: $grey;
     }
 }
 
+@media (prefers-color-scheme: light) {
+    @include theme(#fdfaf6, #181818, #777777, #bbbbbb, #225588, #552288);
+}
+
+@media (prefers-color-scheme: dark) {
+    @include theme(#1f1c18, #e7e7e7, #aaaaaa, #444444, #69a2da, #a269da);
+}
+
 @media print {
-    * {
-        background-color: white !important;
-        border-color: black !important;
-        color: black !important;
-    }
+    @include theme(white, black, black, black, black, black);
 }
