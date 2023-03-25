@@ -8,6 +8,7 @@
     {{ partial "post-meta.html" . }}
     {{ .Content }}
 
+    {{ if eq .Type "posts" }}
     <ul class="meta">
         {{ with .PrevInSection }}
         <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
@@ -17,6 +18,7 @@
         <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
         {{ end }}
     </ul>
+    {{ end }}
 </article>
 
 {{ end }}
