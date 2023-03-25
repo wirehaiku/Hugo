@@ -1,4 +1,5 @@
-{{ $style := (resources.Get "style.scss") | resources.ToCSS }}
+{{ $norma := resources.Get "normalize.css" }}
+{{ $style := resources.Get "style.scss" | resources.ToCSS }}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,7 @@
         <meta property="og:url" content="{{ .Permalink }}">
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="stylesheet" type="text/css" href="{{ $norma.RelPermalink }}">
         <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
         <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml">
     </head>
