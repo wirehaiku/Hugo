@@ -65,6 +65,11 @@ hr {
     width: 50%;
 }
 
+img {
+    height: auto;
+    width: 100%;
+}
+
 ol,
 ul {
     padding-left: 1rem;
@@ -220,6 +225,7 @@ footer {
         border: 1px solid $bord;
     }
 
+    img,
     pre {
         border: 2px solid $bord;
     }
