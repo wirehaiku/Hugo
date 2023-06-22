@@ -5,7 +5,7 @@ title: About
 Hello and welcome to **Wire Haiku**, a journal of [haiku poetry][1] about city life and modern nature.
 I'm Stephen Malone, and every Monday, Wednesday and Friday I write a new haiku and publish it here for all to see.
 
-If you'd like updates on my work, you can follow me on Mastodon at [@stvmln@mastodon.social][2] or get the [RSS feed][3], if you're old-school like me.
+If you'd like updates on my work you can follow me on Mastodon at [@stvmln][2], or get the [RSS feed][3] if you're old-school like me.
 
 Thanks for visiting **Wire Haiku**, I sincerely hope you enjoy it.
 If you have any questions or suggestions, please send me a direct message on [Mastodon][2] or email [mail@wirehaiku.org][5].
