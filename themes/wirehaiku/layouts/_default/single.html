@@ -1,24 +1,36 @@
-{{ define "main" }}
-
-<article>
-    <h2>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h2>
-
-    {{ partial "post-meta.html" . }}
-    {{ .Content }}
-
-    {{ if eq .Type "posts" }}
-    <ul class="meta">
-        {{ with .PrevInSection }}
-        <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
-        {{ end }}
-
-        {{ with .NextInSection }}
-        <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
-        {{ end }}
-    </ul>
+{{ define "meta" }}
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{ with .Resources.GetMatch "feature.png" }}
+        <meta property="og:image" content="{{ .Permalink }}">
     {{ end }}
-</article>
+{{ end }}
 
+{{ define "main" }}
+    <article>
+        <h2>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+
+        {{ partial "post-meta.html" . }}
+        
+        {{ with .Resources.GetMatch "feature.png" }}
+            <img src="{{ .RelPermalink }}" title="Featured Image">
+        {{ end }}
+        
+        {{ .Content }}
+
+        {{ if eq .Type "posts" }}
+        <ul class="meta">
+            {{ with .PrevInSection }}
+            <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
+            {{ end }}
+
+            {{ with .NextInSection }}
+            <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </article>
 {{ end }}

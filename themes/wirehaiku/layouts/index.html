@@ -6,8 +6,13 @@
 
     {{ with index $posts 0 }}
     <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+    
     {{ partial "post-meta.html" . }}
+    {{ with .Resources.GetMatch "feature.png" }}
+        <img src="{{ .RelPermalink }}" title="Featured Image">
+    {{ end }}
     {{ .Summary }}
+
     <p> <a href="{{ .RelPermalink }}">Read more &rarr;</a> </p>
     {{ end }}
 
