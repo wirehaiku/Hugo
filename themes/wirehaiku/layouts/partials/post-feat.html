@@ -1,0 +1,13 @@
+{{ with .Resources.GetMatch "feature.png" }}
+    <style>
+        pre { 
+            background-image: url({{ .RelPermalink | safeCSS }});
+       }
+        code {
+            background: rgb(0, 0, 0);
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.625) 15%, rgba(0, 0, 0, 0.10) 100%);
+            color: white; 
+            text-shadow: 2px 2px 4px #000;
+        }
+    </style>        
+{{ end }}

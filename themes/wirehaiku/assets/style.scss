@@ -111,11 +111,15 @@ nav {
 
 main {
     pre {
-        padding: 0.5rem 1rem;
+        background-position: center;
+        background-size: cover;
+        padding: 0;
 
         code {
-            font-size: 1.125rem;
+            display: block;
+            font-size: 1.25rem;
             line-height: 2.5rem;
+            padding: 0.5rem 1rem; 
         }
     }
 }

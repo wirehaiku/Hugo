@@ -1,23 +1,23 @@
+{{ define "meta" }}
+    {{ $post := index (where .Site.RegularPages "Type" "posts") 0 }}
+    {{ partial "post-feat.html" $post }}
+{{ end }}
+
 {{ define "main" }}
-{{ $posts := (where .Site.RegularPages "Type" "posts") | first 10  }}
+    {{ $posts := (where .Site.RegularPages "Type" "posts") | first 10  }}
+    <article>
+        {{ .Site.Params.intro | safeHTML }}
 
-<article>
-    {{ .Site.Params.intro | safeHTML }}
-
-    {{ with index $posts 0 }}
-    <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+        {{ with index $posts 0 }}
+        <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
     
-    {{ partial "post-meta.html" . }}
-    {{ with .Resources.GetMatch "feature.png" }}
-        <img src="{{ .RelPermalink }}" title="Featured Image">
-    {{ end }}
-    {{ .Summary }}
+        {{ partial "post-meta.html" . }}
+        {{ .Summary }}
 
-    <p> <a href="{{ .RelPermalink }}">Read more &rarr;</a> </p>
-    {{ end }}
+        <p> <a href="{{ .RelPermalink }}">Read more &rarr;</a> </p>
+        {{ end }}
 
-    <h2> Latest <a href="/posts/">Archives</a> </h2>
-    {{ partial "post-list.html" $posts }}
-</article>
-
+        <h2> Latest <a href="/posts/">Archives</a> </h2>
+        {{ partial "post-list.html" $posts }}
+    </article>
 {{ end }}
