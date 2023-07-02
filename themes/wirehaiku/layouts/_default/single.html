@@ -1,12 +1,12 @@
 {{ define "meta" }}
-    <meta property="og:title" content="{{ .Title }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ .Permalink }}">
     {{ with .Resources.GetMatch "feature.png" }}
         <meta property="og:image" content="{{ .Permalink }}">
+        <meta name="twitter:image" content="{{ .Permalink }}">
     {{ end }}
     {{ with .Params.desc }}
+        <meta name="description" content="{{ . }}">
         <meta property="og:description" content="{{ . }}">
+        <meta name="twitter:description" content="{{ . }}">
     {{ end }}
 {{ end }}
 
