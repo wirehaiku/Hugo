@@ -5,6 +5,9 @@
     {{ with .Resources.GetMatch "feature.png" }}
         <meta property="og:image" content="{{ .Permalink }}">
     {{ end }}
+    {{ with .Params.desc }}
+        <meta property="og:description" content="{{ . }}">
+    {{ end }}
 {{ end }}
 
 {{ define "main" }}
