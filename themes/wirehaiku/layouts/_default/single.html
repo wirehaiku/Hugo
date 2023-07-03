@@ -1,6 +1,6 @@
 {{ define "meta" }}
     {{ partial "post-feat.html" . }}
-    {{ with .Resources.GetMatch "feature.png" }}
+    {{ with .Resources.GetMatch "feature.jpg" }}
         <meta property="og:image" content="{{ .Permalink }}">
         <meta name="twitter:image" content="{{ .Permalink }}">
     {{ end }}
