@@ -1,61 +1,17 @@
-@font-face {
-    font-family: "Crimson Pro";
-    font-style: normal;
-    font-weight: 400;
-    src: local(""), url("/fonts/400.woff2") format("woff2"),
-        url("/fonts/400.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Crimson Pro";
-    font-style: italic;
-    font-weight: 400;
-    src: local(""), url("/fonts/400i.woff2") format("woff2"),
-        url("/fonts/400i.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Crimson Pro";
-    font-style: normal;
-    font-weight: 500;
-    src: local(""), url("/fonts/500.woff2") format("woff2"),
-        url("/fonts/500.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Crimson Pro";
-    font-style: normal;
-    font-weight: 700;
-    src: local(""), url("/fonts/700.woff2") format("woff2"),
-        url("/fonts/700.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Crimson Pro";
-    font-style: normal;
-    font-weight: 900;
-    src: local(""), url("/fonts/900.woff2") format("woff2"),
-        url("/fonts/900.woff") format("woff");
-}
-
-*,
-:after,
-:before {
+*, :after, :before {
     box-sizing: border-box;
 }
 
-html,
-code,
-pre {
-    font-family: "Crimson Pro", serif;
-    font-size: 20px;
+html, code, pre {
+    font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-size: 18px;
     font-weight: 400;
     line-height: 1.8rem;
 }
 
 body {
     margin: 0 auto;
-    max-width: 60ch;
+    max-width: 68ch;
     padding: 0 1rem;
     width: 100%;
 }
@@ -70,9 +26,9 @@ img {
     width: 100%;
 }
 
-ol,
-ul {
+ol, ul {
     padding-left: 1rem;
+    line-height: 1.5rem;
 }
 
 header {
@@ -80,7 +36,6 @@ header {
 
     h1 {
         font-size: 3.5rem;
-        font-weight: 900;
         margin: 1.6rem 0;
 
         a {
@@ -88,15 +43,12 @@ header {
         }
     }
 
-    input,
-    label {
+    input, label {
         display: none;
     }
 }
 
 nav {
-    font-weight: 500;
-
     li {
         display: inline-block;
         margin: 0 0.5rem;
@@ -198,6 +150,11 @@ footer {
 }
 
 @mixin theme($back, $fore, $grey, $bord, $blue, $purp) {
+    html, body {
+        background-color: $back;
+        color: $fore;
+    }
+
     a:link {
         color: $blue;
     }
@@ -206,22 +163,14 @@ footer {
         color: $purp;
     }
 
-    a:active,
-    a:hover {
+    a:active, a:hover {
         color: lighten($blue, 20);
     }
 
-    a:visited:active,
-    a:visited:hover {
+    a:visited:active, a:visited:hover {
         color: lighten($purp, 20);
     }
     
-    html, 
-    body {
-        background-color: $back;
-        color: $fore;
-    }
-
     header label {
         color: $grey;
     }
@@ -231,14 +180,11 @@ footer {
         border-bottom: 1px solid $grey;
     }
 
-    img,
-    pre {
+    img, pre {
         border: 2px solid $bord;
     }
 
-    main li::marker,
-    footer,
-    .meta {
+    main li::marker, footer, .meta {
         color: $grey;
     }
 }
