@@ -12,7 +12,7 @@
 {{ end }}
 
 {{ define "main" }}
-    <article>
+    <article id="{{ .Slug }}">
         <h2>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>

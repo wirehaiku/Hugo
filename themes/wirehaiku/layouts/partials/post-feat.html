@@ -1,25 +1,26 @@
+{{ $id := .Slug }}
 {{ with .Resources.GetMatch "feature.jpg" }}
     <style>
-        main pre { 
+        #{{ $id }} pre {
             background-image: url({{ .RelPermalink | safeCSS }});
         }
 
-        main code {
+        #{{ $id }} code {
             background: linear-gradient(90deg, rgba(0, 0, 0, 0.625) 15%, rgba(0, 0, 0, 0.10) 100%);
-            color: white; 
+            color: white;
             text-shadow: 2px 2px 4px #000;
         }
 
         @media print {
-            main pre {
+            #{{ $id }} pre {
                 background-image: none;
             }
 
-            main code {
+            #{{ $id }} code {
                 background: none white;
                 color: black;
                 text-shadow: none;
             }
         }
-    </style>        
+    </style>
 {{ end }}
