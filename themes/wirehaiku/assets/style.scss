@@ -209,13 +209,19 @@ footer {
             border: 2px solid $bord;
         }
 
-        li::marker, footer {
+        li::marker {
             color: $grey;
         }
     }
 
     article .meta {
         @include anchor($grey, $grey, false);
+        color: $grey;
+    }
+
+    footer {
+        @include anchor($grey, $grey, true);
+        color: $grey;
     }
 }
 
