@@ -214,23 +214,23 @@ footer {
         }
     }
 
-    article .meta {
-        @include anchor($grey, $grey, false);
-        color: $grey;
-    }
-
-    footer {
+    article .meta, footer {
         @include anchor($grey, $grey, true);
         color: $grey;
     }
 }
 
+$liteblue: #26598c;
+$litepurp: adjust-hue($liteblue, 60);
+$darkblue: lighten($liteblue, 25);
+$darkpurp: lighten($litepurp, 30);
+
 @media (prefers-color-scheme: light) {
-    @include theme(#ffffff, #303336, #777777, #bbbbbb, #26598c, #59268c);
+    @include theme(#ffffff, #303336, #777777, #bbbbbb, $liteblue, $litepurp);
 }
 
 @media (prefers-color-scheme: dark) {
-    @include theme(#303336, #ffffff, #aaaaaa, #444444, #76c9dc, #c976cc);
+    @include theme(#303336, #eeeeee, #aaaaaa, #444444, $darkblue, $darkpurp);
 }
 
 @media print {
