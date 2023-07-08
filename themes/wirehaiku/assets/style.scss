@@ -3,44 +3,26 @@
 }
 
 html, code, pre {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: system-ui, sans-serif;
     font-size: 18px;
     font-weight: 400;
-    line-height: 1.8rem;
+    line-height: 1.8em;
 }
 
 body {
-    margin: 0 auto;
-    max-width: 68ch;
     padding: 0 1rem;
     width: 100%;
 }
 
-hr {
-    margin: 2rem auto;
-    width: 50%;
-}
-
-img {
-    height: auto;
-    width: 100%;
-}
-
-ol, ul {
-    padding-left: 1rem;
-    line-height: 1.5rem;
-}
-
 header {
+    margin-bottom: 0;
     text-align: center;
 
     h1 {
         font-size: 3.5rem;
-        margin: 1.6rem 0;
-
-        a {
-            text-decoration: none;
-        }
+        font-weight: 900;
+        margin: 0;
+        padding: 2rem 0 0.5rem;
     }
 
     input, label {
@@ -62,6 +44,19 @@ nav {
 }
 
 main {
+    margin: 0 auto;
+    max-width: 68ch;
+
+    hr {
+        margin: 2rem auto;
+        width: 50%;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+
     pre {
         background-position: center;
         background-size: cover;
@@ -69,28 +64,35 @@ main {
 
         code {
             display: block;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             line-height: 2.5rem;
-            padding: 0.5rem 1rem; 
+            padding: 0.5rem 1rem;
         }
     }
-}
 
-.cloud {
-    line-height: 2rem;
-
-    .cloud-item {
-        display: inline-block;
-        margin: 0 0.5rem;
+    ol, ul {
+        line-height: 1.8em;
+        padding-left: 1rem;
     }
 }
 
-li .meta {
-    float: right;
-}
+article {
+    .cloud {
+        line-height: 2rem;
 
-h2 + p.meta {
-    margin-top: -0.5rem;
+        span {
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+    }
+
+    li .meta {
+        float: right;
+    }
+
+    h2 + p.meta {
+        margin-top: -0.5rem;
+    }
 }
 
 footer {
@@ -149,52 +151,80 @@ footer {
     }
 }
 
+@mixin anchor($link, $visit, $under) {
+    a:link {
+        color: $link;
+    }
+
+    a:visited {
+        color: $visit;
+    }
+
+    a:link:active, a:link:hover {
+        color: lighten($link, 20);
+        text-decoration: underline;
+    }
+
+    a:visited:active, a:visited:hover {
+        color: lighten($visit, 20);
+        text-decoration: underline;
+    }
+
+    @if $under {
+        a:link, a:visited {
+            text-decoration: underline;
+        }
+    } @else {
+        a:link, a:visited {
+            text-decoration: none;
+        }
+    }
+}
+
 @mixin theme($back, $fore, $grey, $bord, $blue, $purp) {
+    @include anchor($blue, $purp, true);
+
     html, body {
         background-color: $back;
         color: $fore;
     }
 
-    a:link {
-        color: $blue;
+    header {
+        h1 {
+            @include anchor($fore, $fore, false);
+        }
+
+        label {
+            color: $grey;
+        }
     }
 
-    a:visited {
-        color: $purp;
+    main {
+        hr {
+            border: none;
+            border-bottom: 1px solid $grey;
+        }
+
+        img, pre {
+            border: 2px solid $bord;
+        }
+
+        li::marker, footer {
+            color: $grey;
+        }
     }
 
-    a:active, a:hover {
-        color: lighten($blue, 20);
-    }
-
-    a:visited:active, a:visited:hover {
-        color: lighten($purp, 20);
-    }
-    
-    header label {
-        color: $grey;
-    }
-
-    hr {
-        border: none;
-        border-bottom: 1px solid $grey;
-    }
-
-    img, pre {
-        border: 2px solid $bord;
-    }
-
-    main li::marker, footer, .meta {
-        color: $grey;
+    article .meta {
+        @include anchor($grey, $grey, false);
     }
 }
 
 @media (prefers-color-scheme: light) {
-    @include theme(#fdfaf6, #181818, #777777, #bbbbbb, #225588, #552288);
+    @include theme(#ffffff, #303336, #777777, #bbbbbb, #26598c, #59268c);
 }
 
 @media (prefers-color-scheme: dark) {
-    @include theme(#1f1c18, #e7e7e7, #aaaaaa, #444444, #69a2da, #a269da);
+    @include theme(#303336, #ffffff, #aaaaaa, #444444, #76c9dc, #c976cc);
 }
 
 @media print {

@@ -6,7 +6,9 @@
 {{ define "main" }}
     {{ $posts := (where .Site.RegularPages "Type" "posts") | first 10  }}
     <article>
-        {{ .Site.Params.intro | safeHTML }}
+        <div class="intro">
+            {{ .Site.Params.intro | safeHTML }}
+        </div>
 
         {{ with index $posts 0 }}
         <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
