@@ -1,23 +1,13 @@
-{{ define "meta" }}
-    {{ $post := index (where .Site.RegularPages "Type" "posts") 0 }}
-    {{ partial "post-feat.html" $post }}
-{{ end }}
-
 {{ define "main" }}
     {{ $posts := (where .Site.RegularPages "Type" "posts") | first 10  }}
+    {{ $first := index $posts 0 }}
     <article>
         <div class="intro">
             {{ .Site.Params.intro | safeHTML }}
         </div>
 
-        {{ with index $posts 0 }}
-            <h2> Latest Post: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
-            <div id="{{ .Slug }}">
-                {{ partial "post-meta.html" . }}
-                {{ .Summary }}
-                <p> <a href="{{ .RelPermalink }}">Read more &rarr;</a> </p>
-            </div>
-        {{ end }}
+        <h2> Latest Post: <a href="{{ $first.RelPermalink }}">{{ $first.Title }}</a> </h2>
+        {{ partial "post-jump.html" (index $posts 0) }}
 
         <h2> Latest <a href="/posts/">Archives</a> </h2>
         {{ partial "post-list.html" $posts }}

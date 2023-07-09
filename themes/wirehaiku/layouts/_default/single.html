@@ -1,5 +1,4 @@
 {{ define "meta" }}
-    {{ partial "post-feat.html" . }}
     {{ with .Resources.GetMatch "feature.jpg" }}
         <meta property="og:image" content="{{ .Permalink }}">
         <meta name="twitter:image" content="{{ .Permalink }}">
@@ -12,24 +11,20 @@
 {{ end }}
 
 {{ define "main" }}
-    <article id="{{ .Slug }}">
-        <h2>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-
-        {{ partial "post-meta.html" . }}
-        {{ .Content }}
+    <article>
+        <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+        {{ partial "post-full.html" . }}
 
         {{ if eq .Type "posts" }}
-            <ul class="meta">
-                {{ with .PrevInSection }}
-                    <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
-                {{ end }}
+                <ul class="meta">
+                    {{ with .PrevInSection }}
+                        <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
+                    {{ end }}
 
-                {{ with .NextInSection }}
-                    <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
-                {{ end }}
-            </ul>
-        {{ end }}
+                    {{ with .NextInSection }}
+                        <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
     </article>
 {{ end }}
