@@ -1,8 +1,8 @@
 <ul>
     {{ range . }}
-    <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <span class="meta">{{ .Date.Format "2 January 2006" }}</span>
-    </li>
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="meta">{{ .Date.Format "2 January 2006" }}</span>
+        </li>
     {{ end }}
 </ul>

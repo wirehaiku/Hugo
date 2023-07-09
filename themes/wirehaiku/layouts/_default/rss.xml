@@ -18,16 +18,16 @@
 		<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
 
 		{{ range .Pages }}
-		<item>
-            {{- $data := htmlUnescape .Content  -}}
-            {{- $data := trim $data "\n" -}}
-			<title>{{ .Title }}</title>
-			<link>{{ .Permalink }}</link>
-			<guid>{{ .Permalink }}</guid>
-            <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-            <description>{{- printf "<![CDATA[%s]]>" $data | safeHTML -}}</description>
-            <blog:summary>{{ .Summary | htmlUnescape | safeHTML }}</blog:summary>
-		</item>
+            <item>
+                {{- $data := htmlUnescape .Content  -}}
+                {{- $data := trim $data "\n" -}}
+                <title>{{ .Title }}</title>
+                <link>{{ .Permalink }}</link>
+                <guid>{{ .Permalink }}</guid>
+                <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+                <description>{{- printf "<![CDATA[%s]]>" $data | safeHTML -}}</description>
+                <blog:summary>{{ .Summary | htmlUnescape | safeHTML }}</blog:summary>
+            </item>
 		{{ end }}
 	</channel>
 </rss>

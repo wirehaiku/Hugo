@@ -22,15 +22,15 @@
         {{ .Content }}
 
         {{ if eq .Type "posts" }}
-        <ul class="meta">
-            {{ with .PrevInSection }}
-            <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
-            {{ end }}
+            <ul class="meta">
+                {{ with .PrevInSection }}
+                    <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
+                {{ end }}
 
-            {{ with .NextInSection }}
-            <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
-            {{ end }}
-        </ul>
+                {{ with .NextInSection }}
+                    <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
+                {{ end }}
+            </ul>
         {{ end }}
     </article>
 {{ end }}

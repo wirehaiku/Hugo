@@ -1,0 +1,51 @@
+/*** Dark Theme Media Query ***/
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #303336;
+        color: #eee;
+    }
+    
+    a:link {
+        color: #5689cc;
+    }
+    
+    a:visited {
+        color: #8956cc;
+    }
+    
+    a:link:active, a:link:hover {
+        color: #76a9ec;
+    }
+    
+    a:visited:active, a:visited:hover {
+        color: #a976ec;
+    }
+
+    hr {
+        border: 1px solid #444;
+    }
+    
+    img, pre {
+        border: 2px solid #444;
+    }
+
+    header h1 a:link, header h1 a:visited {
+        color: #eee;
+        text-decoration: none;
+    }
+    
+    header h1 a:link:active, header h1 a:link:hover,
+    header h1 a:visited:active, header h1 a:visited:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    header label {
+        color: #aaa;
+    }
+
+    article .meta, footer {
+        color: #aaa;
+    }
+}

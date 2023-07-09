@@ -1,6 +1,4 @@
-{{ $norma := resources.Get "normalize.css" }}
-{{ $style := resources.Get "style.scss" | resources.ToCSS }}
-
+{{ $style := resources.Match "*.css" | resources.Concat "style.css" | minify }}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +19,6 @@
         {{ block "meta" . }} {{ end }}
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="stylesheet" type="text/css" href="{{ $norma.RelPermalink }}">
         <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
         <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}posts/index.xml">
     </head>
@@ -34,7 +31,7 @@
             <nav>
                 <ul>
                     {{ range .Site.Params.menu }}
-                    <li> {{ . | safeHTML }} </li>
+                        <li> {{ . | safeHTML }} </li>
                     {{ end }}
                 </ul>
             </nav>

@@ -1,0 +1,49 @@
+/*** Mobile Media Query ***/
+
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 2rem;
+        margin: 0;
+        padding: 1rem 0 0.5rem;
+    }
+    
+    header input:checked ~ nav {
+        max-height: 100%;
+    }
+
+    header input:checked ~ label::after {
+        content: " -";
+    }
+
+    header label {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1.25rem;
+        margin-top: 0.5rem;
+    }
+
+    header label::after {
+        content: " +";
+    }
+
+    nav {
+        font-size: 1.25rem;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+    }
+    
+    nav li {
+        display: block;
+        margin: 1rem auto;
+    }
+
+    nav ul {
+        margin: 0;
+    }
+
+    main li .meta {
+        display: block;
+        float: none;
+    }
+}

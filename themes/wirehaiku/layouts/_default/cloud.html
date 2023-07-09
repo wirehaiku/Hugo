@@ -6,7 +6,6 @@
     {{ .Content }}
 
     <div class="cloud">
-        {{ if ne (len $.Site.Taxonomies.tags) 0 }}
         {{ $big := 2.0 }}
         {{ $lil := 1.0 }}
         {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
@@ -21,7 +20,6 @@
             <a href="/tag/{{ $name | urlize }}" style="font-size: {{ $size }}rem">{{ $name }}</a>
             <sup class="meta">{{ $cnt }}</sup>
         </span>
-        {{ end }}
         {{ end }}
     </div>
 </article>

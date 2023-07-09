@@ -1,0 +1,19 @@
+/*** Print Theme Media Query ***/
+
+@media print {
+    * {
+        background: #fff !important;
+        border-color: #000 !important;
+        color: #000 !important; 
+    }
+
+    pre {
+        background-image: none !important;
+    }
+
+    code {
+        background: none white !important;
+        color: black !important;
+        text-shadow: none !important;
+    }
+}
