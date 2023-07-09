@@ -1,6 +1,6 @@
 /*** Mobile Media Query ***/
 
-@media (width <= 700px) {
+@media (max-width: 700px) {
     header h1 {
         font-size: 2rem;
         margin: 0;
