@@ -7,19 +7,19 @@
     }
 
     a:link {
-        color: #5689cc;
+        color: #6699dc;
     }
 
     a:visited {
-        color: #8956cc;
+        color: #9966dc;
     }
 
     a:link:active, a:link:hover {
-        color: #76a9ec;
+        color: #96c9fc;
     }
 
     a:visited:active, a:visited:hover {
-        color: #a976ec;
+        color: #c996fc;
     }
 
     hr {
