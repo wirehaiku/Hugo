@@ -11,13 +11,17 @@ header h1 {
     margin: 0;
     padding: 2rem 0 0.5rem;
 }
-    
+
 header input, header label {
     display: none;
 }
 
 nav {
     margin-top: 1.5rem;
+}
+
+nav a {
+    padding: 0.25rem 0.5rem;
 }
 
 nav li {

@@ -27,7 +27,8 @@
     }
 
     img, pre {
-        border: 2px solid #bbb;
+        border: 0.2rem solid #bbb;
+        border-radius: 0.2rem;
     }
 
     header h1 a:link, header h1 a:visited {
@@ -37,12 +38,25 @@
 
     header h1 a:link:active, header h1 a:link:hover,
     header h1 a:visited:active, header h1 a:visited:hover {
-        color: #606366;
+        color: #505356;
         text-decoration: underline;
     }
 
     header label {
         color: #777;
+    }
+
+    nav a:link, nav a:visited {
+        background: #eee;
+        border-radius: 0.2rem;
+        color: #303336;
+        text-decoration: none;
+    }
+
+    nav a:link:active, nav a:link:hover,
+    nav a:visited:active, nav a:visited:hover {
+        background: #303336;
+        color: #eee;
     }
 
     article .meta, footer {

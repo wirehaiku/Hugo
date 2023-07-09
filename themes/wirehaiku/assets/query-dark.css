@@ -5,19 +5,19 @@
         background-color: #303336;
         color: #eee;
     }
-    
+
     a:link {
         color: #5689cc;
     }
-    
+
     a:visited {
         color: #8956cc;
     }
-    
+
     a:link:active, a:link:hover {
         color: #76a9ec;
     }
-    
+
     a:visited:active, a:visited:hover {
         color: #a976ec;
     }
@@ -25,16 +25,17 @@
     hr {
         border: 1px solid #444;
     }
-    
+
     img, pre {
-        border: 2px solid #444;
+        border: 0.2rem solid #444;
+        border-radius: 0.2rem;
     }
 
     header h1 a:link, header h1 a:visited {
         color: #eee;
         text-decoration: none;
     }
-    
+
     header h1 a:link:active, header h1 a:link:hover,
     header h1 a:visited:active, header h1 a:visited:hover {
         color: #fff;
@@ -43,6 +44,19 @@
 
     header label {
         color: #aaa;
+    }
+
+    nav a:link, nav a:visited {
+        background: #505356;
+        border-radius: 0.2rem;
+        color: #eee;
+        text-decoration: none;
+    }
+
+    nav a:link:active, nav a:link:hover,
+    nav a:visited:active, nav a:visited:hover {
+        background: #eee;
+        color: #505356;
     }
 
     article .meta, footer {
