@@ -4,7 +4,11 @@
     * {
         background: #fff !important;
         border-color: #000 !important;
-        color: #000 !important; 
+        color: #000 !important;
+    }
+
+    nav a {
+        border: 0.1rem solid #000;
     }
 
     pre {

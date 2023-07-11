@@ -23,12 +23,11 @@
     }
 
     hr {
-        border: 1px solid #bbb;
+        border: 0.1rem solid #bbb;
     }
 
     img, pre {
-        border: 0.2rem solid #bbb;
-        border-radius: 0.2rem;
+        border: 0.1rem solid #bbb;
     }
 
     header h1 a:link, header h1 a:visited {
@@ -48,7 +47,6 @@
 
     nav a:link, nav a:visited {
         background: #eee;
-        border-radius: 0.2rem;
         color: #303336;
         text-decoration: none;
     }

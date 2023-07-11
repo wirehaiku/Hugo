@@ -1,0 +1,121 @@
+/*** Global Styles ***/
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+html, code, pre {
+	font-family: system-ui, sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.6em;
+}
+
+body {
+	padding: 0 1rem;
+    margin: 0 auto;
+    max-width: 68ch;
+    width: 100%;
+}
+
+code, img, pre {
+    border-radius: 0.25rem;
+}
+
+hr {
+    margin: 2rem auto;
+    width: 50%;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+ol, ul {
+    line-height: 1.8em;
+    padding-left: 1rem;
+}
+
+/*** Header & Navigation Styles ***/
+
+header {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    padding: 2rem 0 0.5rem;
+}
+
+header input, header label {
+    display: none;
+}
+
+nav {
+    margin-top: 1.5rem;
+}
+
+nav a {
+    border-radius: 0.2rem;
+    padding: 0.25rem 0.5rem;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+/*** Article & Content Styles ***/
+
+article pre {
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+}
+
+article pre code {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    padding: 0.5rem 1rem;
+}
+
+article pre.feature code {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.10) 75%);
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
+
+article .cloud {
+    line-height: 2rem;
+}
+
+article .cloud span  {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+article li .meta {
+    float: right;
+}
+
+/*** Footer Styles ***/
+
+footer {
+    margin: 2rem 0 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0.25rem;
+}
