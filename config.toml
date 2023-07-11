@@ -18,10 +18,15 @@ description = "Haiku about city life and modern nature, by Stephen Malone."
 intro = """
 <p>
     Hello and welcome to <strong>Wire Haiku</strong>: a journal of haiku poetry about city
-    life and modern nature, written by Stephen Malone. You can read the 
-    <a href="/pages/about/">about page</a>, check out the <a href="/posts/">archives</a>, 
+    life and modern nature, written by Stephen Malone. You can read the
+    <a href="/pages/about/">about page</a>, check out the <a href="/posts/">archives</a>,
     or just keep on scrolling!
 </p>
+"""
+
+footer = """
+Powered by <a href="https://gohugo.io/">Hugo</a>,
+licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
 """
 
 menu = [

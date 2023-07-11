@@ -34,6 +34,7 @@
                     {{ end }}
                 </ul>
             </nav>
+
             <label for="menu">menu</label>
         </header>
 
@@ -42,10 +43,8 @@
         </main>
 
         <footer>
-            <p>
-                © Stephen Malone {{ now.Format "2006" }}. Powered by
-                <a href="https://gohugo.io/">Hugo</a>.
-            </p>
+            <p> © {{ .Site.Params.author }} {{ now.Format "2006" }}. </p>
+            <p> {{ .Site.Params.footer | safeHTML }} </p>
         </footer>
     </body>
 
