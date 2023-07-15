@@ -2,9 +2,7 @@
     {{ $posts := (where .Site.RegularPages "Type" "posts") | first 10  }}
     {{ $first := index $posts 0 }}
     <article>
-        <div class="block">
-            {{ .Site.Params.intro | safeHTML }}
-        </div>
+        {{ .Site.Params.intro | .RenderString }}
 
         <h2> Latest Post: <a href="{{ $first.RelPermalink }}">{{ $first.Title }}</a> </h2>
         {{ partial "post-jump.html" (index $posts 0) }}

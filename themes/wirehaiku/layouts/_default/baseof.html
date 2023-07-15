@@ -45,7 +45,7 @@
 
         <footer>
             <p> © {{ .Site.Params.author }} {{ now.Format "2006" }}. </p>
-            <p> {{ .Site.Params.footer | safeHTML }} </p>
+            <p> {{ .Site.Params.footer | .RenderString }} </p>
         </footer>
     </body>
 
