@@ -1,7 +1,7 @@
 {{ define "meta" }}
     {{ with .Resources.GetMatch "feature.jpg" }}
-        <meta property="og:image" content="{{ .Permalink }}">
-        <meta name="twitter:image" content="{{ .Permalink }}">
+        <meta property="og:image" content="{{ .RelPermalink }}">
+        <meta name="twitter:image" content="{{ .RelPermalink }}">
     {{ end }}
     {{ with .Params.desc }}
         <meta name="description" content="{{ . }}">

@@ -16,10 +16,11 @@
     }
 
     header label {
+        color: #aaa;
         cursor: pointer;
         display: inline-block;
         font-size: 1.25rem;
-        margin-top: 0.5rem;
+        margin-top: 0.75rem;
     }
 
     header label::after {
@@ -31,6 +32,12 @@
         margin: 0;
         max-height: 0;
         overflow: hidden;
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem;
+        width: 100%;
     }
 
     nav li {

@@ -1,20 +1,18 @@
 {{ define "main" }}
+    <article>
+        <h2>
+            {{ if eq .Data.Singular "theme" }}
+                Theme: {{ partial "theme-link.html" . }}
+            {{ else if eq .Data.Singular "tag" }}
+                Tag: {{ partial "tag-link.html" . }}
+            {{ else }}
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ end }}
+        </h2>
 
-<article>
-    <h2>
-        {{ if eq .Data.Singular "theme" }}
-            Theme: {{ partial "theme-link.html" . }}
-        {{ else if eq .Data.Singular "tag" }}
-            Tag: {{ partial "tag-link.html" . }}
-        {{ else }}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ range .Pages.GroupByDate "January 2006" }}
+            <h3> {{ .Key }} </h3>
+            {{ partial "post-list.html" .Pages }}
         {{ end }}
-    </h2>
-
-    {{ range .Pages.GroupByDate "January 2006" }}
-        <h3> {{ .Key }} </h3>
-        {{ partial "post-list.html" .Pages }}
-    {{ end }}
-</article>
-
+    </article>
 {{ end }}
