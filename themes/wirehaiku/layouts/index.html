@@ -2,7 +2,7 @@
     {{ $posts := (where .Site.RegularPages "Type" "posts") | first 10  }}
     {{ $first := index $posts 0 }}
     <article>
-        <div class="intro">
+        <div class="block">
             {{ .Site.Params.intro | safeHTML }}
         </div>
 

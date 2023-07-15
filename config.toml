@@ -47,3 +47,6 @@ tag   = "tags"
 
 [markup.goldmark.extensions]
 typographer = true
+
+[markup.goldmark.renderer]
+unsafe = true
