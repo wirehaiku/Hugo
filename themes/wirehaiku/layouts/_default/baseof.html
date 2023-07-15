@@ -1,4 +1,4 @@
-{{ $style := resources.Match "*.css" | resources.Concat "style.css" | minify }}
+{{ $style := resources.Match "*.scss" | resources.Concat "style.css" | toCSS | minify | fingerprint }}
 <!DOCTYPE html>
 <html lang="en">
 
