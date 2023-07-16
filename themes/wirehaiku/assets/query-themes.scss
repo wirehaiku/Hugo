@@ -32,10 +32,10 @@
 }
 
 @media (prefers-color-scheme: light) {
-    @include theme(#fff, #303336, #369, #936, #666, #ccc);
+    @include theme(#fff, #303336, #369, #639, #666, #ccc);
 }
 
 
 @media (prefers-color-scheme: dark) {
-    @include theme(#303336, #eee, #69c, #c69, #aaa, #444);
+    @include theme(#303336, #eee, #69c, #a6c, #aaa, #444);
 }
