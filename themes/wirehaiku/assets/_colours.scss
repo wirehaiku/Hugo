@@ -1,0 +1,13 @@
+/*** Colour Definitions ***/
+
+// Light theme base colours.
+$lite-fore: #303336;
+$lite-back: #ffffff;
+$lite-blue: #36699c;
+
+// Light theme derived colours.
+$lite-purp: adjust-hue($lite-blue, 60);
+$lite-grey-hi: darken($lite-back, 10);
+$lite-grey-lo: lighten($lite-fore, 30);
+$lite-blue-hi: lighten($lite-blue, 20);
+$lite-purp-hi: lighten($lite-purp, 20);

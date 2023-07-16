@@ -1,0 +1,34 @@
+/*** Main Content & Article Styles ***/
+
+article {
+    blockquote {
+        margin: 1.5rem auto;
+        padding: 0.5rem 1rem;
+    }
+
+    pre {
+        background-position: center;
+        background-size: cover;
+        padding: 0;
+
+        code {
+            display: block;
+            font-size: 1.2rem;
+            line-height: 2.5rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+
+    .cloud {
+        line-height: 2rem;
+
+        span  {
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+    }
+
+    li .meta {
+        float: right;
+    }
+}

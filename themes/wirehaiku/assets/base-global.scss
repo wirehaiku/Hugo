@@ -1,0 +1,58 @@
+/*** Global Styles ***/
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+html {
+    background: $lite-back;
+    color: $lite-fore;
+}
+
+html, code, pre {
+	font-family: system-ui, sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.6em;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 68ch;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+a {
+    @include anchor($lite-blue, $lite-purp, $lite-blue-hi, $lite-purp-hi, true);
+}
+
+blockquote, img, pre {
+    border: 0.25rem solid $lite-grey-hi;
+    border-radius: 0.25rem;
+}
+
+hr {
+    border: 0.125rem solid $lite-grey-hi;
+    border-radius: 0.25rem;
+    margin: 2rem auto;
+    width: 50%;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+ol, ul {
+    line-height: 1.8em;
+    padding-left: 1rem;
+
+    li::marker {
+        color: $lite-grey-hi;
+    }
+}
+
+.button {
+    @include button($lite-fore, $lite-back, $lite-grey-hi, $lite-grey-lo);
+}

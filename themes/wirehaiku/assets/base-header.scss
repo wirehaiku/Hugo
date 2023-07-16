@@ -1,0 +1,40 @@
+/*** Header & Navigation Styles ***/
+
+header {
+    margin-bottom: 0;
+    text-align: center;
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin: 0;
+        padding: 2rem 0 0.5rem;
+
+        a {
+            @include anchor($lite-fore, $lite-fore, $lite-grey-lo, $lite-grey-lo, false);
+        }
+    }
+
+    input, label {
+        display: none;
+    }
+}
+
+nav {
+    margin-top: 1.5rem;
+
+    a {
+        @include button($lite-fore, $lite-back, $lite-grey-hi, $lite-grey-lo);
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 0.5rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+}
