@@ -9,10 +9,6 @@ header {
         font-weight: 900;
         margin: 0;
         padding: 2rem 0 0.5rem;
-
-        a {
-            @include anchor($lite-fore, $lite-fore, $lite-grey-lo, $lite-grey-lo, false);
-        }
     }
 
     input, label {
@@ -22,10 +18,6 @@ header {
 
 nav {
     margin-top: 1.5rem;
-
-    a {
-        @include button($lite-fore, $lite-back, $lite-grey-hi, $lite-grey-lo);
-    }
 
     li {
         display: inline-block;
