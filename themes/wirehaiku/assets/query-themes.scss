@@ -15,15 +15,11 @@
     }
 
     header h1 a {
-        @include anchor($grey, $grey, $fore, $fore, false);
+        @include anchor($fore, $fore, $grey, $grey, false);
     }
 
     header label, .meta, footer {
         color: $grey;
-    }
-
-    nav a, a.button {
-        @include button($fore, $back, $fade, $grey);
     }
 
     .meta a {
@@ -32,10 +28,16 @@
 }
 
 @media (prefers-color-scheme: light) {
-    @include theme(#fff, #303336, #369, #639, #666, #ccc);
+    @include theme(#fff, #303336, #369, #639, #666, #369);
+    nav a, a.button {
+       @include button(#fff, #fff, #369);
+    }
 }
 
 
 @media (prefers-color-scheme: dark) {
-    @include theme(#303336, #eee, #69c, #a6c, #aaa, #444);
+    @include theme(#000, #eee, #69c, #a6c, #bbb, #147);
+    nav a, a.button {
+        @include button(#eee, #000, #147);
+    }
 }
