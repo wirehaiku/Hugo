@@ -16,7 +16,7 @@ date = [":filename"]
 author  = "Stephen Malone"
 description = "Haiku about city life and modern nature, by Stephen Malone."
 intro = """
-> Hello and welcome to <strong>Wire Haiku</strong>: a journal of haiku poetry about city life and modern nature, written by Stephen Malone. You can read the [about page](/pages/about/), check out the [archives](/posts/), or just keep on scrolling!
+Hello and welcome to <strong>Wire Haiku</strong>: a journal of haiku poetry about city life and modern nature, written by Stephen Malone. You can read the [about page](/pages/about/), check out the [archives](/posts/), or just keep on scrolling!
 """
 
 footer = """

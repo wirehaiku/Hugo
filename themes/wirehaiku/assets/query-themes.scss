@@ -21,14 +21,10 @@
     header label, .meta, footer {
         color: $grey;
     }
-
-    .meta a {
-        @include anchor($grey, $grey, $fore, $fore, true);
-    }
 }
 
 @media (prefers-color-scheme: light) {
-    @include theme(#fff, #303336, #369, #639, #666, #369);
+    @include theme(#fff, #303336, #369, #639, #666, #ccc);
     nav a, a.button {
        @include button(#fff, #fff, #369);
     }
@@ -36,7 +32,7 @@
 
 
 @media (prefers-color-scheme: dark) {
-    @include theme(#000, #eee, #69c, #a6c, #bbb, #147);
+    @include theme(#000, #eee, #69c, #a6c, #bbb, #444);
     nav a, a.button {
         @include button(#eee, #000, #147);
     }
