@@ -11,9 +11,9 @@ Thanks for visiting **Wire Haiku**, I sincerely hope you enjoy it.
 If you have any questions or suggestions, please send me a direct message on [Mastodon][2] or email [mail@wirehaiku.org][5].
 
 > **Wire Haiku** is licensed under the [Attribution-NonCommercial-ShareAlike 4.0 International][6] license.
-This license gives you the right to freely share and adapt the works on this website, as long as you attribute the work to the author (Stephen Malone), distribute it under the same license and do not use the work for commercial purposes.
+This license gives you the right to freely share and adapt the works on this website, as long as you attribute your version of the work to the author (Wire Haiku and Stephen Malone), distribute it under the same license and do not use the work for commercial purposes.
 >
-> For more information, consult the [Creative Commons license][6].
+> For more information, consult the [Creative Commons license page][6].
 
 [1]: https://en.wikipedia.org/wiki/Haiku
 [2]: https://mastodon.social/@stvmln
