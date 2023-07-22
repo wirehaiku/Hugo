@@ -17,17 +17,16 @@
     <body>
         <header>
             <h1> <a href="/">{{ .Site.Title }}</a> </h1>
-        </header>
-
-        <nav>
             <input type="checkbox" id="menu">
-            <ul>
-                {{ range .Site.Params.menu }}
-                    <li> {{ . | safeHTML }} </li>
-                {{ end }}
-            </ul>
+            <nav>
+                <ul>
+                    {{ range .Site.Params.menu }}
+                        <li> {{ . | safeHTML }} </li>
+                    {{ end }}
+                </ul>
+            </nav>
             <label for="menu">menu</label>
-        </nav>
+        </header>
 
         <main>
             {{ block "main" . }} {{ end }}

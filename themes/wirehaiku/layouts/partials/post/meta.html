@@ -1,0 +1,18 @@
+{{ if eq .Type "posts" }}
+    <div class="meta">
+        <span>
+            {{ .Date.Format "Monday 2 January 2006" }}.
+        </span>
+
+        <span>
+            {{ range .GetTerms "theme" }}
+                {{ partial "theme-link.html" . }}
+            {{ end }}
+
+            {{ range .GetTerms "tags" }}
+                {{ partial "tag-link.html" . }}
+            {{ end }}
+        </span>
+    </div>
+{{ end }}
+
