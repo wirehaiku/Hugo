@@ -1,21 +1,13 @@
 {{ $style := resources.Match "*.scss" | resources.Concat "style.css" | toCSS | minify | fingerprint }}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
     <head>
         <meta charset="utf-8">
-        <meta name="author" content="{{ index .Site.Author.name }}">
         <meta name="color-scheme" content="light dark">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ partial "site-title.html" . }}</title>
-
-        <meta property="og:title" content="{{ .Title }}">
-        <meta property="og:type" content="article">
-        <meta property="og:url" content="{{ .Permalink }}">
-        <meta property="twitter:domain" content="{{ .Site.BaseURL }}">
-        <meta name="twitter:title" content="{{ .Title }}">
-        <meta property="twitter:url" content="{{ .Permalink }}">
-        {{ block "meta" . }} {{ end }}
+        <title>{{ .Site.Title }} - {{ .Title }}</title>
+        {{ partial "site/meta.html" . }}
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
@@ -25,19 +17,17 @@
     <body>
         <header>
             <h1> <a href="/">{{ .Site.Title }}</a> </h1>
-
-            <input type="checkbox" id="menu">
-
-            <nav>
-                <ul>
-                    {{ range .Site.Params.menu }}
-                        <li> {{ . | safeHTML }} </li>
-                    {{ end }}
-                </ul>
-            </nav>
-
-            <label for="menu">menu</label>
         </header>
+
+        <nav>
+            <input type="checkbox" id="menu">
+            <ul>
+                {{ range .Site.Params.menu }}
+                    <li> {{ . | safeHTML }} </li>
+                {{ end }}
+            </ul>
+            <label for="menu">menu</label>
+        </nav>
 
         <main>
             {{ block "main" . }} {{ end }}

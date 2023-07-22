@@ -1,15 +1,3 @@
-{{ define "meta" }}
-    {{ with .Resources.GetMatch "feature.jpg" }}
-        <meta property="og:image" content="{{ .RelPermalink }}">
-        <meta name="twitter:image" content="{{ .RelPermalink }}">
-    {{ end }}
-    {{ with .Params.desc }}
-        <meta name="description" content="{{ . }}">
-        <meta property="og:description" content="{{ . }}">
-        <meta name="twitter:description" content="{{ . }}">
-    {{ end }}
-{{ end }}
-
 {{ define "main" }}
     <article>
         <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>

@@ -1,0 +1,24 @@
+<meta name="author" content="{{ $.Site.Author.name }}">
+<meta property="og:type" content="article">
+<meta property="twitter:domain" content="{{ $.Site.BaseURL }}">
+
+{{ with .Permalink }}
+    <meta property="og:url" content="{{ . }}">
+    <meta property="twitter:url" content="{{ . }}">
+{{ end }}
+
+{{ with .Title }}
+    <meta name="twitter:title" content="{{ $.Site.Title }}: {{ . }}">
+    <meta property="og:title" content="{{ $.Site.Title }}: {{ . }}">
+{{ end }}
+
+{{ with .Params.desc }}
+    <meta name="description" content="{{ . }}">
+    <meta property="og:description" content="{{ . }}">
+    <meta name="twitter:description" content="{{ . }}">
+{{ end }}
+
+{{ with .Resources.GetMatch "feature.jpg" }}
+    <meta property="og:image" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ .Permalink }}">
+{{ end }}
