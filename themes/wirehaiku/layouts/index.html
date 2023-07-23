@@ -1,3 +1,7 @@
+{{ define "name" }}
+    {{ .Site.Title }}: {{ .Site.Params.description }}
+{{ end }}
+
 {{ define "main" }}
     {{ $posts := (where .Site.RegularPages "Type" "posts") | first 10  }}
     {{ $first := index $posts 0 }}
@@ -7,9 +11,7 @@
         <h2> Latest Post: <a href="{{ $first.RelPermalink }}">{{ $first.Title }}</a> </h2>
         {{ partial "post/meta.html" $first }}
         {{ partial "post/body.html" (dict "post" $first "text" $first.Summary) }}
-        <p>
-            <a class="button" href="{{ $first.RelPermalink}}">Read more &rarr;</a>
-        </p>
+        <p> <a href="{{ $first.RelPermalink}}">Read more &rarr;</a> </p>
 
         <h2> Latest <a href="/posts/">Archives</a> </h2>
         {{ partial "post/list.html" $posts }}

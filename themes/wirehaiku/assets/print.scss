@@ -2,16 +2,13 @@
 
 @media print {
     * {
-        background: #fff !important;
-        border-color: #000 !important;
-        color: #000 !important;
-    }
-
-    nav a, a.button {
-        border: 0.1rem solid #000 !important;
+        background: white !important;
+        border-color: black !important;
+        color: black !important;
     }
 
     pre {
+        border: 0.1rem solid black !important;
         background-image: none !important;
     }
 

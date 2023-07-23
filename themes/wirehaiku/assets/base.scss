@@ -1,0 +1,130 @@
+/*** Base Stylesheet ***/
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+html, code, pre {
+	font-family: Georgia, Times, serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.6em;
+}
+
+header, main, footer {
+    border-radius: 0.25rem;
+    margin: 1rem auto;
+    max-width: 68ch;
+    padding: 1rem 5rem;
+}
+
+body {
+    width: 100%;
+
+    blockquote, img, pre {
+        border-radius: 0.25rem;
+    }
+
+    blockquote {
+        margin: 1.5rem auto;
+        padding: 0.5rem 1rem;
+    }
+
+    hr {
+        border-radius: 0.25rem;
+        margin: 2.5rem auto;
+        width: 50%;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+
+    ol, ul {
+        line-height: 1.8em;
+        padding-left: 1rem;
+    }
+}
+
+header {
+    padding-bottom: 0;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        padding-top: 0.5rem;
+    }
+
+    input, label {
+        display: none;
+    }
+}
+
+nav {
+    li {
+        display: inline-block;
+        margin: 0 0.5rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+main {
+    pre {
+        background-position: center;
+        background-size: cover;
+        padding: 0;
+
+        code {
+            display: block;
+            font-size: 1.2rem;
+            line-height: 2.5rem;
+            padding: 0.5rem 1rem;
+        }
+
+        &.feature code {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.1) 75%);
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+        }
+    }
+
+    .cloud {
+        line-height: 2rem;
+
+        span  {
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+    }
+
+    div.meta {
+        margin-top: -0.5rem;
+    }
+
+    div.navs {
+        margin: 1rem 0;
+
+        a.right {
+            float: right;
+        }
+    }
+
+    div.list li span {
+        float: right;
+    }
+}
+
+footer {
+    text-align: center;
+
+    p {
+        margin: 0.5rem;
+    }
+}
