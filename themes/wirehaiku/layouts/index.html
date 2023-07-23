@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-    <article>
+    <article class="info">
         {{ .Site.Params.intro | .RenderString }}
     </article>
 
@@ -16,11 +16,11 @@
             <p> <a href="{{ .RelPermalink}}">Read more &rarr;</a> </p>
         </article>
     {{ end }}
-        <article>
-            <p>
-                Looking for more? Check out <a href="/posts/">the archives</a>
-                or <a href="/pages/taxonomy/">browse by theme/tag</a>.
-            </p>
-        </article>
+
+    <article class="info">
+        <p>
+            Looking for more? Check out <a href="/posts/">the archives</a>
+            or <a href="/pages/taxonomy/">browse by theme/tag</a>.
+        </p>
     </article>
 {{ end }}
