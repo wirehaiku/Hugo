@@ -6,11 +6,11 @@
 
         <span>
             {{ range .GetTerms "theme" }}
-                {{ partial "theme-link.html" . }}
+                {{ partial "link/theme.html" . }}
             {{ end }}
 
             {{ range .GetTerms "tags" }}
-                {{ partial "tag-link.html" . }}
+                {{ partial "link/tag.html" . }}
             {{ end }}
         </span>
     </div>

@@ -5,13 +5,13 @@
         {{ .Site.Params.intro | .RenderString }}
 
         <h2> Latest Post: <a href="{{ $first.RelPermalink }}">{{ $first.Title }}</a> </h2>
-        {{ partial "post/meta.html" }}
+        {{ partial "post/meta.html" $first }}
         {{ partial "post/body.html" (dict "post" $first "text" $first.Summary) }}
         <p>
             <a class="button" href="{{ $first.RelPermalink}}">Read more &rarr;</a>
         </p>
 
         <h2> Latest <a href="/posts/">Archives</a> </h2>
-        {{ partial "post-list.html" $posts }}
+        {{ partial "post/list.html" $posts }}
     </article>
 {{ end }}
