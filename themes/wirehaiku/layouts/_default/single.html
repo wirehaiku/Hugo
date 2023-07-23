@@ -2,17 +2,6 @@
     <article>
         <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
         {{ partial "post-full.html" . }}
-
-        {{ if eq .Type "posts" }}
-                <ul class="meta">
-                    {{ with .PrevInSection }}
-                        <li> Previous: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
-                    {{ end }}
-
-                    {{ with .NextInSection }}
-                        <li> Next: <a href="{{ .RelPermalink }}">{{ .Title }}</a> </li>
-                    {{ end }}
-                </ul>
-            {{ end }}
+        {{ partial "post/navs.html" . }}
     </article>
 {{ end }}

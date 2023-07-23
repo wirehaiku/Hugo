@@ -1,4 +1,4 @@
-{{ partial "post-meta.html" . }}
+{{ partial "post/meta.html" . }}
 {{ $img := .Resources.GetMatch "feature.jpg" }}
 {{ if ne $img nil }}
     {{ $css := printf "background-image: url('%s')" $img.RelPermalink }}
