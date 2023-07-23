@@ -1,8 +1,0 @@
-{{ partial "post/meta.html" . }}
-{{ $img := .Resources.GetMatch "feature.jpg" }}
-{{ if ne $img nil }}
-    {{ $css := printf "background-image: url('%s')" $img.RelPermalink }}
-    {{ replace .Content "<pre" (printf "<pre class=\"feature\" style=\"%s\"" $css) 1 | safeHTML }}
-{{ else }}
-    {{ .Content }}
-{{ end }}
