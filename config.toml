@@ -27,7 +27,7 @@ menu = [
     "<a href='/'>Home</a>",
     "<a href='/pages/about/'>About</a>",
     "<a href='/posts/'>Archives</a>",
-    "<a href='/pages/cloud/'>Tag Cloud</a>",
+    "<a href='/pages/taxonomy/'>Taxonomy</a>",
     "<a href='https://mastodon.social/@stvmln' rel='me'>Mastodon</a>",
 ]
 

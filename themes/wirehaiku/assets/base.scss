@@ -119,6 +119,30 @@ main {
     div.list li span {
         float: right;
     }
+
+    p.themes {
+        text-align: center;
+
+        a {
+            margin: 0.125rem;
+        }
+    }
+
+    table.tags {
+        border-collapse: collapse;
+        width: 100%;
+
+        a {
+            margin: 0.125rem;
+        }
+
+        td:first-child {
+            font-size: 1.25rem;
+            padding: 1rem 0;
+            text-align: center;
+            width: 10%;
+        }
+    }
 }
 
 footer {

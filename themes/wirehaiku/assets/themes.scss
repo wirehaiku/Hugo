@@ -58,6 +58,10 @@
         blockquote, pre {
             border: 0.1rem solid $bord;
         }
+
+        table.taxo tr:not(:last-child) {
+            border-bottom: 0.1rem solid $bord;
+        }
     }
 }
 
