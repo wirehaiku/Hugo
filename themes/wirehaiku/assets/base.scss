@@ -5,8 +5,8 @@
 }
 
 html, code, pre {
-	font-family: Georgia, Times, serif;
-	font-size: 20px;
+	font-family: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, Georgia, serif;
+	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.6em;
 }
@@ -106,10 +106,6 @@ main {
             display: inline-block;
             margin: 0 0.5rem;
         }
-    }
-
-    article.info {
-        text-align: center;
     }
 
     div.meta {

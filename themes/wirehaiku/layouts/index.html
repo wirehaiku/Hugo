@@ -4,7 +4,7 @@
 
 {{ define "main" }}
     <article class="info">
-        {{ .Site.Params.intro | .RenderString }}
+        {{ .Site.Params.intro | .RenderString (dict "display" "block") }}
     </article>
 
 
