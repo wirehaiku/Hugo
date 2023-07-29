@@ -2,7 +2,7 @@
 title: Simulator
 slug: simulator
 theme: contacts
-tags: [season, object, colour]
+tags: [winter, grass, grey]
 desc: description
 ---
 
