@@ -2,7 +2,7 @@
 title: "Theme: Ancients"
 slug: theme-ancients
 theme: ancients
-tags: [spring, rabbits, green]
+tags: [theme-intro, spring, rabbits, green]
 desc: We're going back in time.
 ---
 
