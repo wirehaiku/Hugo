@@ -2,7 +2,7 @@
 title: Luminance
 slug: luminance
 theme: ancients
-tags: [summer, season, object, colour]
+tags: [summer, storms, gold]
 desc: More of this.
 ---
 
