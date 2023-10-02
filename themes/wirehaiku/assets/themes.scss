@@ -82,7 +82,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    @include theme(#fff, #444, #ddd, #777, #369, #639, #58b, #85b);
+    @include theme(#fff, #222, #ddd, #777, #369, #639, #58b, #85b);
 }
 
 @media (prefers-color-scheme: dark) {
