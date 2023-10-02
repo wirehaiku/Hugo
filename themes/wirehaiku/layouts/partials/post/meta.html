@@ -1,17 +1,17 @@
 {{ if eq .Type "posts" }}
-    <div class="meta">
-        <span>
-            {{ .Date.Format "Monday 2 January 2006" }}.
-        </span>
+<div class="meta">
+    <span>
+        {{ .Date.Format "Monday 2 January 2006" }}.
+    </span>
 
-        <span>
-            {{ range .GetTerms "theme" }}
-                {{ partial "link/theme.html" . }}
-            {{ end }}
+    <span>
+        {{ range .GetTerms "theme" }}
+        {{ partial "link/theme.html" . }}
+        {{ end }}
 
-            {{ range .GetTerms "tags" }}
-                {{ partial "link/tag.html" . }}
-            {{ end }}
-        </span>
-    </div>
+        {{ range .GetTerms "tags" }}
+        {{ partial "link/tag.html" . }}
+        {{ end }}
+    </span>
+</div>
 {{ end }}

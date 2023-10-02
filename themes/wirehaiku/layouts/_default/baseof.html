@@ -1,38 +1,42 @@
 {{ $style := resources.Match "*.scss" | resources.Concat "style.css" | toCSS | minify | fingerprint }}
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>{{ block "name" . }} {{ .Site.Title }}: {{ .Title }} {{ end }}</title>
-        <meta name="color-scheme" content="light dark">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
-        <link rel="alternate" type="application/rss+xml" href="/posts/index.xml">
-        {{ partial "site/meta.html" . }}
-    </head>
 
-    <body>
-        <header>
-            <h1> <a href="/">{{ .Site.Title }}</a> </h1>
-            <input type="checkbox" id="menu">
-            <nav>
-                <ul>
-                    {{ range .Site.Params.menu }}
-                        <li> {{ . | safeHTML }} </li>
-                    {{ end }}
-                </ul>
-            </nav>
-            <label for="menu">menu</label>
-        </header>
+<head>
+    <meta charset="utf-8">
+    <title>{{ block "name" . }} {{ .Site.Title }}: {{ .Title }} {{ end }}</title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+    <link rel="alternate" type="application/rss+xml" href="/posts/index.xml">
+    {{ partial "site/meta.html" . }}
+</head>
 
-        <main>
-            {{ block "main" . }} {{ end }}
-        </main>
+<body>
+    <header>
+        <h1> <a href="/">{{ .Site.Title }}</a> </h1>
+        <input type="checkbox" id="menu">
+        <nav>
+            <ul>
+                {{ range .Site.Params.menu }}
+                <li> {{ . | safeHTML }} </li>
+                {{ end }}
+            </ul>
+        </nav>
+        <label for="menu">menu</label>
+    </header>
 
-        <footer>
-            <p> © {{ .Site.Params.author }} {{ now.Format "2006" }}. </p>
-            <p> {{ .Site.Params.footer | .RenderString }} </p>
-        </footer>
-    </body>
+    <main>
+        {{ block "main" . }} {{ end }}
+    </main>
+
+    <hr>
+
+    <footer>
+        <p> © {{ .Site.Params.author }} {{ now.Format "2006" }}. </p>
+        <p> {{ .Site.Params.footer | .RenderString }} </p>
+    </footer>
+</body>
+
 </html>

@@ -15,31 +15,29 @@ pre {
     line-height: 1.6em;
 }
 
-header,
-article,
-footer {
-    border-radius: 0.25rem;
-    margin: 1rem auto;
-    max-width: 69ch;
-    padding: 1rem 5rem;
-}
-
 body {
+    margin: 1rem auto;
+    max-width: 65ch;
     width: 100%;
 
-    blockquote,
-    img,
-    pre {
-        border-radius: 0.25rem;
+    article:not(:last-child) {
+        margin-bottom: 2rem;
     }
 
-    blockquote {
-        margin: 1.5rem auto;
+    blockquote,
+    pre {
+        margin: 1rem auto;
         padding: 0.5rem 1rem;
+
+        code {
+            display: block;
+            font-size: 1.2rem;
+            line-height: 2rem;
+            padding: 0.5rem 1rem;
+        }
     }
 
     hr {
-        border-radius: 0.25rem;
         margin: 2.5rem auto;
         width: 50%;
     }
@@ -86,50 +84,6 @@ nav {
 }
 
 main {
-    br {
-        clear: both;
-    }
-
-    pre {
-        background-position: center;
-        background-size: cover;
-        padding: 0;
-
-        code {
-            display: block;
-            font-size: 1.2rem;
-            line-height: 2.5rem;
-            padding: 0.5rem 1rem;
-        }
-
-        &.feature code {
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 15%, rgba(0, 0, 0, 0.1) 75%);
-            color: white;
-            text-shadow: 2px 2px 4px #000;
-        }
-    }
-
-    .cloud {
-        line-height: 2rem;
-
-        span {
-            display: inline-block;
-            margin: 0 0.5rem;
-        }
-    }
-
-    div.meta {
-        margin-top: -0.5rem;
-    }
-
-    div.navs {
-        margin: 1rem 0;
-
-        a.right {
-            float: right;
-        }
-    }
-
     div.list li span {
         float: right;
     }
@@ -138,7 +92,7 @@ main {
         text-align: center;
 
         a {
-            margin: 0.125rem;
+            margin: 0 0.25rem;
         }
     }
 
@@ -147,7 +101,7 @@ main {
         width: 100%;
 
         a {
-            margin: 0.125rem;
+            margin: 0.25rem;
         }
 
         td {

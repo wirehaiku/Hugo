@@ -1,26 +1,27 @@
 {{ define "name" }}
-    {{ .Site.Title }}: {{ .Site.Params.description }}
+{{ .Site.Title }}: {{ .Site.Params.description }}
 {{ end }}
 
 {{ define "main" }}
-    <article class="info">
-        {{ .Site.Params.intro | .RenderString (dict "display" "block") }}
-    </article>
+<article>
+    {{ .Site.Params.intro | .RenderString (dict "display" "block") }}
+</article>
 
 
-    {{ range where .Site.RegularPages "Type" "posts" | first 5 }}
-        <article>
-            <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
-            {{ partial "post/meta.html" . }}
-            {{ partial "post/body.html" (dict "post" . "text" .Summary) }}
-            <p> <a href="{{ .RelPermalink}}">Read more &rarr;</a> </p>
-        </article>
-    {{ end }}
+{{ range where .Site.RegularPages "Type" "posts" | first 5 }}
+<article>
+    <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+    {{ partial "post/meta.html" . }}
+    {{ .Summary }}
+    <p> <a href="{{ .RelPermalink}}">Read more &rarr;</a> </p>
+</article>
+<hr>
+{{ end }}
 
-    <article class="info">
-        <p>
-            Looking for more? Check out <a href="/posts/">the archives</a>
-            or <a href="/pages/taxonomy/">browse by theme/tag</a>.
-        </p>
-    </article>
+<article class="meta" style="text-align: center">
+    <p>
+        Looking for more? Check out <a href="/posts/">the archives</a>
+        or <a href="/pages/taxonomy/">browse by theme/tag</a>.
+    </p>
+</article>
 {{ end }}
