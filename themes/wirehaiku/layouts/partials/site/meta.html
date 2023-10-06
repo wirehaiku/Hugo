@@ -3,22 +3,22 @@
 <meta property="twitter:domain" content="{{ $.Site.BaseURL }}">
 
 {{ with .Permalink }}
-<meta property="og:url" content="{{ . }}">
-<meta property="twitter:url" content="{{ . }}">
+    <meta property="og:url" content="{{ . }}">
+    <meta property="twitter:url" content="{{ . }}">
 {{ end }}
 
 {{ with .Title }}
-<meta name="twitter:title" content="{{ $.Site.Title }}: {{ . }}">
-<meta property="og:title" content="{{ $.Site.Title }}: {{ . }}">
+    <meta name="twitter:title" content="{{ $.Site.Title }}: {{ . }}">
+    <meta property="og:title" content="{{ $.Site.Title }}: {{ . }}">
 {{ end }}
 
 {{ with .Params.desc }}
-<meta name="description" content="{{ . }}">
-<meta property="og:description" content="{{ . }}">
-<meta name="twitter:description" content="{{ . }}">
+    <meta name="description" content="{{ . }}">
+    <meta property="og:description" content="{{ . }}">
+    <meta name="twitter:description" content="{{ . }}">
 {{ end }}
 
 {{ with .Resources.GetMatch "feature.jpg" }}
-<meta property="og:image" content="{{ .Permalink }}">
-<meta name="twitter:image" content="{{ .Permalink }}">
+    <meta property="og:image" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ .Permalink }}">
 {{ end }}

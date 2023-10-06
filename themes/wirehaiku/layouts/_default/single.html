@@ -1,8 +1,8 @@
 {{ define "main" }}
-<article>
-    <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
-    {{ partial "post/meta.html" . }}
-    {{ .Content }}
-    {{ partial "post/navs.html" . }}
-</article>
+    <article>
+        <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+        {{ partial "post/meta.html" . }}
+        {{ partial "post/body.html" (dict "post" . "text" .Content) }}
+        {{ partial "post/navs.html" . }}
+    </article>
 {{ end }}
