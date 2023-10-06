@@ -16,20 +16,4 @@ description
 
 ---
 
-paragraph
-
-```
-haiku
-```
-
----
-
-paragraph
-
-```
-haiku
-```
-
----
-
-paragraph
+content
