@@ -1,8 +1,8 @@
 ---
-title: Luminance
-slug: luminance
+title: "Theme: Luminance"
+slug: theme-luminance
 theme: ancients
-tags: [summer, storms, gold]
+tags: [theme-intro, summer, storms, gold]
 desc: More of this.
 ---
 

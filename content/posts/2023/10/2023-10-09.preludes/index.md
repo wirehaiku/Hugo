@@ -1,6 +1,6 @@
 ---
-title: Preludes
-slug: preludes
+title: "Theme: Preludes"
+slug: theme-preludes
 theme: preludes
 tags: [theme-intro, spring, objects, colours]
 desc: It starts before it starts.
