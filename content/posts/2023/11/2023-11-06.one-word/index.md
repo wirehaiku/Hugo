@@ -1,8 +1,8 @@
 ---
 title: One Word
 slug: one-word
-theme: unthemed
-tags: [season, object, colour]
+theme: lucky-dip
+tags: [summer, scenery, rainbow]
 desc: Let's try some one-word haiku.
 ---
 
