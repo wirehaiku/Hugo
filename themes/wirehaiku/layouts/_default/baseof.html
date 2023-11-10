@@ -1,38 +1,51 @@
 {{ $style := resources.Match "*.scss" | resources.Concat "style.css" | toCSS | minify | fingerprint }}
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>{{ block "name" . }} {{ .Site.Title }}: {{ .Title }} {{ end }}</title>
-        <meta name="color-scheme" content="light dark">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
-        <link rel="alternate" type="application/rss+xml" href="/posts/index.xml">
-        {{ partial "site/meta.html" . }}
-    </head>
 
-    <body>
-        <header>
-            <h1> <a href="/">{{ .Site.Title }}</a> </h1>
-            <input type="checkbox" id="menu">
-            <nav>
-                <ul>
-                    {{ range .Site.Params.menu }}
-                        <li> {{ . | safeHTML }} </li>
-                    {{ end }}
-                </ul>
-            </nav>
-            <label for="menu">menu</label>
-        </header>
+<head>
+    <!-- Basic metadata. -->
+    <meta charset="utf-8">
+    <title>{{ block "name" . }} {{ .Site.Title }}: {{ .Title }} {{ end }}</title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <main>
-            {{ block "main" . }} {{ end }}
-        </main>
+    <!-- Favicon metadata. -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-        <footer>
-            <p> © {{ .Site.Params.author }} {{ now.Format "2006" }}. </p>
-            <p> {{ .Site.Params.footer | .RenderString }} </p>
-        </footer>
-    </body>
+    <!-- Links and stylesheets. -->
+    <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
+    <link rel="alternate" type="application/rss+xml" href="/posts/index.xml">
+    {{ partial "site/meta.html" . }}
+</head>
+
+<body>
+    <header>
+        <h1> <a href="/">{{ .Site.Title }}</a> </h1>
+        <input type="checkbox" id="menu">
+        <nav>
+            <ul>
+                {{ range .Site.Params.menu }}
+                <li> {{ . | safeHTML }} </li>
+                {{ end }}
+            </ul>
+        </nav>
+        <label for="menu">menu</label>
+    </header>
+
+    <main>
+        {{ block "main" . }} {{ end }}
+    </main>
+
+    <footer>
+        <p> © {{ .Site.Params.author }} {{ now.Format "2006" }}. </p>
+        <p> {{ .Site.Params.footer | .RenderString }} </p>
+    </footer>
+</body>
+
 </html>
