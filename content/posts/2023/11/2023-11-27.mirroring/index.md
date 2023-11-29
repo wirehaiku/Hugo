@@ -1,8 +1,8 @@
 ---
 title: Mirroring
 slug: mirroring
-theme: unthemed
-tags: [season, object, colour]
+theme: lucky-dip
+tags: [summer, lights, green]
 desc: It's all imagery.
 ---
 
