@@ -18,7 +18,7 @@ It's time to feel better.
 
 ---
 
-I'm going on a little hiatus from December 15[^1], but these first two weeks are all about Christmas comforts and indulging in the seasonal glee.
+I'm going on a little hiatus from December 16[^1], but these first two weeks are all about Christmas comforts and indulging in the seasonal glee.
 These haiku will be a healthy mix of Australian summer sun and fantasy winter wonders, but it'll all focus on the minutia of happy human indulgence.
 
 You cannot escape from [today's music][1].
