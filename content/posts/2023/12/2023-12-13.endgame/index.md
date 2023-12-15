@@ -2,7 +2,7 @@
 title: Endgame
 slug: endgame
 theme: indulgence
-tags: [season, object, colour]
+tags: [summer, heat, white]
 desc: Cast the covers off.
 ---
 
