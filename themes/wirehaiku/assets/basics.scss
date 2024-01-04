@@ -188,15 +188,10 @@ header {
 
 nav {
     a {
-        background: $dark;
+        @include button;
         display: block;
         padding: 0.25rem 0.75rem;
         margin: 0;
-
-        &:hover,
-        &:active {
-            background: $back;
-        }
     }
 
     li {
@@ -206,7 +201,7 @@ nav {
 
     ul {
         list-style-type: none;
-        padding: 0;
+        padding: 0 0 1rem 0;
         text-align: center;
     }
 }
@@ -227,14 +222,14 @@ div.navs {
 
     a {
         @include button;
-    }
 
-    a.left {
-        float: left;
-    }
+        &.left {
+            float: left;
+        }
 
-    a.right {
-        float: right;
+        &.right {
+            float: right;
+        }
     }
 
     br {
