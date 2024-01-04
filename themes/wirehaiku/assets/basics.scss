@@ -1,0 +1,246 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                               Basic Site Stylesheet                               //
+///////////////////////////////////////////////////////////////////////////////////////
+
+// Variable Definitions
+////////////////////////
+
+$back: #14171F;
+$fore: #F3E9DB;
+$warn: #862319;
+$lite: desaturate(lighten($back, 60), 10);
+$dark: lighten($back, 10);
+$blue: saturate(lighten($back, 60), 25);
+$purp: adjust-hue($blue, 50deg);
+$grad: linear-gradient(45deg, $dark 10%, lighten($dark, 15) 100%);
+
+// Global Elements
+///////////////////
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+/* convert to locally hosted font files!!! */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Open+Sans:ital,wght@0,400;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400&family=Rubik:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+html,
+code,
+pre {
+    font-family: Inter, sans-serif, system-ui;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6em;
+}
+
+body {
+    background: $back;
+    color: $fore;
+}
+
+main,
+footer {
+    margin: 1rem auto;
+    max-width: 60ch;
+}
+
+// Generic Elements
+////////////////////
+
+a {
+    &:link {
+        color: $blue;
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: $purp;
+        text-decoration: underline;
+    }
+
+    &:link:active,
+    &:link:hover {
+        color: lighten($blue, 10);
+        text-decoration: underline;
+    }
+
+    &:visited:active,
+    &:visited:hover {
+        color: lighten($purp, 10);
+        text-decoration: underline;
+    }
+}
+
+article {
+    margin: 2rem 0;
+}
+
+blockquote {
+    border: 0.25rem solid $dark;
+    margin: 1.5rem auto;
+    padding: 0.5rem 1rem;
+}
+
+br {
+    clear: both;
+}
+
+hr {
+    border: 0.125rem solid $dark;
+    margin: 3rem auto;
+    width: 50%;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+ol,
+ul {
+    line-height: 1.8em;
+    padding-left: 1rem;
+}
+
+pre {
+    background: $dark;
+    background: $grad;
+    padding: 0;
+
+    code {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+// Header & Navigation Elements
+////////////////////////////////
+
+header {
+    background: $dark;
+    background: $grad;
+    text-align: center;
+
+    a {
+
+        &:link,
+        &:visited {
+            color: $fore;
+            text-decoration: none;
+        }
+
+        &:link:active,
+        &:link:hover,
+        &:visited:active,
+        &:visited:hover {
+            color: lighten($fore, 10);
+        }
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        margin: 0;
+        padding: 2rem 0 1rem;
+    }
+
+    input,
+    label {
+        color: $lite;
+        display: none;
+    }
+}
+
+nav {
+    a {
+        background: $dark;
+        display: block;
+        padding: 0.25rem 0.75rem;
+        margin: 0;
+
+        &:hover,
+        &:active {
+            background: $back;
+        }
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 0.125rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+// Custom Elements
+///////////////////
+
+div.meta {
+    color: $lite;
+}
+
+div.navs {
+    margin: 1rem 0;
+
+    a.right {
+        float: right;
+    }
+}
+
+div.list li span {
+    color: $lite;
+    float: right;
+}
+
+p.themes {
+    text-align: center;
+
+    a {
+        margin: 0.125rem;
+    }
+}
+
+table.tags {
+    border-collapse: collapse;
+    width: 100%;
+
+    a {
+        margin: 0.125rem;
+    }
+
+    td {
+        padding: 1rem 0;
+    }
+
+    td:first-child {
+        font-size: 1.25rem;
+        padding: 1rem 0;
+        text-align: center;
+        width: 10%;
+    }
+
+    tr:not(:last-child) {
+        border-bottom: 0.25rem solid $dark;
+    }
+}
+
+// Footer Elements
+///////////////////
+
+footer {
+    color: $lite;
+    text-align: center;
+
+    p {
+        margin: 0.5rem;
+    }
+}

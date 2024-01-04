@@ -1,5 +1,5 @@
 <div class="body">
-    {{ $feat := .post.Resources.GetMatch "feature.jpg" }}
+    <!-- {{ $feat := .post.Resources.GetMatch "feature.jpg" }}
     {{ if ne $feat nil }}
         {{ $burl := printf `background-image: url(%s)` $feat.RelPermalink }}
         {{ $orig := printf `<pre tabindex="0">` }}
@@ -7,5 +7,6 @@
         {{ replace .text $orig $dest 1 | safeHTML }}
     {{ else }}
         {{ .text }}
-    {{ end }}
+    {{ end }} -->
+    {{ .text }}
 </div>
