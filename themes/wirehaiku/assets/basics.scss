@@ -105,8 +105,9 @@ ul {
 }
 
 pre {
-    background: $dark;
-    background: $grad;
+    background-position: center;
+    background-size: cover;
+    border: 0.25rem solid $dark;
     padding: 0;
 
     code {
@@ -115,6 +116,12 @@ pre {
         font-weight: 700;
         line-height: 2.5rem;
         padding: 0.5rem 1rem;
+    }
+
+    &.feature code {
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.2) 100%);
+        color: $fore;
+        text-shadow: 0.125rem 0.125rem 0.25rem #000;
     }
 }
 
@@ -190,6 +197,7 @@ div.meta {
 
 div.navs {
     background: $dark;
+    margin: 1rem 0;
     padding: 0.5rem 1rem;
 
     a.right {

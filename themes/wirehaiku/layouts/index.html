@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-{{ .Site.Params.intro | .RenderString (dict "display" "block") }}
+{{ .Site.Params.intro | .RenderString }}
 
 {{ range where .Site.RegularPages "Type" "posts" | first 5 }}
 <article>
@@ -14,10 +14,8 @@
 </article>
 {{ end }}
 
-<article class="info">
-    <p>
-        Looking for more? Check out <a href="/posts/">the archives</a>
-        or <a href="/pages/taxonomy/">browse by theme/tag</a>.
-    </p>
-</article>
+<blockquote style="text-align: center">
+    Looking for more? Check out <a href="/posts/">the archives</a>
+    or <a href="/pages/taxonomy/">browse by theme/tag</a>.
+</blockquote>
 {{ end }}
