@@ -1,42 +1,42 @@
 {{ define "main" }}
-    <article>
-        <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
+<article>
+    <h2> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h2>
 
-        {{ .Content }}
+    {{ .Content }}
 
-        {{ $group := dict }}
-        {{ range $alpha := split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
-            {{ $slice := slice }}
-            {{ range $name, $pages := $.Site.Taxonomies.tags }}
-                {{ $first := substr $name 0 1 | upper }}
-                {{ if eq $alpha $first }}
-                    {{ $slice = $slice | append (slice $name) }}
-                {{ end }}
-            {{ end }}
-            {{ if ne (len $slice) 0 }}
-                {{ $group = $group | merge (dict $alpha $slice) }}
-            {{ end }}
+    {{ $group := dict }}
+    {{ range $alpha := split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
+    {{ $slice := slice }}
+    {{ range $name, $pages := $.Site.Taxonomies.tags }}
+    {{ $first := substr $name 0 1 | upper }}
+    {{ if eq $alpha $first }}
+    {{ $slice = $slice | append (slice $name) }}
+    {{ end }}
+    {{ end }}
+    {{ if ne (len $slice) 0 }}
+    {{ $group = $group | merge (dict $alpha $slice) }}
+    {{ end }}
+    {{ end }}
+
+    <h3> Themes </h3>
+    <p class="themes">
+        {{ range $name, $taxo := $.Site.Taxonomies.theme }}
+        <a href="/theme/{{ $name }}/">{{ $name }}</a>
         {{ end }}
+    </p>
 
-        <h3> Themes </h3>
-        <p class="themes">
-            {{ range $name, $taxo := $.Site.Taxonomies.theme }}
-                <a href="/theme/{{ $name }}/">{{ $name }}</a>
-            {{ end }}
-        </p>
-
-        <h3> Tags </h3>
-        <table class="tags">
-            {{ range $alpha, $names := $group }}
-                <tr>
-                    <td> {{ $alpha }} </td>
-                    <td>
-                        {{ range $name := $names }}
-                            <a href="/tag/{{ $name | urlize}}/">{{ $name }}</a>
-                        {{ end }}
-                     </td>
-                </tr>
-            {{ end }}
-        </table>
-    </article>
+    <h3> Tags </h3>
+    <table class="tags">
+        {{ range $alpha, $names := $group }}
+        <tr>
+            <td> {{ $alpha }} </td>
+            <td>
+                {{ range $name := $names }}
+                <a href="/tag/{{ $name | urlize }}/">{{ $name }}</a>
+                {{ end }}
+            </td>
+        </tr>
+        {{ end }}
+    </table>
+</article>
 {{ end }}
