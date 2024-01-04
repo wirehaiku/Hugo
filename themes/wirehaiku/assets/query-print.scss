@@ -1,10 +1,13 @@
-/*** Print Theme Media Query ***/
+///////////////////////////////////////////////////////////////////////////////////////
+//                         Print Theme Media Query Stylesheet                        //
+///////////////////////////////////////////////////////////////////////////////////////
 
 @media print {
     * {
         background: white !important;
         border-color: black !important;
         color: black !important;
+        border-width: 0.1rem !important;
     }
 
     pre {
