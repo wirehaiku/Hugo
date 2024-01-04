@@ -1,0 +1,93 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                        Mobile Theme Media Query Stylesheet                        //
+///////////////////////////////////////////////////////////////////////////////////////
+
+@media (max-width: 700px) {
+
+    main,
+    footer {
+        padding: 0 1rem;
+    }
+
+    header {
+        margin-bottom: 1rem;
+
+        h1 {
+            font-size: 1.5rem;
+            padding: 1rem 0 0;
+        }
+
+        input:checked~nav {
+            max-height: 100%;
+        }
+
+        input:checked~label::after {
+            content: " -";
+        }
+
+        label {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.125rem;
+            margin: 1rem 0;
+
+            &::after {
+                content: " +";
+            }
+        }
+    }
+
+    nav {
+        font-size: 1.125rem;
+        max-height: 0;
+        overflow: hidden;
+
+        a {
+            background: inherit;
+        }
+
+        li {
+            display: block;
+            margin: 0;
+            width: 100%;
+
+            &:first-child {
+                margin-top: 1rem;
+            }
+        }
+
+        ul {
+            margin: 0;
+        }
+    }
+
+    pre code {
+        font-size: 1rem;
+    }
+
+    div.list li span {
+        display: block;
+        float: none;
+    }
+
+    div.meta span {
+        display: block;
+    }
+
+    div.navs {
+        background: inherit;
+
+        a {
+            background: $dark;
+            display: block;
+            float: none !important;
+            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            text-align: center;
+        }
+
+        br {
+            display: none;
+        }
+    }
+}
