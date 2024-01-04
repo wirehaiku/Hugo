@@ -8,11 +8,37 @@
 $back: #14171F;
 $fore: #F3E9DB;
 $warn: #862319;
-$lite: desaturate(lighten($back, 60), 10);
+$lite: desaturate(lighten($back, 60), 0);
 $dark: lighten($back, 10);
 $blue: saturate(lighten($back, 60), 25);
 $purp: adjust-hue($blue, 50deg);
 $grad: linear-gradient(45deg, $dark 10%, lighten($dark, 15) 100%);
+
+// Mixins
+//////////
+
+@mixin border() {
+    border: 0.25rem solid $dark;
+    border-radius: 0.5rem;
+}
+
+@mixin button() {
+    background: $dark;
+    border-radius: 0.5rem;
+    color: $fore;
+    padding: 0.375rem 0.75rem;
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+        color: $fore;
+        text-decoration: underline;
+    }
+}
 
 // Global Elements
 ///////////////////
@@ -24,7 +50,7 @@ $grad: linear-gradient(45deg, $dark 10%, lighten($dark, 15) 100%);
 }
 
 /* convert to locally hosted font files!!! */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Open+Sans:ital,wght@0,400;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400&family=Rubik:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
 html,
 code,
@@ -78,19 +104,15 @@ article {
 }
 
 blockquote {
-    border: 0.25rem solid $dark;
+    @include border;
     margin: 1.5rem auto;
     padding: 0.5rem 1rem;
 }
 
-br {
-    clear: both;
-}
-
 hr {
-    border: 0.125rem solid $dark;
+    @include border;
     margin: 3rem auto;
-    width: 50%;
+    width: 5rem;
 }
 
 img {
@@ -105,17 +127,18 @@ ul {
 }
 
 pre {
+    @include border;
     background-position: center;
     background-size: cover;
-    border: 0.25rem solid $dark;
     padding: 0;
 
     code {
+        border-radius: 0.5rem;
         display: block;
         font-size: 1.25rem;
         font-weight: 700;
-        line-height: 2.5rem;
-        padding: 0.5rem 1rem;
+        line-height: 2.75rem;
+        padding: 0.75rem 1rem;
     }
 
     &.feature code {
@@ -191,23 +214,41 @@ nav {
 // Custom Elements
 ///////////////////
 
+a.button {
+    @include button;
+}
+
 div.meta {
     color: $lite;
 }
 
 div.navs {
-    background: $dark;
     margin: 1rem 0;
-    padding: 0.5rem 1rem;
+
+    a {
+        @include button;
+    }
+
+    a.left {
+        float: left;
+    }
 
     a.right {
         float: right;
+    }
+
+    br {
+        clear: both;
     }
 }
 
 div.list li span {
     color: $lite;
     float: right;
+}
+
+h2~div.meta {
+    margin: -0.5rem 0 1rem;
 }
 
 p.themes {
