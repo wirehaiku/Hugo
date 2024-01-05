@@ -1,11 +1,11 @@
 {{ if eq .Type "posts" }}
 <div class="navs">
     {{ with .PrevInSection }}
-    <a class="button left" href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>
+    <a class="left" href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>
     {{ end }}
 
     {{ with .NextInSection }}
-    <a class="button right" href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>
+    <a class="right" href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>
     {{ end }}
     <br>
 </div>

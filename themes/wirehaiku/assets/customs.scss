@@ -1,20 +1,5 @@
 /*** Custom Elements ***/
 
-a.button {
-    border-radius: 0.5rem;
-    padding: 0.25rem 0.75rem;
-
-    &:link,
-    &:visited {
-        text-decoration: none;
-    }
-
-    &:hover,
-    &:active {
-        text-decoration: underline;
-    }
-}
-
 div.navs {
     margin: 1rem 0;
 

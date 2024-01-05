@@ -82,9 +82,15 @@ body {
 header {
     text-align: center;
 
-    a:link,
-    a:visited {
-        text-decoration: none;
+    a {
+        border-radius: 0.5rem;
+        margin: 0 0.25rem;
+        padding: 0.4rem 0.75rem;
+
+        &:link,
+        &:visited {
+            text-decoration: none;
+        }
     }
 
     h1 {
