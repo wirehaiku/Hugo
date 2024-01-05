@@ -40,6 +40,10 @@
         max-height: 0;
         overflow: hidden;
 
+        a {
+            display: block;
+        }
+
         li {
             display: block;
             margin: 0.5rem 0;

@@ -13,10 +13,8 @@
                 color: $nord5;
             }
 
-            a:link:active,
-            a:link:hover,
-            a:visited:active,
-            a:visited:hover {
+            a:active,
+            a:hover {
                 color: $nord6;
             }
         }
@@ -48,18 +46,20 @@
         color: $link;
     }
 
-    a:link:active,
-    a:link:hover {
+    a:active,
+    a:hover {
         color: lighten($link, 10);
     }
 
-    a:visited:active,
-    a:visited:hover {
-        color: lighten($vstd, 10);
-    }
+    article {
+        a:visited {
+            color: $vstd,
+        }
 
-    article a:visited {
-        color: $vstd,
+        a:visited:hover,
+        a:visited:active {
+            color: lighten($vstd, 10);
+        }
     }
 
     blockquote,
