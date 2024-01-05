@@ -87,7 +87,7 @@
 
 @media (prefers-color-scheme: light) {
     @include header;
-    @include scheme(#fff, $nord1, $nord3, $nord4, $nord10, $nord15);
+    @include scheme(#fff, $nord1, $nord3, $nord4, $nord10, darken($nord15, 10));
 }
 
 @media (prefers-color-scheme: dark) {

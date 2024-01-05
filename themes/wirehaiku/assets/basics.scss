@@ -21,58 +21,55 @@ footer {
     max-width: 60ch;
 }
 
-body {
+a:link,
+a:visited,
+a:link:active,
+a:link:hover,
+a:visited:active,
+a:visited:hover {
+    text-decoration: underline;
+}
 
-    a:link,
-    a:visited,
-    a:link:active,
-    a:link:hover,
-    a:visited:active,
-    a:visited:hover {
-        text-decoration: underline;
-    }
+article {
+    margin: 2rem 0;
+}
 
-    article {
-        margin: 2rem 0;
-    }
+blockquote {
+    border-radius: 0.5rem;
+    margin: 1.5rem auto;
+    padding: 0.5rem 1rem;
+}
 
-    blockquote {
+hr {
+    border-radius: 0.5rem;
+    margin: 3rem auto;
+    width: 5rem;
+}
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+ol,
+ul {
+    line-height: 1.8em;
+    padding-left: 1rem;
+}
+
+pre {
+    background-position: center;
+    background-size: cover;
+    border-radius: 0.5rem;
+    padding: 0;
+
+    code {
         border-radius: 0.5rem;
-        margin: 1.5rem auto;
-        padding: 0.5rem 1rem;
-    }
-
-    hr {
-        border-radius: 0.5rem;
-        margin: 3rem auto;
-        width: 5rem;
-    }
-
-    img {
-        height: auto;
-        width: 100%;
-    }
-
-    ol,
-    ul {
-        line-height: 1.8em;
-        padding-left: 1rem;
-    }
-
-    pre {
-        background-position: center;
-        background-size: cover;
-        border-radius: 0.5rem;
-        padding: 0;
-
-        code {
-            border-radius: 0.5rem;
-            display: block;
-            font-size: 1.25rem;
-            font-weight: 700;
-            line-height: 2.75rem;
-            padding: 0.75rem 1rem;
-        }
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 2.75rem;
+        padding: 0.75rem 1rem;
     }
 }
 
