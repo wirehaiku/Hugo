@@ -13,7 +13,6 @@
     {{ partial "post/meta.html" . }}
     {{ partial "post/body.html" (dict "post" . "text" .Summary) }}
     <p> <a href="{{ .RelPermalink}}">Read more &rarr;</a> </p>
-    <hr>
 </article>
 {{ end }}
 
