@@ -1,0 +1,68 @@
+/*** Custom Elements ***/
+
+a.button {
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.75rem;
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+div.navs {
+    margin: 1rem 0;
+
+    a.left {
+        float: left;
+    }
+
+    a.right {
+        float: right;
+    }
+
+    br {
+        clear: both;
+    }
+}
+
+div.list li span {
+    float: right;
+}
+
+h2~div.meta {
+    margin: -0.5rem 0 1rem;
+}
+
+p.themes {
+    text-align: center;
+
+    a {
+        margin: 0.125rem;
+    }
+}
+
+table.tags {
+    border-collapse: collapse;
+    width: 100%;
+
+    a {
+        margin: 0.125rem;
+    }
+
+    td {
+        padding: 1rem 0;
+    }
+
+    td:first-child {
+        font-size: 1.25rem;
+        padding: 1rem 0;
+        text-align: center;
+        width: 10%;
+    }
+}

@@ -1,6 +1,4 @@
-///////////////////////////////////////////////////////////////////////////////////////
-//                        Mobile Theme Media Query Stylesheet                        //
-///////////////////////////////////////////////////////////////////////////////////////
+/*** Mobile Media Query ***/
 
 @media (max-width: 700px) {
 
@@ -75,7 +73,6 @@
         background: inherit;
 
         a {
-            background: $dark;
             display: block;
             float: none !important;
             margin: 1rem 0;

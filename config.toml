@@ -24,11 +24,11 @@ Powered by [Hugo](https://gohugo.io/), licensed under [CC BY-NC-SA 4.0](https://
 """
 
 menu = [
-    "<a href='/'>Home</a>",
-    "<a href='/pages/about/'>About</a>",
-    "<a href='/posts/'>Archives</a>",
-    "<a href='/pages/taxonomy/'>Taxonomy</a>",
-    "<a href='https://mastodon.social/@stvmln' rel='me'>Mastodon</a>",
+    "<a class='button' href='/'>Home</a>",
+    "<a class='button' href='/pages/about/'>About</a>",
+    "<a class='button' href='/posts/'>Archives</a>",
+    "<a class='button' href='/pages/taxonomy/'>Taxonomy</a>",
+    "<a class='button' href='https://mastodon.social/@stvmln' rel='me'>Mastodon</a>",
 ]
 
 [permalinks]
