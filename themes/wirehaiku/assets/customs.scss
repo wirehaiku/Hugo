@@ -28,7 +28,7 @@ p.themes {
     text-align: center;
 
     a {
-        margin: 0.125rem;
+        margin: 0 0.125rem;
     }
 }
 
@@ -37,11 +37,7 @@ table.tags {
     width: 100%;
 
     a {
-        margin: 0.125rem;
-    }
-
-    td {
-        padding: 1rem 0;
+        margin: 0 0.125rem;
     }
 
     td:first-child {

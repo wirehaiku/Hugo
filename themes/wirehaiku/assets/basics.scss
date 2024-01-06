@@ -21,17 +21,26 @@ footer {
     max-width: 60ch;
 }
 
-a:link,
-a:visited,
-a:link:active,
-a:link:hover,
-a:visited:active,
-a:visited:hover {
-    text-decoration: underline;
+a {
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:active,
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 article {
     margin: 2rem 0;
+
+    a:link,
+    a:visited {
+        text-decoration: underline;
+    }
 }
 
 blockquote {
@@ -82,11 +91,6 @@ header {
         border-radius: 0.5rem;
         margin: 0 0.25rem;
         padding: 0.4rem 0.75rem;
-
-        &:link,
-        &:visited {
-            text-decoration: none;
-        }
     }
 
     h1 {
