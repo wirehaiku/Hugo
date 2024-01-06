@@ -2,19 +2,9 @@
 
 @media print {
     * {
+        background-image: none !important;
         background: white !important;
         border-color: black !important;
-        color: black !important;
-        border-width: 0.1rem !important;
-    }
-
-    pre {
-        border: 0.1rem solid black !important;
-        background-image: none !important;
-    }
-
-    code {
-        background: none white !important;
         color: black !important;
         text-shadow: none !important;
     }
