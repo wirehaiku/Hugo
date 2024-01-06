@@ -1,6 +1,9 @@
 /*** Mobile Media Query ***/
 
 @media (max-width: 700px) {
+    html {
+        font-size: 16px;
+    }
 
     main,
     footer {
