@@ -56,13 +56,10 @@
         border: 0.25rem solid $tone;
     }
 
-    pre {
+    pre code {
         background: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 15%, rgba(0, 0, 0, 0.2) 100%);
-
-        code {
-            color: white;
-            text-shadow: 0.125rem 0.125rem 0.25rem black;
-        }
+        color: white;
+        text-shadow: 0.125rem 0.125rem 0.25rem black;
     }
 
     div.list span,
