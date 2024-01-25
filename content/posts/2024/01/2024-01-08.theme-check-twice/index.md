@@ -1,8 +1,8 @@
 ---
-title: Check Twice
-slug: check-twice
+title: "Theme: Check Twice"
+slug: theme-check-twice
 theme: upkeep
-tags: [winter, trees, green]
+tags: [theme-intro, winter, trees, green]
 desc: Stay standing.
 ---
 

@@ -2,7 +2,7 @@
 title: "Theme: Indulgence"
 slug: theme-indulgence
 theme: indulgence
-tags: [winter, people, brown]
+tags: [theme-intro, winter, people, brown]
 desc: It's time to feel better.
 ---
 
